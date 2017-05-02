@@ -1,0 +1,60 @@
+@import "variables";
+body{
+  min-width: 768px;
+}
+#main-box{
+  font-size: 12px;
+  color: #333333;
+  background-color: @bg-gray;
+  #contain{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 12px;
+    box-sizing: border-box;
+    min-width: 768px;
+    .about{
+      width: 100%;
+      height: 100%;
+      background-color: @bg-white;
+      border: 1px solid #e5e8ef;
+      box-sizing: border-box;
+      padding: 60px 0 0 60px;
+      font-size: 12px;
+      p:not(.last-p){
+        height: 36px;
+        .title{
+          display: inline-block;
+          width: 98px;
+          height: 36px;
+          font-weight: bold;
+        }
+        a{
+          color: #7797d0;
+        }
+      }
+      .last-p{
+        height: 62px;
+        min-width: 700px;
+        .title{
+          display: inline-block;
+          width: 98px;
+          height: 62px;
+          font-weight: bold;
+          line-height: 36px;
+        }
+        .content{
+          display: inline-block;
+          span:nth-child(1){
+            line-height: 36px;
+          }
+          span:nth-child(2){
+            line-height: 26px;
+          }
+        }
+      }
+    }
+  }
+}

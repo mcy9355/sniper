@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>邮件设置</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/email-setting.css">
+</head>
+<body>
+<header id="header" class="clearfix">
+    <a href="#" class="logo pull-left"></a>
+    <div class="user-center pull-right">
+        <a class="user-btn" href="javascript:void(0);">
+            <i class="icon-man iconfont">&#xe61a;</i>
+            <span>系统管理员</span>
+            <i class="icon-arrow iconfont">&#xe62d;</i>
+        </a>
+    </div>
+    <div class="time-box pull-right clearfix">
+        <i class="icon-time iconfont">&#xe613;</i>
+        <span id="current-time"></span>
+    </div>
+</header>
+<aside id="nav-side" class="open">
+    <ul class="nav-side-list">
+        <li>
+            <a href="safe-account.html" class="clearfix">
+                <i class="iconfont pull-left">&#xe611;</i>
+                <span class="pull-left">账号</span>
+            </a>
+        </li>
+        <li>
+            <a href="safe-migrate.html" class="clearfix">
+                <i class="iconfont pull-left">&#xe64c;</i>
+                <span class="pull-left">安全中心迁移</span>
+            </a>
+        </li>
+        <li>
+            <a href="install.html" class="clearfix">
+                <i class="iconfont pull-left">&#xe648;</i>
+                <span class="pull-left">安装卸载</span>
+            </a>
+        </li>
+        <li>
+            <a class="summary clearfix open" href="javascript:void(0);">
+                <i class="iconfont arrow-icon pull-left">&#xe62b;</i>
+                <span class="pull-left">升级设定</span>
+            </a>
+            <ul class="nav-side-sec">
+                <li>
+                    <a href="upgrade-setting.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe60c;</i>
+                        <span class="pull-left">升级设置</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="email-setting.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe617;</i>
+                        <span class="pull-left">邮件设置</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <a class="toggle-nav-btn" href="javascript:void(0);">
+        <i class="iconfont">&#xe62f;</i>
+    </a>
+</aside>
+<section id="main-box">
+    <div id="contain">
+        <div class="bg-white">
+            <form action="#">
+                <div class="line">
+                    <label for="name" class="pull-left">发信人</label>
+                    <input type="text" id="name" class="pull-left">
+                </div>
+                <div class="line">
+                    <label for="pwd" class="pull-left">发信人密码</label>
+                    <input type="password" id="pwd" class="pull-left">
+                </div>
+                <div class="line line-server">
+                    <label for="server" class="pull-left">邮件服务器</label>
+                    <input type="text" id="server" class="pull-left">
+                    <span class="colon pull-left">:</span>
+                    <input type="text"  class="pull-left" id="server-sub">
+                </div>
+                <div class="line sub">
+                    <button type="submit" class="test">测试</button>
+                    <button type="button" class="save">保存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+</body>
+<!--[if lt IE 9]>
+<script src="lib/html5shiv.min.js"></script>
+<script src="lib/respond.min.js"></script>
+<![endif]-->
+<script src="js/common.js"></script>
+<script src="js/email-setting.js"></script>
+</html>

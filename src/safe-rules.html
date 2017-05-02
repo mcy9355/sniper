@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>账号变更通知</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/safe-rules.css">
+</head>
+<body>
+<header id="header" class="clearfix">
+    <a href="#" class="logo pull-left"></a>
+    <div class="user-center pull-right">
+        <a class="user-btn" href="javascript:void(0);">
+            <i class="icon-man iconfont">&#xe61a;</i>
+            <span>安全管理员</span>
+            <i class="icon-arrow iconfont">&#xe62d;</i>
+        </a>
+    </div>
+    <div class="time-box pull-right clearfix">
+        <i class="icon-time iconfont">&#xe613;</i>
+        <span id="current-time"></span>
+    </div>
+</header>
+<aside id="nav-side" class="open">
+    <ul class="nav-side-list">
+        <li>
+            <a href="index.html" class="clearfix">
+                <i class="iconfont pull-left">&#xe621;</i>
+                <span class="pull-left">总览</span>
+            </a>
+        </li>
+        <li>
+            <a href="host-manage.html" class="clearfix">
+                <i class="iconfont pull-left">&#xe61f;</i>
+                <span class="pull-left">主机管理</span>
+            </a>
+        </li>
+        <li>
+            <a class="summary clearfix" href="javascript:void(0);">
+                <i class="iconfont arrow-icon pull-left">&#xe62b;</i>
+                <span class="pull-left">智能分析</span>
+            </a>
+            <ul class="nav-side-sec">
+                <li>
+                    <a href="action-track.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe60c;</i>
+                        <span class="pull-left">动作追踪</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="restore.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe617;</i>
+                        <span class="pull-left">现场还原</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class="summary clearfix" href="javascript:void(0);">
+                <i class="iconfont arrow-icon pull-left">&#xe62b;</i>
+                <span class="pull-left">用户管理</span>
+            </a>
+            <ul class="nav-side-sec">
+                <li>
+                    <a href="person-manage.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe611;</i>
+                        <span class="pull-left">分管人员</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="area-manage.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe609;</i>
+                        <span class="pull-left">分管片区</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class="summary open clearfix" href="javascript:void(0);">
+                <i class="iconfont arrow-icon pull-left">&#xe62b;</i>
+                <span class="pull-left">系统设置</span>
+            </a>
+            <ul class="nav-side-sec">
+                <li>
+                    <a href="template.html" class="clearfix tooltip" title="防护模板">
+                        <i class="iconfont pull-left">&#xe706;</i>
+                        <span class="pull-left">防护模板</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="safe-rules.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe607;</i>
+                        <span class="pull-left">安全警报规则</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="time-manage.html" class="clearfix tooltip" title="时间管理">
+                        <i class="iconfont pull-left">&#xe613;</i>
+                        <span class="pull-left">时间管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="system-settings.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe61d;</i>
+                        <span class="pull-left">其他设置</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="system-status.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe668;</i>
+                        <span class="pull-left">系统信息</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="data-filter.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe66e;</i>
+                        <span class="pull-left">数据过滤器</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="about.html" class="clearfix tooltip" title="关于sniper">
+                <i class="iconfont pull-left">&#xe650;</i>
+                <span class="pull-left">关于sniper</span>
+            </a>
+        </li>
+    </ul>
+    <a class="toggle-nav-btn" href="javascript:void(0);">
+        <i class="iconfont">&#xe62f;</i>
+    </a>
+</aside>
+<section id="main-box">
+    <div id="contain">
+        <form action="#">
+            <!--<section for="receiver">-->
+                <!--<label>收件人</label>-->
+                <!--<div class="input-box">-->
+                    <!--<input type="text" id="receiver" name="text">-->
+                <!--</div>-->
+            <!--</section>-->
+            <!--<section for="server">-->
+                <!--<label>邮件服务器</label>-->
+                <!--<div class="input-box">-->
+                    <!--<input type="text" id="server" name="text">-->
+                <!--</div>-->
+            <!--</section>-->
+            <!--<section for="email">-->
+                <!--<label>邮件账号</label>-->
+                <!--<div class="input-box">-->
+                    <!--<input type="email" id="email" name="email">-->
+                <!--</div>-->
+            <!--</section>-->
+            <!--<section for="pwd">-->
+                <!--<label>邮件密码</label>-->
+                <!--<div class="input-box">-->
+                    <!--<input type="password" id="pwd" name="password">-->
+                <!--</div>-->
+            <!--</section>-->
+            <section class="tab-title">
+                <label>邮件类型</label>
+                <div class="wrap" id="wrap">
+                    <div class="lineBorder">
+                        <div class="lineDiv"><!--移动的div--></div>
+                    </div>
+                    <ul class="tabClick">
+                        <li class="active" id="accountChange">账号变更通知</li>
+                        <li id="systemAlarm">系统报警通知</li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="email-info tabCon">
+                <div class="tabBox">
+                    <section class="tabList">
+                        <label class="pull-left">收件人</label>
+                        <input type="text" class="receiver pull-left" id="receiverA" placeholder="aaaa">
+                        <input type="text" class="receiver pull-left hidden" id="receiverB" placeholder="bbb">
+                    </section>
+                    <section class="tabList">
+                        <label class="pull-left">标题</label>
+                        <input type="text" class="email-title pull-left" id="accountChangeTitle" placeholder="账号密码变更通知">
+                        <input type="text" class="email-title pull-left hidden" id="systemAlarmTitle" placeholder="IP:192.168.21.166触发安全警报">
+                    </section>
+                    <section class="tabList">
+                        <label class="pull-left">内容</label>
+                        <textarea class="email-content pull-left" id="accountChangeContent" placeholder="1ee"></textarea>
+                        <textarea class="email-content pull-left hidden" id="systemAlarmContent" placeholder="2edc"></textarea>
+                    </section>
+                </div>
+            </div>
+            <div class="submit">
+                <button type="submit" class="test">测试</button>
+                <button type="button" class="save">保存</button>
+            </div>
+        </form>
+    </div>
+</section>
+</body>
+<!--[if lt IE 9]>
+<script src="lib/html5shiv.min.js"></script>
+<script src="lib/respond.min.js"></script>
+<![endif]-->
+<script src="js/common.js"></script>
+<script src="js/email.js"></script>
+</html>

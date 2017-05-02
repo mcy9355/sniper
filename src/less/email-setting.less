@@ -1,0 +1,78 @@
+@import "variables";
+#main-box{
+  font-size: 12px;
+  color: #333333;
+  background-color: @bg-gray;
+  #contain{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 12px;
+    box-sizing: border-box;
+    .bg-white{
+      height: 100%;
+      background-color: @bg-white;
+      border: 1px solid @border-gray;
+      form{
+        height: 100%;
+        padding: 60px 0 0 60px;
+        color: #2f2f2f;
+        .line{
+          width: 100%;
+          height: 60px;
+          label{
+            width: 80px;
+            height: 30px;
+            line-height: 30px;
+            display: inline-block;
+          }
+          input{
+            width: 500px;
+            height: 30px;
+            border: 1px solid @border-gray;
+            display: inline-block;
+            box-sizing: border-box;
+          }
+          input[type=text],input[type=password]{
+            text-indent: 1em;
+          }
+        }
+        .line-server{
+          #server{
+            width: 369px;
+          }
+          .colon{
+            width: 26px;
+            text-align: center;
+            line-height: 30px;
+          }
+          #server-sub{
+            width: 106px;
+          }
+        }
+        .sub{
+          padding-left: 80px;
+          box-sizing: border-box;
+          button{
+            width: 110px;
+            height: 32px;
+            padding: 0;
+            color: @bg-white;
+            border: 0;
+            border-radius: 2px;
+            background-color: @primary-green;
+            font-size: 14px;
+            margin-right: 6px;
+            cursor: pointer;
+            box-sizing: border-box;
+          }
+          .save{
+            background-color: @primary-orange;
+          }
+        }
+      }
+    }
+  }
+}
+

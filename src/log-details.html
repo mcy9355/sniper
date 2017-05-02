@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>日志详情</title>
+    <link rel="stylesheet" href="lib/jquery.dataTables/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/log-details.css">
+</head>
+<body>
+<div class="main-details-box">
+    <div class="main-details-wrap clearfix">
+        <div class="sort-tab-wrap pull-left">
+            <ul class="sort-tab">
+                <li class="active">
+                    <i class="iconfont">&#xe626;</i>
+                    <span>行为分析</span>
+                </li>
+                <li>
+                    <i class="iconfont">&#xe62a;</i>
+                    <span>文件防护</span>
+                </li>
+                <li>
+                    <i class="iconfont">&#xe629;</i>
+                    <span>网络链路</span>
+                </li>
+                <li>
+                    <i class="iconfont">&#xe627;</i>
+                    <span>渗透溯源</span>
+                </li>
+                <li>
+                    <i class="iconfont">&#xe628;</i>
+                    <span>域名捕获</span>
+                </li>
+                <li>
+                    <i class="iconfont">&#xe65d;</i>
+                    <span>EPL防护</span>
+                </li>
+            </ul>
+        </div>
+        <!--行为分析-->
+        <div class="tab-content pull-left">
+            <div class="filter-box clearfix">
+                <div class="log-type-box pull-left">
+                    <label>类型</label>
+                    <select class="type-select">
+                        <option value="">全部</option>
+                        <option value="">安全日志</option>
+                        <option value="">可疑日志</option>
+                    </select>
+                </div>
+                <div class="action-type-box pull-left">
+                    <label>行为类别</label>
+                    <select class="type-select">
+                        <option value="">全部</option>
+                        <option value="">端口映射</option>
+                        <option value="">未知漏洞溢出提权</option>
+                        <option value="">WEB应用执行命令</option>
+                        <option value="">进程异常行为</option>
+                        <option value="">非正常卸载</option>
+                        <option value="">口令猜解</option>
+                        <option value="">违规审计</option>
+                    </select>
+                </div>
+                <div class="process-type-box pull-left">
+                    <label>进程</label>
+                    <select class="type-select">
+                        <option value="">全部</option>
+                        <option value="">exe</option>
+                    </select>
+                </div>
+                <div class="date-box pull-left">
+                    <label>日期</label>
+                    <input data-type="1" type="text" readonly>
+                    <i class="iconfont">&#xe652;</i>
+                </div>
+                <div class="search-box pull-left">
+                    <input type="text" placeholder="search">
+                    <button>
+                        <i class="iconfont">&#xe618;</i>
+                    </button>
+                </div>
+                <div class="refresh pull-left">
+                    <div class="sniper-checkbox pull-left">
+                        <input type="checkbox" data-type="1">
+                        <i class="iconfont">&#xe624;</i>
+                    </div>
+                    <div class="text pull-left">实时刷新日志</div>
+                </div>
+                <a class="filter-btn pull-right" href="javascript:void(0);" title="筛选">
+                    <i class="iconfont">&#xe60d;</i>
+                    <ul class="filter-ul" data-type="1" style="display: none">
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="1">
+                            <span>时间</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="2">
+                            <span>行为类别</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="3">
+                            <span>进程</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="4">
+                            <span>父进程</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="5">
+                            <span>用户</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="6">
+                            <span>行为参数</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="7">
+                            <span>评估</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="8">
+                            <span>标记安全</span>
+                        </li>
+                    </ul>
+                </a>
+                <a class="sort-btn pull-right" href="javascript:void(0);" title="分析模式">
+                    <i class="iconfont">&#xe65c;</i>
+                </a>
+                <a class="refresh-btn pull-right" href="javascript:void(0);" title="刷新">
+                    <i class="iconfont">&#xe61b;</i>
+                </a>
+            </div>
+            <table id="action-table" class="display data-table">
+                <thead>
+                <tr>
+                    <th class="tag-th"></th>
+                    <th class="time-th">时间</th>
+                    <th class="type-th">行为类别</th>
+                    <th class="process-th">进程</th>
+                    <th class="parent-process-th">父进程</th>
+                    <th class="user-th">用户</th>
+                    <th class="parameter-th">行为参数</th>
+                    <th>评估</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <!--文件防护-->
+        <div class="tab-content pull-left hide">
+            <div class="filter-box clearfix">
+                <div class="log-type-box pull-left">
+                    <label>类型</label>
+                    <select class="type-select">
+                        <option value="">全部</option>
+                        <option value="">安全日志</option>
+                        <option value="">可疑日志</option>
+                    </select>
+                </div>
+                <div class="action-type-box pull-left">
+                    <label>行为类别</label>
+                    <select class="type-select">
+                        <option value="">全部</option>
+                        <option value="">非法文件识别</option>
+                        <option value="">文件夹浏览痕迹</option>
+                        <option value="">文件访问痕迹</option>
+                        <option value="">非法篡改</option>
+                    </select>
+                </div>
+                <div class="process-type-box pull-left">
+                    <label>进程</label>
+                    <select class="type-select">
+                        <option value="">全部</option>
+                        <option value="">exe</option>
+                    </select>
+                </div>
+                <div class="date-box pull-left">
+                    <label>日期</label>
+                    <input data-type="2" type="text" readonly>
+                    <i class="iconfont">&#xe652;</i>
+                </div>
+                <div class="search-box pull-left">
+                    <input type="text" placeholder="search">
+                    <button>
+                        <i class="iconfont">&#xe618;</i>
+                    </button>
+                </div>
+                <div class="refresh pull-left">
+                    <div class="sniper-checkbox pull-left">
+                        <input type="checkbox" data-type="2">
+                        <i class="iconfont">&#xe624;</i>
+                    </div>
+                    <div class="text pull-left">实时刷新日志</div>
+                </div>
+                <a class="filter-btn pull-right" href="javascript:void(0);" title="筛选">
+                    <i class="iconfont">&#xe60d;</i>
+                    <ul class="filter-ul" data-type="2" style="display: none">
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="1">
+                            <span>时间</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="2">
+                            <span>行为类别</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="3">
+                            <span>用户</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="4">
+                            <span>进程</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="5">
+                            <span>路径</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="6">
+                            <span>文件类型</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="7">
+                            <span>文件大小</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="8">
+                            <span>文件属性</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="9">
+                            <span>关键词</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="10">
+                            <span>评估</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="11">
+                            <span>标记安全</span>
+                        </li>
+                    </ul>
+                </a>
+                <a class="sort-btn pull-right" href="javascript:void(0);" title="分析模式">
+                    <i class="iconfont">&#xe65c;</i>
+                </a>
+                <a class="refresh-btn pull-right" href="javascript:void(0);" title="刷新">
+                    <i class="iconfont">&#xe61b;</i>
+                </a>
+            </div>
+            <table id="file-table" class="display data-table">
+                <thead>
+                <tr>
+                    <th class="tag-th"></th>
+                    <th class="time-th">时间</th>
+                    <th class="type-th">行为类别</th>
+                    <th class="user-th">用户</th>
+                    <th class="process-th">进程</th>
+                    <th class="path-th">路径</th>
+                    <th>文件类型</th>
+                    <th>文件大小</th>
+                    <th>文件属性</th>
+                    <th class="keyword-th">关键词</th>
+                    <th class="evaluate-th">评估</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <!--网络链路-->
+        <div class="tab-content pull-left hide">
+            <div class="filter-box clearfix">
+                <div class="log-type-box pull-left">
+                    <label>类型</label>
+                    <select class="type-select">
+                        <option value="">全部</option>
+                        <option value="">安全日志</option>
+                        <option value="">可疑日志</option>
+                    </select>
+                </div>
+                <div class="action-type-box pull-left">
+                    <label>行为类别</label>
+                    <select class="type-select">
+                        <option value="">全部</option>
+                        <option value="">远程终端</option>
+                        <option value="">IPC共享管道</option>
+                        <option value="">SSH</option>
+                        <option value="">非系统远程管理</option>
+                    </select>
+                </div>
+                <div class="process-type-box pull-left">
+                    <label>进程</label>
+                    <select class="type-select">
+                        <option value="">全部</option>
+                        <option value="">exe</option>
+                    </select>
+                </div>
+                <div class="date-box pull-left">
+                    <label>日期</label>
+                    <input data-type="3" type="text" readonly>
+                    <i class="iconfont">&#xe652;</i>
+                </div>
+
+                <div class="search-box pull-left">
+                    <input type="text" placeholder="search">
+                    <button>
+                        <i class="iconfont">&#xe618;</i>
+                    </button>
+                </div>
+
+                <div class="refresh pull-left">
+                    <div class="sniper-checkbox pull-left">
+                        <input type="checkbox" data-type="3">
+                        <i class="iconfont">&#xe624;</i>
+                    </div>
+                    <div class="text pull-left">实时刷新日志</div>
+                </div>
+                <a class="filter-btn pull-right" href="javascript:void(0);" title="筛选">
+                    <i class="iconfont">&#xe60d;</i>
+                    <ul class="filter-ul" data-type="3" style="display: none">
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="1">
+                            <span>时间</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="2">
+                            <span>行为类别</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="3">
+                            <span>用户</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="4">
+                            <span>最后连接时间</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="5">
+                            <span>进程</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="6">
+                            <span>端口</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="7">
+                            <span>本机IP</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="8">
+                            <span>来源IP</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="9">
+                            <span>评估</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="10">
+                            <span>标记安全</span>
+                        </li>
+                    </ul>
+                </a>
+                <a class="sort-btn pull-right" href="javascript:void(0);" title="分析模式">
+                    <i class="iconfont">&#xe65c;</i>
+                </a>
+                <a class="refresh-btn pull-right" href="javascript:void(0);" title="刷新">
+                    <i class="iconfont">&#xe61b;</i>
+                </a>
+            </div>
+            <table id="network-table" class="display data-table">
+                <thead>
+                <tr>
+                    <th class="tag-th"></th>
+                    <th class="time-th">时间</th>
+                    <th class="type-th">行为类别</th>
+                    <th class="user-th">用户</th>
+                    <th class="time-th">最后连接时间</th>
+                    <th class="process-th">进程</th>
+                    <th>端口</th>
+                    <th>本机IP</th>
+                    <th>来源IP</th>
+                    <th>评估</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <!--渗透溯源-->
+        <div id="source-content" class="tab-content pull-left hide">
+            <div class="parent-host">
+                <i class="iconfont pull-left">&#xe659;</i>
+                <div class="pull-left">
+                    <span>192.168.225.110</span>
+                    <span>统计共33台</span>
+                </div>
+            </div>
+            <div class="child-host-wrap">
+                <ul class="child-host-ul">
+                    <li class="child-host-item " data-ip="192.168.21.254">
+                        <span class="ip-name pull-left">192.168.21.254(4)</span>
+                        <span class="num pull-left"></span><i class="pull-right iconfont icon-link-open"></i>
+                        <div class="tip-box">
+                            <div class="hd"><span>时间</span><span>协议</span><span>端口</span></div>
+                            <ul>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="child-host-item " data-ip="192.168.21.254">
+                        <span class="ip-name pull-left">192.168.21.254(4)</span>
+                        <span class="num pull-left"></span><i class="pull-right iconfont icon-link-open"></i>
+                        <div class="tip-box">
+                            <div class="hd"><span>时间</span><span>协议</span><span>端口</span></div>
+                            <ul>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="child-host-item " data-ip="192.168.21.254">
+                        <span class="ip-name pull-left">192.168.21.254(4)</span>
+                        <span class="num pull-left"></span><i class="pull-right iconfont icon-link-open"></i>
+                        <div class="tip-box">
+                            <div class="hd"><span>时间</span><span>协议</span><span>端口</span></div>
+                            <ul>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="child-host-item " data-ip="192.168.21.254">
+                        <span class="ip-name pull-left">192.168.21.254(4)</span>
+                        <span class="num pull-left"></span><i class="pull-right iconfont icon-link-open"></i>
+                        <div class="tip-box">
+                            <div class="hd"><span>时间</span><span>协议</span><span>端口</span></div>
+                            <ul>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>FTP</span><span>21</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>TELNET</span><span>23</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SSH</span><span>22</span></li>
+                                <li><span>2017-03-31 14:32:03</span><span>SMTP</span><span>25</span></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="no-source-host">目前状态良好，无扫描端口行为</div>
+        </div>
+        <!--域名捕获-->
+        <div class="tab-content pull-left hide">
+            <div class="filter-box clearfix">
+                <div class="log-type-box pull-left">
+                    <label>类型</label>
+                    <select class="type-select">
+                        <option value="">全部</option>
+                        <option value="">安全日志</option>
+                        <option value="">可疑日志</option>
+                    </select>
+                </div>
+                <div class="action-type-box pull-left">
+                    <label>行为类别</label>
+                    <select class="type-select">
+                        <option value="">全部</option>
+                        <option value="">木马上线域名</option>
+                        <option value="">色情网站域名</option>
+                        <option value="">赌博网站域名</option>
+                        <option value="">涉黑暴力元素域名</option>
+                        <option value="">境外反动域名</option>
+                    </select>
+                </div>
+                <div class="process-type-box pull-left">
+                    <label>进程</label>
+                    <select class="type-select">
+                        <option value="">全部</option>
+                        <option value="">exe</option>
+                    </select>
+                </div>
+                <div class="date-box pull-left">
+                    <label>日期</label>
+                    <input data-type="4" type="text" readonly>
+                    <i class="iconfont">&#xe652;</i>
+                </div>
+                <div class="search-box pull-left">
+                    <input type="text" placeholder="search">
+                    <button>
+                        <i class="iconfont">&#xe618;</i>
+                    </button>
+                </div>
+                <div class="refresh pull-left">
+                    <div class="sniper-checkbox pull-left">
+                        <input type="checkbox" data-type="4">
+                        <i class="iconfont">&#xe624;</i>
+                    </div>
+                    <div class="text pull-left">实时刷新日志</div>
+                </div>
+                <a class="filter-btn pull-right" href="javascript:void(0);" title="筛选">
+                    <i class="iconfont">&#xe60d;</i>
+                    <ul class="filter-ul" data-type="4" style="display: none">
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="1">
+                            <span>时间</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="2">
+                            <span>行为类别</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="3">
+                            <span>进程</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="4">
+                            <span>域名</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="5">
+                            <span>指向IP</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="6">
+                            <span>Whois信息</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="7">
+                            <span>评估</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="8">
+                            <span>标记安全</span>
+                        </li>
+                    </ul>
+                </a>
+                <a class="sort-btn pull-right" href="javascript:void(0);" title="分析模式">
+                    <i class="iconfont">&#xe65c;</i>
+                </a>
+                <a class="refresh-btn pull-right" href="javascript:void(0);" title="刷新">
+                    <i class="iconfont">&#xe61b;</i>
+                </a>
+            </div>
+            <table id="domain-table" class="display data-table">
+                <thead>
+                <tr>
+                    <th class="tag-th"></th>
+                    <th class="time-th">时间</th>
+                    <th class="type-th">行为类别</th>
+                    <th class="process-th">进程</th>
+                    <th>域名</th>
+                    <th>指向IP</th>
+                    <th>Whois信息</th>
+                    <th>评估</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <!--EPL防护-->
+        <div class="tab-content pull-left hide">
+            <div class="filter-box clearfix">
+                <div class="log-type-box pull-left">
+                    <label>类型</label>
+                    <select class="type-select">
+                        <option value="">全部</option>
+                        <option value="">安全日志</option>
+                        <option value="">可疑日志</option>
+                    </select>
+                </div>
+                <div class="action-type-box pull-left">
+                    <label>行为类别</label>
+                    <select class="type-select">
+                        <option value="">全部</option>
+                        <option value="">非法篡改</option>
+                        <option value="">非法文件识别</option>
+                        <option value="">文件夹访问痕迹</option>
+                        <option value="">疑似勒索软件</option>
+                        <option value="">数据窃取</option>
+                    </select>
+                </div>
+                <div class="process-type-box pull-left">
+                    <label>进程</label>
+                    <select class="type-select">
+                        <option value="">全部</option>
+                        <option value="">exe</option>
+                    </select>
+                </div>
+                <div class="date-box pull-left">
+                    <label>日期</label>
+                    <input data-type="5" type="text" readonly>
+                    <i class="iconfont">&#xe652;</i>
+                </div>
+                <div class="search-box pull-left">
+                    <input type="text" placeholder="search">
+                    <button>
+                        <i class="iconfont">&#xe618;</i>
+                    </button>
+                </div>
+                <div class="refresh pull-left">
+                    <div class="sniper-checkbox pull-left">
+                        <input type="checkbox" data-type="5">
+                        <i class="iconfont">&#xe624;</i>
+                    </div>
+                    <div class="text pull-left">实时刷新日志</div>
+                </div>
+                <a class="filter-btn pull-right" href="javascript:void(0);" title="筛选">
+                    <i class="iconfont">&#xe60d;</i>
+                    <ul class="filter-ul" data-type="5" style="display: none">
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="1">
+                            <span>时间</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="2">
+                            <span>用户</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="3">
+                            <span>进程</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="4">
+                            <span>路径</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="5">
+                            <span>文件类型</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="6">
+                            <span>文件大小</span>
+                        </li>
+                        <li class="clearfix">
+                            <input type="checkbox" checked class="toggle-vis" data-column="7">
+                            <span>文件属性</span>
+                        </li>
+                    </ul>
+                </a>
+                <a class="sort-btn pull-right" href="javascript:void(0);" title="分析模式">
+                    <i class="iconfont">&#xe65c;</i>
+                </a>
+                <a class="refresh-btn pull-right" href="javascript:void(0);" title="刷新">
+                    <i class="iconfont">&#xe61b;</i>
+                </a>
+            </div>
+            <table id="epl-table" class="display data-table">
+                <thead>
+                <tr>
+                    <th class="tag-th"></th>
+                    <th class="time-th">时间</th>
+                    <th>用户</th>
+                    <th class="process-th">进程</th>
+                    <th>路径</th>
+                    <th>文件类型</th>
+                    <th>文件大小</th>
+                    <th>文件属性</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+<!--[if lt IE 9]>
+<script src="lib/html5shiv.min.js"></script>
+<script src="lib/respond.min.js"></script>
+<![endif]-->
+<script src="js/common.js"></script>
+<script src="js/log-details.js"></script>
+</html>

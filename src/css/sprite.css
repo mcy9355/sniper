@@ -1,0 +1,50 @@
+
+.sprite {
+  background-image: url('../images/sprite.png');
+}
+
+.sprite-dangerHost-warn {
+  background-position: -0px -0px;
+  width: 40px;
+  height: 36px;
+}
+.sprite-dangerHost {
+  background-position: -0px -36px;
+  width: 40px;
+  height: 36px;
+}
+.sprite-outlineHost {
+  background-position: -0px -72px;
+  width: 40px;
+  height: 36px;
+}
+.sprite-safeHost-warn {
+  background-position: -0px -108px;
+  width: 40px;
+  height: 36px;
+}
+.sprite-safeHost {
+  background-position: -0px -144px;
+  width: 40px;
+  height: 36px;
+}
+.sprite-logo {
+  background-position: -0px -180px;
+  width: 182px;
+  height: 52px;
+}
+.sprite-disk {
+  background-position: -0px -232px;
+  width: 59px;
+  height: 53px;
+}
+.sprite-computer {
+  background-position: -0px -285px;
+  width: 74px;
+  height: 74px;
+}
+.sprite-tu {
+  background-position: -0px -359px;
+  width: 894px;
+  height: 702px;
+}

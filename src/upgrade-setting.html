@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>升级设置</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/upgrade-setting.css">
+</head>
+<body>
+<header id="header" class="clearfix">
+    <a href="#" class="logo pull-left"></a>
+    <div class="user-center pull-right">
+        <a class="user-btn" href="javascript:void(0);">
+            <i class="icon-man iconfont">&#xe61a;</i>
+            <span>系统管理员</span>
+            <i class="icon-arrow iconfont">&#xe62d;</i>
+        </a>
+    </div>
+    <div class="time-box pull-right clearfix">
+        <i class="icon-time iconfont">&#xe613;</i>
+        <span id="current-time"></span>
+    </div>
+</header>
+<aside id="nav-side" class="open">
+    <ul class="nav-side-list">
+        <li>
+            <a href="safe-account.html" class="clearfix">
+                <i class="iconfont pull-left">&#xe611;</i>
+                <span class="pull-left">账号</span>
+            </a>
+        </li>
+        <li>
+            <a href="safe-migrate.html" class="clearfix">
+                <i class="iconfont pull-left">&#xe64c;</i>
+                <span class="pull-left">安全中心迁移</span>
+            </a>
+        </li>
+        <li>
+            <a href="install.html" class="clearfix">
+                <i class="iconfont pull-left">&#xe648;</i>
+                <span class="pull-left">安装卸载</span>
+            </a>
+        </li>
+        <li>
+            <a class="summary clearfix open" href="javascript:void(0);">
+                <i class="iconfont arrow-icon pull-left">&#xe62b;</i>
+                <span class="pull-left">升级设定</span>
+            </a>
+            <ul class="nav-side-sec">
+                <li class="active">
+                    <a href="upgrade-setting.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe60c;</i>
+                        <span class="pull-left">升级设置</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="email-setting.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe617;</i>
+                        <span class="pull-left">邮件设置</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <a class="toggle-nav-btn" href="javascript:void(0);">
+        <i class="iconfont">&#xe62f;</i>
+    </a>
+</aside>
+<section id="main-box">
+    <div id="contain">
+        <div class="bg-white">
+            <div class="client windows-client">
+                <h1>
+                    <i class="iconfont">&#xe655;</i>
+                    windows端
+                    <span>（当前版本：3.8.01）</span>
+                </h1>
+                <section>
+                    <h2>cab升级包</h2>
+                    <div>
+                        <input type="text" placeholder="（例：3.6.cab）">
+                        <button type="button">浏览...</button>
+                    </div>
+                </section>
+                <section>
+                    <h2>exe安装包</h2>
+                    <div>
+                        <input type="text" placeholder="（例：sniper.exe）">
+                        <button type="button">浏览...</button>
+                    </div>
+                </section>
+                <aside>
+                    <button type="button">更新</button>
+                </aside>
+            </div>
+            <div class="client linux-client">
+                <h1>
+                    <i class="iconfont">&#xe653;</i>
+                    linux端
+                    <span>（当前版本：3.8.01）</span>
+                </h1>
+                <section>
+                    <h2>bin安装包</h2>
+                    <div>
+                        <input type="text"  placeholder="（例：sniper.bin）">
+                        <button type="button">浏览...</button>
+                    </div>
+                </section>
+                <section>
+                    <h2>tar升级包</h2>
+                    <div>
+                        <input type="text" placeholder="（例：sniper.tar.gz）">
+                        <button type="button">浏览...</button>
+                    </div>
+                </section>
+                <aside>
+                    <button type="button">更新</button>
+                </aside>
+            </div>
+            <div class="client permit">
+                <h1>
+                    <i class="iconfont">&#xe65b;</i>
+                    更新许可文件
+                </h1>
+                <section>
+                    <div>
+                        <input type="text">
+                        <button type="button" class="browse">浏览...</button>
+                        <p>许可信息：试用期到时间&ensp;2016-08-01&ensp;&ensp;许可证&ensp;100</p>
+                    </div>
+                </section>
+                <aside>
+                    <button type="button">更新</button>
+                </aside>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+<!--[if lt IE 9]>
+<script src="lib/html5shiv.min.js"></script>
+<script src="lib/respond.min.js"></script>
+<![endif]-->
+<script src="js/common.js"></script>
+<script src="js/upgrade-setting.js"></script>
+</html>

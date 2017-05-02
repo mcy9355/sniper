@@ -1,0 +1,193 @@
+@import "variables";
+
+#main-box {
+  background-color: @bg-gray;
+  #contain {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 12px;
+    box-sizing: border-box;
+    min-width: 768px;
+    #temp-wrap {
+      width: 100%;
+      height: 100%;
+      background-color: @bg-white;
+      border: 1px solid @border-gray;
+      box-sizing: border-box;
+      .box-hd {
+        margin-top: 14px;
+      }
+      .temp-box {
+        border-bottom: 1px solid @border-gray;
+        margin-right: 18px;
+        margin-left: 140px;
+        padding: 26px 0 52px 0;
+        label {
+          float: left;
+          margin-left: -140px;
+          text-indent: 32px;
+          line-height: 72px;
+        }
+        .temp-list {
+          margin-left: -26px;
+          li {
+            position: relative;
+            float: left;
+            width: 124px;
+            height: 138px;
+            margin-right: 20px;
+            border: 1px solid transparent;
+            &:hover {
+              border-color: @primary-orange;
+              .temp-details {
+                display: block;
+              }
+            }
+            .temp-info {
+              text-align: center;
+              img {
+                margin-top: 30px;
+                margin-bottom: 6px;
+              }
+            }
+            .temp-details {
+              display: none;
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 36px;
+              background: rgba(0, 0, 0, .5);
+              a {
+                color: #fff;
+                margin-top: 8px;
+                i {
+                  font-size: 20px;
+                }
+              }
+              .btn-set {
+                float: left;
+                margin-left: 10px;
+              }
+              .btn-details {
+                float: left;
+                margin-left: 22px;
+              }
+              .btn-del{
+                float: right;
+                margin-right: 10px;
+              }
+            }
+          }
+        }
+      }
+      .custom-box {
+        border-bottom: none;
+        #add-temp {
+          display: block;
+          margin-top: 30px;
+          width: 74px;
+          height: 74px;
+          border: 1px dashed #d4d5d5;
+          text-align: center;
+          cursor: pointer;
+          i {
+            color: #bebebe;
+            line-height: 74px;
+            font-size: 40px;
+          }
+        }
+      }
+    }
+  }
+}
+
+#temp-modal {
+  width: 578px;
+  .temp-modal-box {
+    width: 240px;
+    height: 434px;
+    border: 1px solid @input-border;
+    &:last-child {
+      width: 230px;
+    }
+    .hd {
+      height: 34px;
+      line-height: 34px;
+      background: #f2f3f6;
+      padding: 0 10px;
+      border-bottom: 1px solid @input-border;
+      .clear-btn {
+        cursor: pointer;
+        &:hover {
+          color: @primary-orange;
+        }
+      }
+    }
+    .object-bd {
+      position: relative;
+      height: 400px;
+      #object-list {
+        li {
+          height: 34px;
+          line-height: 34px;
+          padding: 0 20px;
+          &:hover {
+            background: #f2faff;
+          }
+          i {
+            color: #ababb3;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  .arrow-icon {
+    width: 30px;
+    height: 30px;
+    margin-left: 8px;
+    margin-top: 202px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 2px;
+    border: 1px solid @input-border;
+    cursor: pointer;
+    i {
+      color: #8c97b2;
+    }
+  }
+  .search-box {
+    margin: 9px;
+    input {
+      width: 208px;
+      height: 30px;
+      line-height: 30px;
+    }
+  }
+  .jstree-default .jstree-themeicon {
+    display: none;
+  }
+  #group-tree {
+    position: relative;
+    height: 340px;
+  }
+  .btn-group {
+    .cancel {
+      margin-left: 20px;
+    }
+  }
+}
+
+.jstree-default .jstree-clicked {
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+.jstree-default .jstree-anchor{
+  height: 26px;
+  line-height: 26px;
+}

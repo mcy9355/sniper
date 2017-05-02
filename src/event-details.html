@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>事件详情</title>
+    <link rel="stylesheet" href="lib/jquery.dataTables/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/event-details.css">
+</head>
+<body>
+<div class="main-details-box">
+    <div class="main-details-wrap">
+        <div class="tab-content">
+            <div class="filter-box clearfix">
+                <div class="action-type-box pull-left">
+                    <label>行为类别</label>
+                    <select class="type-select">
+                        <option value="">全部</option>
+                        <option value="">端口映射</option>
+                        <option value="">未知漏洞溢出提权</option>
+                        <option value="">WEB应用执行命令</option>
+                        <option value="">进程异常行为</option>
+                        <option value="">非正常卸载</option>
+                        <option value="">口令猜解</option>
+                        <option value="">违规审计</option>
+                    </select>
+                </div>
+                <div class="date-box pull-left">
+                    <label>日期</label>
+                    <input data-type="1" type="text" readonly>
+                    <i class="iconfont">&#xe652;</i>
+                </div>
+                <div class="search-box pull-left">
+                    <input type="text" placeholder="search">
+                    <button>
+                        <i class="iconfont">&#xe618;</i>
+                    </button>
+                </div>
+                <div class="refresh pull-left">
+                    <div class="sniper-checkbox pull-left">
+                        <input type="checkbox" data-type="1">
+                        <i class="iconfont">&#xe624;</i>
+                    </div>
+                    <div class="text pull-left">实时刷新日志</div>
+                </div>
+                <button class="tag-all-btn btn-primary pull-right">标记全部</button>
+            </div>
+            <table id="event-table" class="display data-table">
+                <thead>
+                <tr>
+                    <th>时间</th>
+                    <th>行为类别</th>
+                    <th class="digest-th">事件摘要</th>
+                    <th>详情</th>
+                    <th>标记安全</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+<!--[if lt IE 9]>
+<script src="lib/html5shiv.min.js"></script>
+<script src="lib/respond.min.js"></script>
+<![endif]-->
+<script src="js/common.js"></script>
+<script src="js/event-details.js"></script>
+</html>

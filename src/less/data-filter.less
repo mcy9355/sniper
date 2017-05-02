@@ -1,0 +1,134 @@
+@import "variables";
+#main-box{
+  font-size: 12px;
+  color: @text-black;
+  background-color: @bg-gray;
+  #contain{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 12px;
+    box-sizing: border-box;
+    .bg-white{
+      height: 100%;
+      background-color: @bg-white;
+      border: 1px solid @border-gray;
+      position: relative;
+      .head{
+        width: 100%;
+        height: 94px;
+        padding: 32px 0 0 31px;
+        box-sizing: border-box;
+        .add-btn{
+          margin-right: 12px;
+        }
+      }
+      .table{
+        width: 100%;
+        background-color: @bg-white;
+        table{
+          width: 100%;
+          table-layout: fixed;
+          thead{
+            width: 100%;
+            tr{
+              height: 48px;
+              background-color: #f9fafb;
+              th{
+                text-align: left;
+                font-weight: bold;
+                font-size: 14px;
+                vertical-align: top;
+                padding-top: 15px;
+                box-sizing: border-box;
+              }
+              th:nth-child(1){
+                width: 5%;
+                padding-left: 30px;
+                box-sizing: border-box;
+              }
+              th:nth-child(1){
+                .sniper-checkbox.hide{
+                  opacity: 0;
+                }
+              }
+              th:nth-child(2){
+                width: 16.53%;
+                padding-left: 6px;
+              }
+              th:nth-child(3){
+                width: 29.90%;
+              }
+              th:nth-child(4){
+                width: 2.14%;
+              }
+              th:nth-child(5){
+                width: 24%;
+              }
+              th:nth-child(6){
+                width: 25.49%;
+              }
+            }
+          }
+          tbody{
+            tr{
+              height: 48px;
+              td{
+                text-align: left;
+                vertical-align: top;
+                padding-top: 15px;
+                box-sizing: border-box;
+                font-size: 14px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+              td:nth-child(1){
+                padding-left: 30px;
+                padding-right: 6px;
+              }
+              td:nth-child(2){
+                padding-left: 6px;
+              }
+              td:nth-child(3){
+                span:nth-child(1){
+                  margin-right: 6px;
+                }
+              }
+              td:nth-child(4) i,td:nth-child(5) i{
+                color: #5e6675;
+                font-size: 16px;
+              }
+            }
+            tr:nth-child(even){
+              background-color: @table-odd-bg;
+            }
+            tr:nth-child(odd){
+              background-color: @bg-white;
+            }
+            tr:hover{
+              background-color: #d6e1f1;
+              td:nth-child(4) i:hover{
+                cursor: pointer;
+                color: @primary-orange;
+              }
+              td:nth-child(5) i:hover{
+                cursor: pointer;
+                color: @primary-orange;
+              }
+            }
+          }
+        }
+      }
+    }
+    .delete-btn{
+      border-color: @primary-orange;
+      color: @primary-orange;
+      i{
+        color: @primary-orange;
+      }
+    }
+  }
+}
+

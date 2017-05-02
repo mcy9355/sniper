@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>防护模板</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="lib/jsTree/style.css">
+    <link rel="stylesheet" href="css/template.css">
+</head>
+<body>
+<header id="header" class="clearfix">
+    <a href="#" class="logo pull-left"></a>
+    <div class="user-center pull-right">
+        <a class="user-btn" href="javascript:void(0);">
+            <i class="icon-man iconfont">&#xe61a;</i>
+            <span>安全管理员</span>
+            <i class="icon-arrow iconfont">&#xe62d;</i>
+        </a>
+    </div>
+    <div class="time-box pull-right clearfix">
+        <i class="icon-time iconfont">&#xe613;</i>
+        <span id="current-time"></span>
+    </div>
+</header>
+<aside id="nav-side" class="open">
+    <ul class="nav-side-list">
+        <li>
+            <a href="index.html" class="clearfix">
+                <i class="iconfont pull-left">&#xe621;</i>
+                <span class="pull-left">总览</span>
+            </a>
+        </li>
+        <li>
+            <a href="host-manage.html" class="clearfix">
+                <i class="iconfont pull-left">&#xe61f;</i>
+                <span class="pull-left">主机管理</span>
+            </a>
+        </li>
+        <li>
+            <a class="summary clearfix" href="javascript:void(0);">
+                <i class="iconfont arrow-icon pull-left">&#xe62b;</i>
+                <span class="pull-left">智能分析</span>
+            </a>
+            <ul class="nav-side-sec">
+                <li>
+                    <a href="#" class="clearfix">
+                        <i class="iconfont pull-left">&#xe60c;</i>
+                        <span class="pull-left">动作追踪</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="clearfix">
+                        <i class="iconfont pull-left">&#xe617;</i>
+                        <span class="pull-left">现场还原</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class="summary clearfix" href="javascript:void(0);">
+                <i class="iconfont arrow-icon pull-left">&#xe62b;</i>
+                <span class="pull-left">用户管理</span>
+            </a>
+            <ul class="nav-side-sec">
+                <li>
+                    <a href="person-manage.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe611;</i>
+                        <span class="pull-left">分管人员</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="area-manage.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe609;</i>
+                        <span class="pull-left">分管片区</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class="summary open clearfix" href="javascript:void(0);">
+                <i class="iconfont arrow-icon pull-left">&#xe62b;</i>
+                <span class="pull-left">系统设置</span>
+            </a>
+            <ul class="nav-side-sec">
+                <li class="active">
+                    <a href="template.html" class="clearfix tooltip" title="防护模板">
+                        <i class="iconfont pull-left">&#xe706;</i>
+                        <span class="pull-left">防护模板</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="safe-rules.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe607;</i>
+                        <span class="pull-left">安全警报规则</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="time-manage.html" class="clearfix tooltip" title="时间管理">
+                        <i class="iconfont pull-left">&#xe613;</i>
+                        <span class="pull-left">时间管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="system-settings.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe61d;</i>
+                        <span class="pull-left">其他设置</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="system-status.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe668;</i>
+                        <span class="pull-left">系统信息</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="data-filter.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe66e;</i>
+                        <span class="pull-left">数据过滤器</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="about.html" class="clearfix tooltip" title="关于sniper">
+                <i class="iconfont pull-left">&#xe650;</i>
+                <span class="pull-left">关于sniper</span>
+            </a>
+        </li>
+    </ul>
+    <a class="toggle-nav-btn" href="javascript:void(0);">
+        <i class="iconfont">&#xe62f;</i>
+    </a>
+</aside>
+<section id="main-box">
+    <div id="contain">
+        <div id="temp-wrap">
+            <h6 class="box-hd">
+                <span class="pull-left">选择防护模板</span>
+            </h6>
+            <div class="temp-box clearfix">
+                <label>主题防护</label>
+                <ul class="temp-list clearfix">
+                    <li>
+                        <div class="temp-info">
+                            <img src="images/template.png" alt="上传漏洞防护">
+                            <div class="temp-name">上传漏洞防护</div>
+                        </div>
+                        <div class="temp-details">
+                            <a href="javascript:void(0);" class="btn-set" title="应用模板">
+                                <i class="iconfont">&#xe707;</i>
+                            </a>
+                            <a href="defend-tem.html" class="btn-details" title="编辑模板">
+                                <i class="iconfont">&#xe705;</i>
+                            </a>
+                            <a href="javascript:void(0);" class="btn-del" title="删除模板">
+                                <i class="iconfont">&#xe708;</i>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="temp-info">
+                            <img src="images/template.png" alt="纯静态Web防护">
+                            <div class="temp-name">纯静态Web防护</div>
+                        </div>
+                        <div class="temp-details">
+                            <a href="javascript:void(0);" class="btn-set" title="应用模板">
+                                <i class="iconfont">&#xe707;</i>
+                            </a>
+                            <a href="defend-tem.html" class="btn-details" title="编辑模板">
+                                <i class="iconfont">&#xe705;</i>
+                            </a>
+                            <a href="javascript:void(0);" class="btn-del" title="删除模板">
+                                <i class="iconfont">&#xe708;</i>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="temp-info">
+                            <img src="images/template.png" alt="勒索软件防护">
+                            <div class="temp-name">勒索软件防护</div>
+                        </div>
+                        <div class="temp-details">
+                            <a href="javascript:void(0);" class="btn-set" title="应用模板">
+                                <i class="iconfont">&#xe707;</i>
+                            </a>
+                            <a href="defend-tem.html" class="btn-details" title="编辑模板">
+                                <i class="iconfont">&#xe705;</i>
+                            </a>
+                            <a href="javascript:void(0);" class="btn-del" title="删除模板">
+                                <i class="iconfont">&#xe708;</i>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="temp-info">
+                            <img src="images/template.png" alt="钓鱼邮件防护">
+                            <div class="temp-name">钓鱼邮件防护</div>
+                        </div>
+                        <div class="temp-details">
+                            <a href="javascript:void(0);" class="btn-set" title="应用模板">
+                                <i class="iconfont">&#xe707;</i>
+                            </a>
+                            <a href="defend-tem.html" class="btn-details" title="编辑模板">
+                                <i class="iconfont">&#xe705;</i>
+                            </a>
+                            <a href="javascript:void(0);" class="btn-del" title="删除模板">
+                                <i class="iconfont">&#xe708;</i>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="temp-info">
+                            <img src="images/template.png" alt="webshell渗透防护">
+                            <div class="temp-name">webshell渗透防护</div>
+                        </div>
+                        <div class="temp-details">
+                            <a href="javascript:void(0);" class="btn-set" title="应用模板">
+                                <i class="iconfont">&#xe707;</i>
+                            </a>
+                            <a href="defend-tem.html" class="btn-details" title="编辑模板">
+                                <i class="iconfont">&#xe705;</i>
+                            </a>
+                            <a href="javascript:void(0);" class="btn-del" title="删除模板">
+                                <i class="iconfont">&#xe708;</i>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="temp-info">
+                            <img src="images/template.png" alt="蜜罐系统">
+                            <div class="temp-name">蜜罐系统</div>
+                        </div>
+                        <div class="temp-details">
+                            <a href="javascript:void(0);" class="btn-set" title="应用模板">
+                                <i class="iconfont">&#xe707;</i>
+                            </a>
+                            <a href="defend-tem.html" class="btn-details" title="编辑模板">
+                                <i class="iconfont">&#xe705;</i>
+                            </a>
+                            <a href="javascript:void(0);" class="btn-del" title="删除模板">
+                                <i class="iconfont">&#xe708;</i>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="temp-box clearfix">
+                <label>综合防护</label>
+                <ul class="temp-list clearfix">
+                    <li>
+                        <div class="temp-info">
+                            <img src="images/template.png" alt="个人机防护">
+                            <div class="temp-name">个人机防护</div>
+                        </div>
+                        <div class="temp-details">
+                            <a href="javascript:void(0);" class="btn-set" title="应用模板">
+                                <i class="iconfont">&#xe707;</i>
+                            </a>
+                            <a href="defend-tem.html" class="btn-details" title="编辑模板">
+                                <i class="iconfont">&#xe705;</i>
+                            </a>
+                            <a href="javascript:void(0);" class="btn-del" title="删除模板">
+                                <i class="iconfont">&#xe708;</i>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="temp-info">
+                            <img src="images/template.png" alt="文件服务器防护">
+                            <div class="temp-name">文件服务器防护</div>
+                        </div>
+                        <div class="temp-details">
+                            <a href="javascript:void(0);" class="btn-set" title="应用模板">
+                                <i class="iconfont">&#xe707;</i>
+                            </a>
+                            <a href="defend-tem.html" class="btn-details" title="编辑模板">
+                                <i class="iconfont">&#xe705;</i>
+                            </a>
+                            <a href="javascript:void(0);" class="btn-del" title="删除模板">
+                                <i class="iconfont">&#xe708;</i>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="temp-info">
+                            <img src="images/template.png" alt="web服务器防护">
+                            <div class="temp-name">web服务器防护</div>
+                        </div>
+                        <div class="temp-details">
+                            <a href="javascript:void(0);" class="btn-set" title="应用模板">
+                                <i class="iconfont">&#xe707;</i>
+                            </a>
+                            <a href="defend-tem.html" class="btn-details" title="编辑模板">
+                                <i class="iconfont">&#xe705;</i>
+                            </a>
+                            <a href="javascript:void(0);" class="btn-del" title="删除模板">
+                                <i class="iconfont">&#xe708;</i>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="temp-info">
+                            <img src="images/template.png" alt="邮件服务器防护">
+                            <div class="temp-name">邮件服务器防护</div>
+                        </div>
+                        <div class="temp-details">
+                            <a href="javascript:void(0);" class="btn-set" title="应用模板">
+                                <i class="iconfont">&#xe707;</i>
+                            </a>
+                            <a href="defend-tem.html" class="btn-details" title="编辑模板">
+                                <i class="iconfont">&#xe705;</i>
+                            </a>
+                            <a href="javascript:void(0);" class="btn-del" title="删除模板">
+                                <i class="iconfont">&#xe708;</i>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="temp-box custom-box">
+                <label>自定义模板</label>
+                <a id="add-temp" href="defend-tem.html">
+                    <i class="iconfont">&#xe608;</i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!--设置模板弹出框-->
+<div id="temp-modal" class="sniper-modal modal" style="display: none;">
+    <div class="header">设置防护模板</div>
+    <div class="bd clearfix">
+        <div class="temp-modal-box pull-left">
+            <div class="hd">
+                主机分组
+            </div>
+            <div class="search-box">
+                <form action="">
+                    <input id="groupTreeSearch" type="text" placeholder="搜索">
+                </form>
+            </div>
+            <div id="group-tree">
+                <ul>
+                    <li>
+                        <span>默认分组(3)</span>
+                        <ul>
+                            <li>
+                                <span>moweitest</span>
+                            </li>
+                            <li>
+                                <span>apt-win10</span>
+                            </li>
+                            <li>
+                                <span>apt-winxp</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>攻防演练靶场组(3)</span>
+                        <ul>
+                            <li>
+                                <span>moweitest</span>
+                            </li>
+                            <li>
+                                <span>apt-win10</span>
+                            </li>
+                            <li>
+                                <span>apt-winxp</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>攻防演练靶场组(3)</span>
+                        <ul>
+                            <li>
+                                <span>moweitest</span>
+                            </li>
+                            <li>
+                                <span>apt-win10</span>
+                            </li>
+                            <li>
+                                <span>apt-winxp</span>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="arrow-icon pull-left">
+            <i class="iconfont">&#xe67b;</i>
+        </div>
+        <div class="temp-modal-box pull-right">
+            <div class="hd clearfix">
+                <div class="pull-left">设置对象</div>
+                <div class="pull-right clear-btn">清空</div>
+            </div>
+            <div class="object-bd">
+                <ul id="object-list">
+
+                </ul>
+            </div>
+        </div>
+        <div class="btn-group clearfix">
+            <a href="#close-modal" rel="modal:close" class="pull-right cancel">取消</a>
+            <a href="#close-modal" rel="modal:close" class="pull-right submit" id="confirmTemp">确定</a>
+        </div>
+    </div>
+</div>
+</body>
+<!--[if lt IE 9]>
+<script src="lib/html5shiv.min.js"></script>
+<script src="lib/respond.min.js"></script>
+<![endif]-->
+<script src="js/common.js"></script>
+<script src="js/template.js"></script>
+</html>

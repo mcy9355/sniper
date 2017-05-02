@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>首页</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div id="passInput" class="addModal" style="display: none;">
+    <div class="header">修改密码</div>
+    <form action="#">
+        <p>密码已过期，请修改密码！</p>
+        <div class="line">
+            <label for="userName">原密码：</label>
+            <input type="text" id="userName">
+        </div>
+        <div class="line">
+            <label for="password">现密码：</label>
+            <input type="text" id="password">
+        </div>
+        <div class="line">
+            <label for="repwd">确认密码：</label>
+            <input type="text" id="repwd">
+        </div>
+        <div class="line">
+            <button type="submit"  class="pull-left submit" id="confirmAdd">确定</button>
+            <button type="reset"  class="pull-right cancel">重置</button>
+        </div>
+    </form>
+</div>
+<header id="header" class="clearfix">
+    <a href="#" class="logo pull-left"></a>
+    <div class="licence pull-left">
+        <span>
+            试用到期时间
+            <span id="licence-time">2016-12-01</span>
+        </span>
+        <span>
+            许可证
+            <span id="licence-num">100</span>
+            台
+        </span>
+        <span>
+            当前版本
+            <span id="">4.1</span>
+        </span>
+    </div>
+    <div class="user-center pull-right">
+        <a class="user-btn" href="javascript:void(0);">
+            <i class="icon-man iconfont">&#xe61a;</i>
+            <span>安全管理员</span>
+            <i class="icon-arrow iconfont">&#xe62d;</i>
+        </a>
+    </div>
+    <div class="time-box pull-right clearfix">
+        <i class="icon-time iconfont">&#xe613;</i>
+        <span id="current-time"></span>
+    </div>
+</header>
+<aside id="nav-side" class="open">
+    <ul class="nav-side-list">
+        <li class="active">
+            <a href="index.html" class="clearfix tooltip" title="总览">
+                <i class="iconfont pull-left">&#xe621;</i>
+                <span class="pull-left">总览</span>
+            </a>
+        </li>
+        <li>
+            <a href="host-manage.html" class="clearfix tooltip" title="主机管理">
+                <i class="iconfont pull-left">&#xe61f;</i>
+                <span class="pull-left">主机管理</span>
+            </a>
+        </li>
+        <li>
+            <a class="summary clearfix tooltip" href="javascript:void(0);" title="智能分析">
+                <i class="iconfont arrow-icon pull-left">&#xe62b;</i>
+                <span class="pull-left">智能分析</span>
+            </a>
+            <ul class="nav-side-sec">
+                <li>
+                    <a href="action-track.html" class="clearfix tooltip" title="动作追踪">
+                        <i class="iconfont pull-left">&#xe60c;</i>
+                        <span class="pull-left">动作追踪</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="restore.html" class="clearfix tooltip" title="现场还原">
+                        <i class="iconfont pull-left">&#xe617;</i>
+                        <span class="pull-left">现场还原</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class="summary clearfix tooltip" title="用户管理" href="javascript:void(0);">
+                <i class="iconfont arrow-icon pull-left">&#xe62b;</i>
+                <span class="pull-left">用户管理</span>
+            </a>
+            <ul class="nav-side-sec">
+                <li>
+                    <a href="person-manage.html" class="clearfix tooltip" title="分管人员">
+                        <i class="iconfont pull-left">&#xe611;</i>
+                        <span class="pull-left">分管人员</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="area-manage.html" class="clearfix tooltip" title="分管片区">
+                        <i class="iconfont pull-left">&#xe609;</i>
+                        <span class="pull-left">分管片区</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class="summary clearfix tooltip" href="javascript:void(0);" title="系统设置">
+                <i class="iconfont arrow-icon pull-left">&#xe62b;</i>
+                <span class="pull-left">系统设置</span>
+            </a>
+            <ul class="nav-side-sec">
+                <li>
+                    <a href="template.html" class="clearfix tooltip" title="防护模板">
+                        <i class="iconfont pull-left">&#xe706;</i>
+                        <span class="pull-left">防护模板</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="safe-rules.html" class="clearfix tooltip" title="安全警报规则">
+                        <i class="iconfont pull-left">&#xe607;</i>
+                        <span class="pull-left">安全警报规则</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="time-manage.html" class="clearfix tooltip" title="时间管理">
+                        <i class="iconfont pull-left">&#xe613;</i>
+                        <span class="pull-left">时间管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="system-settings.html" class="clearfix tooltip" title="其他设置">
+                        <i class="iconfont pull-left">&#xe61d;</i>
+                        <span class="pull-left">其他设置</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="system-status.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe668;</i>
+                        <span class="pull-left">系统信息</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="data-filter.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe66e;</i>
+                        <span class="pull-left">数据过滤器</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="about.html" class="clearfix tooltip" title="关于sniper">
+                <i class="iconfont pull-left">&#xe650;</i>
+                <span class="pull-left">关于sniper</span>
+            </a>
+        </li>
+    </ul>
+    <a class="toggle-nav-btn" href="javascript:void(0);">
+        <i class="iconfont">&#xe62f;</i>
+    </a>
+</aside>
+<section id="main-box">
+    <div id="contain">
+        <!--页面左边-->
+        <article class="view pull-left">
+            <!--页面左边上半部分-->
+            <section class="data-info">
+                <!--数据统计+关键服务器-->
+                <div class="pie-chart pull-left">
+                    <!--数据统计-->
+                    <div class="data-statistics">
+                        <h6 class="box-hd">
+                            <span class="pull-left">数据统计</span>
+                            <strong class="pull-left">当前受sniper保护系统<em id="num">108</em>台</strong>
+                        </h6>
+                        <div class="pie">
+                            <div id="pieBox">
+                                <div class="canvas pull-left clearfix">
+                                    <div class="pie-canvas" id="pie-canvas1"></div>
+                                </div>
+                                <div class="canvas pull-right">
+                                    <div class="pie-canvas" id="pie-canvas2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="file-num clearfix">
+                            <div class="num all pull-left">
+                                <h2>全网并发访问文件数</h2>
+                                <p>7825条</p>
+                            </div>
+                            <div class="num current pull-right">
+                                <h2>当前全网并发连接数</h2>
+                                <p>7825条</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--关键服务器-->
+                    <div class="key-server" id="key-server">
+                        <h6 class="box-hd">
+                            <span class="pull-left">关键服务器</span>
+                        </h6>
+                        <div class="severLink">
+                            <p>
+                                <a href="#">195.26.35.25.25</a>
+                                <a href="#">195.26.35.25.25</a>
+                            </p>
+                            <p>
+                                <a href="#">195.26.35.25.25</a>
+                                <a href="#">195.26.35.25.25</a>
+                            </p>
+                            <p>
+                                <a href="#">195.26.35.25.25</a>
+                                <a href="#">195.26.35.25.25</a>
+                            </p>
+                            <p>
+                                <a href="#">195.26.35.25.25</a>
+                                <a href="#">195.26.35.25.25</a>
+                            </p>
+                            <p>
+                                <a href="#">195.26.35.25.25</a>
+                                <a href="#">195.26.35.25.25</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--地图+当前风险服务器-->
+                <div class="map pull-left">
+                    <!--地图-->
+                    <div id="mapBox">
+                        <div class="map-canvas" id="mapCanvas"></div>
+                    </div>
+                    <!--当前风险服务器-->
+                    <div class="risk-server" id="banner">
+                        <h6 class="box-hd">
+                            <span class="pull-left">当前风险服务器&nbsp;<em>24</em>&nbsp;台</span>
+                        </h6>
+                        <div class="slideWrap">
+                            <div id="slideBox">
+                                <a class="sPrev iconfont" href="javascript:void(0)">&#xe62f;</a>
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="sprite sprite-computer"></i>
+                                            <span>192.168.211.253</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="sprite sprite-computer"></i>
+                                            <span>192.168.211.253</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="sprite sprite-computer"></i>
+                                            <span>192.168.211.253</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="sprite sprite-computer"></i>
+                                            <span>192.168.211.253</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="sprite sprite-computer"></i>
+                                            <span>192.168.211.253</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="sprite sprite-computer"></i>
+                                            <span>192.168.211.253</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="sprite sprite-computer"></i>
+                                            <span>192.168.211.253</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="sprite sprite-computer"></i>
+                                            <span>192.168.211.253</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <a class="sNext iconfont" href="javascript:void(0)">&#xe62e;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--页面左边下半部分-->
+            <section class="recent-data">
+                <!--最近7天趋势-->
+                <div class="bg-gray pull-left">
+                    <div class="tendency pull-left">
+                        <div class="wrap" id="wrap">
+                            <div class="lineBorder">
+                                <div class="lineDiv"></div>
+                            </div>
+                            <ul class="tabClick">
+                                <li class="pull-left active" id="sevenTen">最近7天文件数</li>
+                                <li class="pull-left" id="sevenCon">最近7天连接数</li>
+                                <li class="pull-left" id="proTimeline">防护时间轴</li>
+                            </ul>
+                        </div>
+                        <div class="canvas-box">
+                            <div class="recently ten-canvas" id="sevenTenCanvas"><!--最近7天趋势的折线图--></div>
+                            <div class="recently ten-canvas hide" id="sevenConCanvas"><!--最近7天连接数--></div>
+                            <div class="recently ten-canvas hide" id="proTime"><!--防护时间轴--></div>
+                        </div>
+                    </div>
+                </div>
+                <!--最近扫描结果-->
+                <div class="result pull-left">
+                    <h6 class="box-hd">
+                        <span class="pull-left">最近扫描结果</span>
+                        <a class="more-link pull-right" href="more-scan-result.html">更多>></a>
+                    </h6>
+                    <table id="current-result">
+                        <thead>
+                        <tr>
+                            <th>服务器IP</th>
+                            <th>扫描时间</th>
+                            <th>诊断状态</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="ip-address">192.168.21.134</td>
+                            <td>2016-10-13 10:13:25</td>
+                            <td><span>安全</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ip-address">123.1.156.231</td>
+                            <td>2016-10-13 10:13:25</td>
+                            <td><span>安全</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ip-address">123.1.156.231</td>
+                            <td>2016-10-13 10:13:25</td>
+                            <td><span>安全</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ip-address">123.1.156.231</td>
+                            <td>2016-10-13 10:13:25</td>
+                            <td><span>安全</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ip-address">123.1.156.231</td>
+                            <td>2016-10-13 10:13:25</td>
+                            <td><span class="active">可疑</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ip-address">123.1.156.231</td>
+                            <td>2016-10-13 10:13:25</td>
+                            <td><span>安全</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ip-address">123.1.156.231</td>
+                            <td>2016-10-13 10:13:25</td>
+                            <td><span class="active">可疑</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ip-address">123.1.156.231</td>
+                            <td>2016-10-13 10:13:25</td>
+                            <td><span>安全</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ip-address">123.1.156.231</td>
+                            <td>2016-10-13 10:13:25</td>
+                            <td><span>安全</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ip-address">123.1.156.231</td>
+                            <td>2016-10-13 10:13:25</td>
+                            <td><span>安全</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ip-address">123.1.156.231</td>
+                            <td>2016-10-13 10:13:25</td>
+                            <td><span>安全</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ip-address">123.1.156.231</td>
+                            <td>2016-10-13 10:13:25</td>
+                            <td><span>安全</span></td>
+                        </tr>
+                        <tr>
+                            <td class="ip-address">123.1.156.231</td>
+                            <td>2016-10-13 10:13:25</td>
+                            <td><span>安全</span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </article>
+        <!--页面右边-->
+        <aside class="data-list pull-left">
+            <!--最近安全事件-->
+            <section class="safe-event">
+                <h6 class="box-hd">
+                    <span class="pull-left">最近安全事件</span>
+                    <a class="more-link pull-right" href="more-safe-event.html">更多&gt;&gt;</a>
+                </h6>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>时间</th>
+                        <th>IP</th>
+                        <th>防护分类</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>2016-10-17 12:32:11</td>
+                        <td>132.1.156.231</td>
+                        <td>非法文件识别</td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-17 12:32:11</td>
+                        <td>132.1.156.231</td>
+                        <td>非法文件识别</td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-17 12:32:11</td>
+                        <td>132.1.156.231</td>
+                        <td>非法文件识别</td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-17 12:32:11</td>
+                        <td>132.1.156.231</td>
+                        <td>非法文件识别</td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-17 12:32:11</td>
+                        <td>132.1.156.231</td>
+                        <td>非法文件识别</td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-17 12:32:11</td>
+                        <td>132.1.156.231</td>
+                        <td>非法文件识别</td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-17 12:32:11</td>
+                        <td>132.1.156.231</td>
+                        <td>非法文件识别</td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-17 12:32:11</td>
+                        <td>132.1.156.231</td>
+                        <td>非法文件识别</td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-17 12:32:11</td>
+                        <td>132.1.156.231</td>
+                        <td>非法文件识别</td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-17 12:32:11</td>
+                        <td>132.1.156.231</td>
+                        <td>非法文件识别</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
+            <!--最近一小时连续数量排行-->
+            <section class="con-num">
+                <h6 class="box-hd">
+                    <span class="pull-left">最近1小时连接数量排行</span>
+                </h6>
+                <div class="con-canvas" id="con-canvas"></div>
+            </section>
+            <!--最近一小时设计文件打开数量排行-->
+            <section class="open-num" >
+                <h6 class="box-hd">
+                    <span class="pull-left">最近1小时设计文件打开数量排行</span>
+                </h6>
+                <div class="open-canvas" id="open-canvas"></div>
+            </section>
+        </aside>
+    </div>
+</section>
+</body>
+<!--[if lt IE 9]>
+<script src="lib/html5shiv.min.js"></script>
+<script src="lib/respond.min.js"></script>
+<![endif]-->
+<script src="js/common.js"></script>
+<script src="js/index.js"></script>
+</html>

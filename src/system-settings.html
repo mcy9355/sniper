@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>系统设置</title>
+    <link rel="stylesheet" href="css/system-setting.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+<header id="header" class="clearfix">
+    <a href="#" class="logo pull-left"></a>
+    <div class="user-center pull-right">
+        <a class="user-btn" href="javascript:void(0);">
+            <i class="icon-man iconfont">&#xe61a;</i>
+            <span>安全管理员</span>
+            <i class="icon-arrow iconfont">&#xe62d;</i>
+        </a>
+    </div>
+    <div class="time-box pull-right clearfix">
+        <i class="icon-time iconfont">&#xe613;</i>
+        <span id="current-time"></span>
+    </div>
+</header>
+<aside id="nav-side" class="open">
+    <ul class="nav-side-list">
+        <li>
+            <a href="index.html" class="clearfix">
+                <i class="iconfont pull-left">&#xe621;</i>
+                <span class="pull-left">总览</span>
+            </a>
+        </li>
+        <li>
+            <a href="host-manage.html" class="clearfix">
+                <i class="iconfont pull-left">&#xe61f;</i>
+                <span class="pull-left">主机管理</span>
+            </a>
+        </li>
+        <li>
+            <a class="summary clearfix" href="javascript:void(0);">
+                <i class="iconfont arrow-icon pull-left">&#xe62b;</i>
+                <span class="pull-left">智能分析</span>
+            </a>
+            <ul class="nav-side-sec">
+                <li>
+                    <a href="action-track.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe60c;</i>
+                        <span class="pull-left">动作追踪</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="restore.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe617;</i>
+                        <span class="pull-left">现场还原</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class="summary clearfix" href="javascript:void(0);">
+                <i class="iconfont arrow-icon pull-left">&#xe62b;</i>
+                <span class="pull-left">用户管理</span>
+            </a>
+            <ul class="nav-side-sec">
+                <li>
+                    <a href="person-manage.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe611;</i>
+                        <span class="pull-left">分管人员</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="area-manage.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe609;</i>
+                        <span class="pull-left">分管片区</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class="summary open clearfix" href="javascript:void(0);">
+                <i class="iconfont arrow-icon pull-left">&#xe62b;</i>
+                <span class="pull-left">系统设置</span>
+            </a>
+            <ul class="nav-side-sec">
+                <li>
+                    <a href="template.html" class="clearfix tooltip" title="防护模板">
+                        <i class="iconfont pull-left">&#xe706;</i>
+                        <span class="pull-left">防护模板</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="safe-rules.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe607;</i>
+                        <span class="pull-left">安全警报规则</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="time-manage.html" class="clearfix tooltip" title="时间管理">
+                        <i class="iconfont pull-left">&#xe613;</i>
+                        <span class="pull-left">时间管理</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="system-settings.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe61d;</i>
+                        <span class="pull-left">其他设置</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="system-status.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe668;</i>
+                        <span class="pull-left">系统信息</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="data-filter.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe66e;</i>
+                        <span class="pull-left">数据过滤器</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="about.html" class="clearfix tooltip" title="关于sniper">
+                <i class="iconfont pull-left">&#xe650;</i>
+                <span class="pull-left">关于sniper</span>
+            </a>
+        </li>
+    </ul>
+    <a class="toggle-nav-btn" href="javascript:void(0);">
+        <i class="iconfont">&#xe62f;</i>
+    </a>
+</aside>
+<section id="main-box">
+    <div id="contain">
+        <form class="out-box">
+            <section class="normal-time">
+                <h2>正常工作时间</h2>
+                <div class="in-box smaller-height">
+                    开始工作时间
+                    <select name="" class="sel-time sel-time-begin">
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                        <option value="">6</option>
+                        <option value="">7</option>
+                        <option value="">8</option>
+                        <option value="">9</option>
+                        <option value="">10</option>
+                        <option value="">11</option>
+                        <option value="">12</option>
+                        <option value="">13</option>
+                        <option value="">14</option>
+                        <option value="">15</option>
+                        <option value="">16</option>
+                        <option value="">17</option>
+                        <option value="">18</option>
+                        <option value="">18</option>
+                        <option value="">20</option>
+                        <option value="">21</option>
+                        <option value="">22</option>
+                        <option value="">23</option>
+                        <option value="">24</option>
+                    </select>时，
+                    结束时间
+                    <select name="" class="sel-time sel-time-end">
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                    </select>时
+                </div>
+            </section>
+            <section class="period">
+                <h2>日志存储周期</h2>
+                <div class="in-box smaller-height">
+                    目前存储期限
+                    <input type="text">
+                    天
+                </div>
+            </section>
+            <section class="timeout-strategy">
+                <h2>操作超时策略</h2>
+                <div class="in-box smaller-height">
+                    Sniper无操作
+                    <input type="text">
+                    分钟，系统将自动退出
+                </div>
+            </section>
+            <section class="try-strategy">
+                <h2>密码尝试策略</h2>
+                <div class="in-box smaller-height">
+                    登录密码尝试
+                    <input type="text">
+                    次，系统锁定
+                    <input type="text">
+                    分钟
+                </div>
+            </section>
+            <section class="validity-strategy">
+                <h2>密码有效期策略</h2>
+                <div class="in-box smaller-height">
+                    登陆密码超过
+                    <input type="text">
+                    天，必须更换（0表示永久有效）
+                </div>
+            </section>
+            <section class="complexity-strategy">
+                <h2>密码复杂度策略</h2>
+                <ul class="in-box clearfix smaller-height">
+                    <li>
+                        <div class="sniper-checkbox pull-left">
+                            <input type="checkbox">
+                            <i class="iconfont">&#xe624;</i>
+                        </div>
+                        <span>字母</span>
+                    </li>
+                    <li>
+                        <div class="sniper-checkbox pull-left">
+                            <input type="checkbox">
+                            <i class="iconfont">&#xe624;</i>
+                        </div>
+                        <span>数字</span>
+                    </li>
+                    <li>
+                        <div class="sniper-checkbox pull-left">
+                            <input type="checkbox">
+                            <i class="iconfont">&#xe624;</i>
+                        </div>
+                        <span>特殊符号</span>
+                    </li>
+                    <li>
+                        <div class="sniper-checkbox pull-left">
+                            <input type="checkbox">
+                            <i class="iconfont">&#xe624;</i>
+                        </div>
+                        <span>区分大小写</span>
+                    </li>
+                    <li>
+                        <div class="sniper-checkbox pull-left">
+                            <input type="checkbox">
+                            <i class="iconfont">&#xe624;</i>
+                        </div>
+                        <div class="length">
+                            长度至少<input type="text">位
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <section class="ip-range">
+                <h2>可信IP范围</h2>
+                <div class="in-box pull-left">
+                    <input type="text" placeholder="注：多个IP以逗号分隔">
+                </div>
+            </section>
+            <section class="ip-or-name">
+                <h2>备用安全中心IP或域名</h2>
+                <div class="in-box pull-left">
+                    <input type="text" placeholder="注：当安全中心无法被agent连到，agent将会自动向备用安全中心报备数据">
+                </div>
+            </section>
+            <section class="epl-type">
+                <h2>EPL保护的文档类型</h2>
+                <div class="in-box pull-left">
+                    <input type="text" placeholder="注：以逗号分隔，限EPL许可证用户">
+                </div>
+            </section>
+            <section>
+                <button class="save-btn" type="button">保&nbsp;&nbsp;存</button>
+            </section>
+        </form>
+    </div>
+</section>
+</body>
+<!--[if lt IE 9]>
+<script src="lib/html5shiv.min.js"></script>
+<script src="lib/respond.min.js"></script>
+<![endif]-->
+<script src="js/common.js"></script>
+<script src="js/system-settings.js"></script>
+</html>

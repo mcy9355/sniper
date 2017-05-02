@@ -1,0 +1,116 @@
+@import "variables";
+#main-box{
+  font-size: 14px;
+  color: #333333;
+  background-color: @bg-gray;
+  #contain{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 12px;
+    box-sizing: border-box;
+    .bg-white{
+      height: 100%;
+      background-color: @bg-white;
+      border: 1px solid @border-gray;
+      box-sizing: border-box;
+      position: relative;
+      .head{
+        width: 100%;
+        height: 70px;
+        padding: 20px 0 0 30px;
+        box-sizing: border-box;
+        .search-box {
+          input{
+            width: 136px;
+          }
+        }
+        #deleteIp{
+          height: 32px;
+          margin-left: 16px;
+        }
+      }
+      .table{
+        width: 100%;
+        table{
+          width: 100%;
+          table-layout: fixed;
+          thead{
+            tr{
+              height: 50px;
+              background-color: #f9fafb;
+              th{
+                font-weight: bold;
+                text-align: left;
+                font-size: 14px;
+                vertical-align: middle;
+              }
+              th:nth-child(1){
+                width: 5%;
+                padding-left: 30px;
+                box-sizing: border-box;
+                padding-right: 10px;
+              }
+              th:nth-child(5){
+                width: 48%;
+              }
+              th:nth-child(6){
+                width: 6%;
+              }
+            }
+          }
+          tbody{
+            tr{
+              height: 50px;
+              td{
+                text-align: left;
+                vertical-align: middle;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+              td:nth-child(1){
+                padding-left: 30px;
+                box-sizing: border-box;
+                .sniper-checkbox{
+                  vertical-align: middle;
+                }
+              }
+              td:nth-child(3){
+                i{
+                 font-size: 12px;
+                }
+              }
+              .on-line{
+                color: #7fc14e;
+              }
+              .off-line{
+                color: #9ba1ac;
+              }
+              .doubtful{
+                color: @primary-orange;
+              }
+            }
+            tr:nth-child(even){
+              background-color: @table-odd-bg;
+            }
+            tr:nth-child(odd){
+              background-color: @bg-white;
+            }
+            tr:hover{
+              background-color: #d6e1f1;
+              td:nth-child(6){
+                cursor: pointer;
+              }
+              td:nth-child(6):hover{
+                color: @primary-orange;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

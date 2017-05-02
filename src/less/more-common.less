@@ -1,0 +1,900 @@
+@import "variables";
+header{
+  clear: both;
+  .back-btn{
+    color: @bg-white;
+    font-size: 14px;
+    padding-right: 49px;
+    box-sizing: border-box;
+    .iconfont{
+      margin-right: 1px;
+    }
+  }
+}
+.empty{
+  width: 100%;
+  height: @header-height;
+}
+.contain{
+  width: 100%;
+  height:100%;
+  position: relative;
+  padding: 0 18px;
+  box-sizing: border-box;
+  background: #fff;
+  .head{
+    width: 100%;
+    height: 58px;
+    padding: 0 0 0 50px;
+    box-sizing: border-box;
+    .subnav{
+      padding-top: 20px;
+      a{
+        color: #579f22;
+        font-size: 16px;
+      }
+      i{
+        color: #aab3c3;
+        font-size: 16px;
+      }
+      span{
+        color: @text-black;
+        font-size: 16px;
+      }
+    }
+    .search-box{
+      box-sizing: border-box;
+      height: 30px;
+      margin-top: 14px;
+      input{
+        width: 136px;
+      }
+      button{
+        margin-top: 0;
+      }
+    }
+  }
+  .table{
+    width: 100%;
+    padding-bottom: 30px;
+    table{
+      border-collapse: collapse;
+      width: 100%;
+      height: 100%;
+      padding-bottom: 30px;
+      table-layout:fixed;
+      thead{
+        tr{
+          th{
+            border: none;
+            border-top: 1px solid @border-gray;
+            padding: 0;
+          }
+        }
+      }
+      tbody{
+        tr{
+          td{
+            word-break: break-all;
+          }
+        }
+      }
+
+    }
+    table.dataTable{
+      tbody{
+        td{
+          padding: 10px 10px 10px 0;
+          border: none;
+        }
+      }
+    }
+    // 2小时内关联操作
+    table.associated-operation-table{
+      thead{
+        tr{
+          height: 36px;
+          line-height: 36px;
+          background-color: @table-odd-bg;
+          th{
+            text-align: left;
+            font-size: 14px;
+            //border-top: 1px solid #eceef3;
+            //border-bottom: 1px solid #eceef3;
+            background-color: @table-odd-bg;
+          }
+          th:nth-child(1){
+            padding-left: 50px;
+            box-sizing: border-box;
+            width: 17%;
+          }
+          th:nth-child(2){
+            width: 12%;
+          }
+          th:nth-child(3){
+            width: 12%;
+          }
+          th:nth-child(4){
+            width: 20%;
+          }
+          th:nth-child(5){
+            width: 39%;
+          }
+        }
+      }
+      tbody{
+        tr{
+          height: 36px;
+          line-height: 20px;
+          td{
+            font-size: 14px;
+            padding-right: 10px;
+          }
+          td:nth-child(1){
+            padding-left: 50px;
+            box-sizing: border-box;
+          }
+        }
+        tr:nth-child(odd){
+          background-color: @bg-white;
+        }
+        tr:nth-child(even){
+          background-color: @table-odd-bg;
+        }
+        tr:hover{
+          background-color: #d6e1f1;
+        }
+      }
+      tfoot{
+        tr{
+          line-height: 60px;
+          td:nth-child(1){
+            padding-left: 50px;
+          }
+          td:last-child{
+            padding-right: 0;
+          }
+        }
+      }
+    }
+    // 2小时内设计文件操作一览
+    table.file-operations-table{
+      width: 100%;
+      height: 100%;
+      thead{
+        tr{
+          height: 36px;
+          line-height: 36px;
+          background-color: @table-odd-bg;
+          th{
+            text-align: left;
+            font-size: 14px;
+            border-top: 1px solid #eceef3;
+            background-color: @table-odd-bg;
+          }
+          th:nth-child(1){
+            padding-left: 50px;
+            box-sizing: border-box;
+            width: 17%;
+          }
+          th:nth-child(2){
+            width: 35%;
+          }
+          th:nth-child(3){
+            width: 13%;
+          }
+          th:nth-child(4){
+            width: 35%;
+          }
+        }
+      }
+      tbody{
+        tr{
+          height: 36px;
+          line-height: 20px;
+          td{
+            font-size: 14px;
+          }
+          td:nth-child(1){
+            padding-left: 50px;
+            box-sizing: border-box;
+          }
+        }
+        tr:nth-child(odd){
+          background-color: @bg-white;
+        }
+        tr:nth-child(even){
+          background-color: @table-odd-bg;
+        }
+        tr:hover{
+          background-color: #d6e1f1;
+        }
+      }
+      tfoot{
+        tr{
+          line-height: 60px;
+          td:nth-child(1){
+            padding-left: 50px;
+          }
+          td:last-child{
+            padding-right: 0;
+          }
+        }
+      }
+    }
+    // 当前设计文件访问状态
+    table.design-file-status-table{
+      width: 100%;
+      height: 100%;
+      thead{
+        tr{
+          height: 36px;
+          line-height: 36px;
+          background-color: @table-odd-bg;
+          th{
+            text-align: left;
+            font-size: 14px;
+            border-top: 1px solid #eceef3;
+            background-color: @table-odd-bg;
+          }
+          th:nth-child(1){
+            padding-left: 50px;
+            box-sizing: border-box;
+            width: 10.6%;
+          }
+          th:nth-child(2){
+            width: 8.8%;
+          }
+          th:nth-child(3){
+            width: 80.6%;
+          }
+        }
+      }
+      tbody{
+        tr{
+          height: 36px;
+          line-height: 20px;
+          td{
+            font-size: 14px;
+          }
+          td:nth-child(1){
+            padding-left: 50px;
+            box-sizing: border-box;
+          }
+        }
+        tr:nth-child(odd){
+          background-color: @bg-white;
+        }
+        tr:nth-child(even){
+          background-color: @table-odd-bg;
+        }
+        tr:hover{
+          background-color: #d6e1f1;
+        }
+      }
+      tfoot{
+        tr{
+          line-height: 60px;
+          td:nth-child(1){
+            padding-left: 50px;
+          }
+          td:last-child{
+            padding-right: 0;
+          }
+        }
+      }
+    }
+    // 2小时内域名访问记录
+    table.domainname-access-records-table{
+      width: 100%;
+      height: 100%;
+      thead{
+        tr{
+          height: 36px;
+          line-height: 36px;
+          background-color: @table-odd-bg;
+          th{
+            text-align: left;
+            font-size: 14px;
+            border-top: 1px solid #eceef3;
+            background-color: @table-odd-bg;
+          }
+          th:nth-child(1){
+            padding-left: 50px;
+            box-sizing: border-box;
+            width: 17.36%;
+          }
+          th:nth-child(2){
+            width: 14.03%;
+          }
+          th:nth-child(3){
+            width: 68.01%;
+          }
+        }
+      }
+      tbody{
+        tr{
+          height: 36px;
+          line-height: 20px;
+          td{
+            font-size: 14px;
+          }
+          td:nth-child(1){
+            padding-left: 50px;
+            box-sizing: border-box;
+          }
+          td:nth-child(3){
+            i{
+              color: #91ce79;
+              font-size: 14px;
+              vertical-align: top;
+              margin-right: 3px;
+            }
+          }
+        }
+        tr:nth-child(odd){
+          background-color: @bg-white;
+        }
+        tr:nth-child(even){
+          background-color: @table-odd-bg;
+        }
+        tr:hover{
+          background-color: #d6e1f1;
+        }
+      }
+      tfoot{
+        tr{
+          line-height: 60px;
+          td:nth-child(1){
+            padding-left: 50px;
+          }
+          td:last-child{
+            padding-right: 0;
+          }
+        }
+      }
+    }
+    //总览  2小时内域名访问记录
+    table.domainname-list-table{
+      width: 100%;
+      height: 100%;
+      thead{
+        tr{
+          height: 36px;
+          line-height: 36px;
+          background-color: @table-odd-bg;
+          th{
+            text-align: left;
+            font-size: 14px;
+            border-top: 1px solid #eceef3;
+            background-color: @table-odd-bg;
+          }
+          th:nth-child(1){
+            padding-left: 50px;
+            box-sizing: border-box;
+            width: 17%;
+          }
+          th:nth-child(2){
+            width: 20%;
+          }
+          th:nth-child(3){
+            width: 63%;
+          }
+        }
+      }
+      tbody{
+        tr{
+          height: 36px;
+          line-height: 20px;
+          td{
+            font-size: 14px;
+          }
+          td:nth-child(1){
+            padding-left: 50px;
+            box-sizing: border-box;
+          }
+          td:nth-child(2){
+            i{
+              color: #91ce79;
+              font-size: 14px;
+            }
+          }
+          td:nth-child(3){
+            i{
+              color: #91ce79;
+              font-size: 14px;
+              vertical-align: top;
+              margin-right: 3px;
+            }
+          }
+        }
+        tr:nth-child(odd){
+          background-color: @bg-white;
+        }
+        tr:nth-child(even){
+          background-color: @table-odd-bg;
+        }
+        tr:hover{
+          background-color: #d6e1f1;
+        }
+      }
+      tfoot{
+        tr{
+          line-height: 60px;
+          td:nth-child(1){
+            padding-left: 50px;
+          }
+          td:last-child{
+            padding-right: 0;
+          }
+        }
+      }
+    }
+    table.dataTable tfoot td{
+      border-top: 1px solid #eceef3;
+    }
+    table.file-access-records-table{
+      width: 100%;
+      height: 100%;
+      thead{
+        tr{
+          height: 36px;
+          line-height: 36px;
+          background-color: @table-odd-bg;
+          th{
+            text-align: left;
+            font-size: 14px;
+            border-top: 1px solid #eceef3;
+            background-color: @table-odd-bg;
+          }
+          th:nth-child(1){
+            padding-left: 50px;
+            box-sizing: border-box;
+            width: 15.6%;
+          }
+          th:nth-child(2){
+            width: 9.3%;
+          }
+          th:nth-child(3){
+            width: 11.16%;
+          }
+          th:nth-child(4){
+            width: 63.94%;
+          }
+        }
+      }
+      tbody{
+        tr{
+          height: 36px;
+          line-height: 20px;
+          td{
+            font-size: 14px;
+          }
+          td:nth-child(1){
+            padding-left: 50px;
+            box-sizing: border-box;
+          }
+        }
+        tr:nth-child(odd){
+          background-color: @bg-white;
+        }
+        tr:nth-child(even){
+          background-color: @table-odd-bg;
+        }
+        tr:hover{
+          background-color: #d6e1f1;
+        }
+      }
+      tfoot{
+        tr{
+          line-height: 60px;
+          td:nth-child(1){
+            padding-left: 50px;
+          }
+          td:last-child{
+            padding-right: 0;
+          }
+        }
+      }
+    }
+    table.login-status-table{
+      width: 100%;
+      height: 100%;
+      thead{
+        tr{
+          height: 36px;
+          line-height: 36px;
+          background-color: @table-odd-bg;
+          th{
+            text-align: left;
+            font-size: 14px;
+            border-top: 1px solid #eceef3;
+            background-color: @table-odd-bg;
+          }
+          th:nth-child(1){
+            padding-left: 50px;
+            box-sizing: border-box;
+            width: 11.03%;
+          }
+          th:nth-child(2){
+            width: 88.97%;
+            //text-indent: 34px;
+          }
+        }
+      }
+      tbody{
+        tr{
+          height: 36px;
+          line-height: 20px;
+          td{
+            font-size: 14px;
+          }
+          td:nth-child(1){
+            padding-left: 50px;
+            box-sizing: border-box;
+          }
+        }
+        tr:nth-child(odd){
+          background-color: @bg-white;
+        }
+        tr:nth-child(even){
+          background-color: @table-odd-bg;
+        }
+        tr:hover{
+          background-color: #d6e1f1;
+        }
+      }
+      tfoot{
+        tr{
+          line-height: 60px;
+          td:nth-child(1){
+            padding-left: 50px;
+          }
+          td:last-child{
+            padding-right: 0;
+          }
+        }
+      }
+    }
+    table.safe-event-table{
+      width: 100%;
+      height: 100%;
+      thead{
+        tr{
+          height: 36px;
+          line-height: 36px;
+          background-color: @table-odd-bg;
+          th{
+            text-align: left;
+            font-size: 14px;
+            border-top: 1px solid #eceef3;
+          }
+          th:nth-child(1){
+            width: 15.72%;
+            padding-left: 50px;
+            box-sizing: border-box;
+          }
+          th:nth-child(2){
+            width: 11.78%;
+          }
+          th:nth-child(3){
+            width: 14.86%;
+          }
+          th:nth-child(4){
+            width: 57.64%;
+          }
+        }
+      }
+      tbody{
+        tr{
+          height: 36px;
+          line-height: 20px;
+          td{
+            font-size: 14px;
+          }
+          td:nth-child(1){
+            padding-left: 50px;
+            box-sizing: border-box;
+          }
+          td:nth-child(3){
+            color:#5584c5;
+            cursor: pointer;
+          }
+        }
+        tr:nth-child(odd){
+          background-color: @bg-white;
+          td:nth-child(4){
+            input{
+              background-color: @bg-white;
+            }
+          }
+        }
+        tr:nth-child(even){
+          background-color: @table-odd-bg;
+          td:nth-child(4){
+            input{
+              background-color: @table-odd-bg;
+            }
+          }
+        }
+        tr:hover{
+          background-color:#dee7f4;
+          td:nth-child(3){
+            color: @primary-orange;
+            text-decoration: underline;
+          }
+          td:nth-child(4){
+            input{
+              background-color:#dee7f4;
+            }
+          }
+        }
+      }
+      tfoot{
+        tr{
+          line-height: 60px;
+          td:nth-child(1){
+            padding-left: 50px;
+          }
+          td:last-child{
+            padding-right: 0;
+          }
+        }
+      }
+    }
+    table.report-table{
+      width: 52.083333%;
+      margin: 0 auto;
+      border: 1px solid #86c457;
+      box-sizing: border-box;
+      border-collapse: collapse;
+      thead{
+        tr{
+          height: 36px;
+          line-height: 36px;
+          th{
+            text-align: left;
+            font-size: 14px;
+            background-color: #86c457;
+            color: @bg-white;
+            padding: 16px 16px 16px 16px;
+            box-sizing: border-box;
+            border: 1px solid #d6d7dc;
+          }
+          th:nth-child(1){
+            width: 19.52%;
+          }
+          th:nth-child(2){
+            width: 17.53%;
+          }
+          th:nth-child(3){
+            width: 26.1%;
+          }
+          th:nth-child(4){
+            width: 36.85%;
+          }
+        }
+      }
+      tbody{
+        tr{
+          td{
+            text-align: left;
+            font-size: 14px;
+            border: 1px solid #d6d7dc;
+            padding: 16px 16px 16px 16px;
+            box-sizing: border-box;
+          }
+        }
+      }
+    }
+    table.scan-result-table{
+      width: 100%;
+      height: 100%;
+      thead{
+        tr{
+          height: 36px;
+          line-height: 20px;
+          background-color: @table-odd-bg;
+          th{
+            text-align: left;
+            font-size: 14px;
+            border-top: 1px solid #eceef3;
+            background-color: @table-odd-bg;
+          }
+          th:nth-child(1){
+            padding-left: 50px;
+            box-sizing: border-box;
+            width: 14.82%;
+          }
+          th:nth-child(2){
+            width: 16.32%;
+          }
+          th:nth-child(3){
+            width: 68.86%;
+          }
+        }
+      }
+      tbody{
+        tr{
+          height: 36px;
+          line-height: 20px;
+          td{
+            font-size: 14px;
+          }
+          td:nth-child(1){
+            padding-left: 50px;
+            box-sizing: border-box;
+          }
+          td:nth-child(3){
+            box-sizing: border-box;
+            span{
+              display: inline-block;
+              width: 54px;
+              height: 20px;
+              line-height: 20px;
+              border-radius: 10px;
+              border: 1px solid @primary-green;
+              color: @primary-green;
+              text-align: center;
+              font-size: 14px;
+              vertical-align: top;
+              margin-top: 8px;
+            }
+            span.active{
+              border: 1px solid @primary-orange;
+              color: @primary-orange;
+            }
+          }
+        }
+        tr:nth-child(odd){
+          background-color: @bg-white;
+        }
+        tr:nth-child(even){
+          background-color: @table-odd-bg;
+        }
+        tr:hover{
+          background-color: #d6e1f1;
+          td:last-child span{
+            background-color: @primary-green;
+            color: @bg-white;
+          }
+          td:last-child .active{
+            background-color: @primary-orange;
+            border: 1px solid @primary-orange;
+          }
+        }
+      }
+      tfoot{
+        tr{
+          line-height: 60px;
+          td:nth-child(1){
+            padding-left: 50px;
+          }
+          td:last-child{
+            padding-right: 0;
+          }
+        }
+      }
+    }
+    table.sensitive-file-table{
+      width: 100%;
+      height: 100%;
+      thead{
+        tr{
+          height: 36px;
+          line-height: 36px;
+          background-color: @table-odd-bg;
+          th{
+            text-align: left;
+            font-size: 14px;
+            border-top: 1px solid #eceef3;
+            background-color: @table-odd-bg;
+          }
+          th:nth-child(1){
+            padding-left: 50px;
+            box-sizing: border-box;
+            width: 22.76%;
+          }
+          th:nth-child(2){
+            width: 17.61%;
+          }
+          th:nth-child(3){
+            width: 59.63%;
+          }
+        }
+      }
+      tbody{
+        tr{
+          height: 36px;
+          line-height: 20px;
+          td{
+            font-size: 14px;
+          }
+          td:nth-child(1){
+            padding-left: 50px;
+            box-sizing: border-box;
+          }
+        }
+        tr:nth-child(odd){
+          background-color: @bg-white;
+        }
+        tr:nth-child(even){
+          background-color: @table-odd-bg;
+        }
+        tr:hover{
+          background-color: #d6e1f1;
+        }
+      }
+      tfoot{
+        tr{
+          line-height: 60px;
+          td:nth-child(1){
+            padding-left: 50px;
+          }
+          td:last-child{
+            padding-right: 0;
+          }
+        }
+      }
+    }
+    table.user-distribution-table{
+      width: 100%;
+      height: 100%;
+      thead{
+        tr{
+          height: 36px;
+          line-height: 36px;
+          background-color: @table-odd-bg;
+          th{
+            text-align: left;
+            font-size: 14px;
+            border-top: 1px solid #eceef3;
+            background-color: @table-odd-bg;
+          }
+          th:nth-child(1){
+            padding-left: 50px;
+            box-sizing: border-box;
+            width: 10.6%;
+          }
+          th:nth-child(2){
+            width: 10.49%;
+          }
+        }
+      }
+      tbody{
+        tr{
+          height: 36px;
+          line-height: 20px;
+          td{
+            font-size: 14px;
+          }
+          td:nth-child(1){
+            padding-left: 50px;
+            box-sizing: border-box;
+          }
+        }
+        tr:nth-child(odd){
+          background-color: @bg-white;
+        }
+        tr:nth-child(even){
+          background-color: @table-odd-bg;
+        }
+        tr:hover{
+          background-color: #d6e1f1;
+        }
+      }
+      tfoot{
+        tr{
+          line-height: 60px;
+          td:nth-child(1){
+            padding-left: 50px;
+          }
+          td:last-child{
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+

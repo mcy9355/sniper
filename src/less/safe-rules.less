@@ -1,0 +1,163 @@
+@import "variables";
+#main-box{
+  font-size: 12px;
+  color: #333333;
+  background-color: @bg-gray;
+  #contain{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 12px;
+    box-sizing: border-box;
+    form{
+      width: 100%;
+      height: 100%;
+      background-color: @bg-white;
+      padding: 80px 100px 0 0;
+      box-sizing: border-box;
+      section{
+        width: 100%;
+        height: 50px;
+        display: block;
+        label{
+          width: 12%;
+          height: 36px;
+          line-height: 36px;
+          display: inline-block;
+          text-align: right;
+          font-weight: bold;
+          padding-right: 20px;
+          box-sizing: border-box;
+          float: left;
+        }
+      }
+      .tab-title{
+        margin-top: 10px;
+        display: block;
+        #wrap{
+          width: 240px;
+          height: 40px;
+          display: inline-block;
+          vertical-align: middle;
+          position: relative;
+          .lineBorder{
+            width: 244px;
+            height: 3px;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            .lineDiv{
+              transition:all 0.3s ease-in-out;
+              background: @primary-orange;
+              height: 3px;
+              width: 120px;
+            }
+          }
+          .tabClick{
+            background: #f8f8f8;
+            overflow: hidden;
+            border-right: 0;
+            border-left: 0;
+            li{
+              box-sizing: border-box;
+              height:42px;
+              line-height: 42px;
+              width: 120px;
+              float: left;
+              text-align: center;
+              border: 1px solid @border-gray;
+              cursor: pointer;
+            }
+            li:nth-child(2){
+              border-left: 0;
+            }
+            .active{
+              color: @primary-orange;
+              transition:all 0.3s;
+              background: @bg-white;
+              border-bottom: none;
+            }
+          }
+        }
+      }
+      .email-info{
+        margin-top: 24px;
+        //最左边的标题和内容
+        label{
+          font-weight: normal;
+          width: 12%;
+        }
+        //标题文本框
+        section:nth-child(1),section:nth-child(2){
+          .email-title,.receiver{
+            width: 88%;
+            height: 36px;
+            line-height: 36px;
+            border: 1px solid @border-gray;
+            box-sizing: border-box;
+            text-indent: 1em;
+          }
+          .hidden{
+            display: none;
+          }
+        }
+        //邮件内容文本框
+        section:nth-child(3){
+          display: block;
+          height: 384px;
+          .email-content{
+            width: 88%;
+            height: 390px;
+            border: 1px solid @border-gray;
+            vertical-align: top;
+            box-sizing: border-box;
+            padding: 1em;
+          }
+          .hidden{
+             display: none;
+           }
+        }
+      }
+      //测试和保存两个按钮样式
+      .submit{
+        display: block;
+        width: 100%;
+        height: 38px;
+        margin-top: 30px;
+        padding-left: 12%;
+        box-sizing: border-box;
+        button{
+          width: 110px;
+          height: 32px;
+          background-color: @primary-orange;
+          color: @bg-white;
+          font-size: 14px;
+          border-radius: 2px;
+          border: 1px solid @primary-orange;
+          cursor: pointer;
+        }
+        .test{
+          background-color: @bg-white;
+          border: 1px solid @primary-green;
+          color: @primary-green;
+        }
+      }
+    }
+  }
+  @media only screen and (min-height : 900px) and (max-height : 1080px) {
+    #contain{
+      form{
+        height: 100%;
+      }
+    }
+  }
+  @media only screen and (min-height : 0px) and (max-height : 900px) {
+    #contain{
+      form{
+        height: 800px;
+      }
+    }
+  }
+}

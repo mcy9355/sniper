@@ -1,0 +1,831 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>主机详情</title>
+    <link rel="stylesheet" href="lib/jsTree/style.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/host-details.css">
+</head>
+<body>
+<div class="main-details-box clearfix">
+    <div class="main-details-wrap">
+        <div id="host-info" class="item-box clearfix">
+            <h6 class="box-hd">
+                <span class="pull-left">主机详情</span>
+            </h6>
+            <div class="info-box name-info-box">
+                <div class="info-group clearfix">
+                    <label class="label-name">机器名</label>
+                    <span class="pull-left host-name">YANG04</span>
+                    <i id="edit-btn" class="iconfont pull-left">&#xe605;</i>
+                </div>
+                <div class="info-group clearfix">
+                    <label class="access-label label-name">转移管理权</label>
+                    <div class="pull-left">
+                        <select id="access-select">
+                            <option value="">管理区</option>
+                            <option value="">万兆区</option>
+                            <option value="">生产区</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="info-group" style="margin-top: 32px;">
+                    <span class="label-name">最后连接时间：</span>
+                    <span>2016-10-28 09:44:23</span>
+                </div>
+                <div class="info-group">
+                    <span class="label-name">上次开机时间：</span>
+                    <span>2016-10-28 09:44:23</span>
+                </div>
+                <div class="info-group">
+                    <span class="label-name">策略更新时间：</span>
+                    <span>2016-10-28 09:44:23</span>
+                </div>
+            </div>
+            <div class="info-box host-info-box">
+                <div class="info-group">
+                    <label class="label-name">操作系统：</label>
+                    <span>win7 Enterprise Sp2</span>
+                </div>
+                <div class="info-group">
+                    <label class="label-name">IP地址：</label>
+                    <span>192.168.31.232\10.228.80.201\192.168.88.7</span>
+                </div>
+                <div class="info-group">
+                    <label class="label-name">MAC地址：</label>
+                    <span>AE-FD-CE-1A-9C-8A</span>
+                </div>
+                <div class="info-group">
+                    <label class="label-name">处理器：</label>
+                    <span>Intel(R) Core(TM)i7-4790 CPU @3.60GHz 3.60GHz </span>
+                </div>
+                <div class="info-group">
+                    <label class="label-name">内存：</label>
+                    <span>16G</span>
+                </div>
+                <div class="info-group">
+                    <label class="label-name">Sniper CPU使用率：</label>
+                    <span>10%</span>
+                </div>
+            </div>
+            <div class="info-box disk-box clearfix">
+                <label class="label-name">硬盘(8)</label>
+                <div class="disk-wrap">
+                    <div class="info-group disk-group clearfix">
+                        <i class="sprite sprite-disk"></i>
+                        <div class="disk-content">
+                            <div class="disk-name">工作学习(C:)</div>
+                            <div class="disk">
+                                <div class="disk-bar" style="width:58%;"></div>
+                            </div>
+                            <div class="disk-info">已用115GB，共37.1GB</div>
+                        </div>
+                    </div>
+                    <div class="info-group disk-group clearfix">
+                        <i class="sprite sprite-disk"></i>
+                        <div class="disk-content">
+                            <div class="disk-name">工作学习(C:)</div>
+                            <div class="disk">
+                                <div class="disk-bar" style="width:58%;"></div>
+                            </div>
+                            <div class="disk-info">已用115GB，共37.1GB</div>
+                        </div>
+                    </div>
+                    <div class="info-group disk-group clearfix">
+                        <i class="sprite sprite-disk"></i>
+                        <div class="disk-content">
+                            <div class="disk-name">工作学习(C:)</div>
+                            <div class="disk">
+                                <div class="disk-bar" style="width:58%;"></div>
+                            </div>
+                            <div class="disk-info">已用115GB，共37.1GB</div>
+                        </div>
+                    </div>
+                    <div class="info-group disk-group clearfix">
+                        <i class="sprite sprite-disk"></i>
+                        <div class="disk-content">
+                            <div class="disk-name">工作学习(C:)</div>
+                            <div class="disk">
+                                <div class="disk-bar" style="width:58%;"></div>
+                            </div>
+                            <div class="disk-info">已用115GB，共37.1GB</div>
+                        </div>
+                    </div>
+                    <div class="info-group disk-group clearfix">
+                        <i class="sprite sprite-disk"></i>
+                        <div class="disk-content">
+                            <div class="disk-name">工作学习(C:)</div>
+                            <div class="disk">
+                                <div class="disk-bar" style="width:58%;"></div>
+                            </div>
+                            <div class="disk-info">已用115GB，共37.1GB</div>
+                        </div>
+                    </div>
+                    <div class="info-group disk-group clearfix">
+                        <i class="sprite sprite-disk"></i>
+                        <div class="disk-content">
+                            <div class="disk-name">工作学习(C:)</div>
+                            <div class="disk">
+                                <div class="disk-bar" style="width:58%;"></div>
+                            </div>
+                            <div class="disk-info">已用115GB，共37.1GB</div>
+                        </div>
+                    </div>
+                    <div class="info-group disk-group clearfix">
+                        <i class="sprite sprite-disk"></i>
+                        <div class="disk-content">
+                            <div class="disk-name">工作学习(C:)</div>
+                            <div class="disk">
+                                <div class="disk-bar" style="width:58%;"></div>
+                            </div>
+                            <div class="disk-info">已用115GB，共37.1GB</div>
+                        </div>
+                    </div>
+                    <div class="info-group disk-group clearfix">
+                        <i class="sprite sprite-disk"></i>
+                        <div class="disk-content">
+                            <div class="disk-name">工作学习(C:)</div>
+                            <div class="disk">
+                                <div class="disk-bar" style="width:58%;"></div>
+                            </div>
+                            <div class="disk-info">已用115GB，共37.1GB</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="statistics">
+            <div class="num-box link-num clearfix">
+                <i class="iconfont">&#xe64e;</i>
+                <span class="num">567</span>
+                <span class="text">当前网络状态连接数</span>
+            </div>
+            <div class="num-box remote-num clearfix">
+                <i class="iconfont">&#xe61c;</i>
+                <span class="num">67</span>
+                <span class="text">远程桌面登录用户数</span>
+            </div>
+            <div class="num-box login-num clearfix">
+                <i class="iconfont">&#xe60f;</i>
+                <span class="num">330</span>
+                <span class="text">当前登录用户数</span>
+            </div>
+            <div class="num-box file-num clearfix">
+                <i class="iconfont">&#xe606;</i>
+                <span class="num">345</span>
+                <span class="text">当前打开设计文件数</span>
+            </div>
+        </div>
+        <div id="link-list" class="item-box">
+            <h6 class="box-hd">
+                <span class="pull-left">当前网络连接清单</span>
+                <i class="update-icon iconfont pull-right">&#xe61b;</i>
+                <button class="btn-primary pull-right">渗透溯源</button>
+            </h6>
+            <div class="link-chart-wrap">
+                <div class="parent-host">
+                    <i class="iconfont pull-left">&#xe659;</i>
+                    <div class="pull-left">
+                        <span>192.168.225.110</span>
+                        <span>统计共33台</span>
+                    </div>
+                </div>
+                <!--<ul class="host-link-list">-->
+                    <!--<li>-->
+                        <!--<i class="circle"></i>-->
+                        <!--<span>192.168.211.110</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="circle"></i>-->
+                        <!--<span>192.168.211.110</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="circle"></i>-->
+                        <!--<span>192.168.211.110</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="circle"></i>-->
+                        <!--<span>192.168.211.110</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="circle"></i>-->
+                        <!--<span>192.168.211.110</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="circle"></i>-->
+                        <!--<span>192.168.211.110</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="circle"></i>-->
+                        <!--<span>192.168.211.110</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="circle"></i>-->
+                        <!--<span>192.168.211.110</span>-->
+                    <!--</li>-->
+                <!--</ul>-->
+                <!--<ul class="host-link-list">-->
+                    <!--<li>-->
+                        <!--<i class="circle"></i>-->
+                        <!--<span>192.168.211.110</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="circle"></i>-->
+                        <!--<span>192.168.211.110</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="circle"></i>-->
+                        <!--<span>192.168.211.110</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="circle"></i>-->
+                        <!--<span>192.168.211.110</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="circle"></i>-->
+                        <!--<span>192.168.211.110</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="circle"></i>-->
+                        <!--<span>192.168.211.110</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="circle"></i>-->
+                        <!--<span>192.168.211.110</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="circle"></i>-->
+                        <!--<span>192.168.211.110</span>-->
+                    <!--</li>-->
+                <!--</ul>-->
+                <!--<ul class="host-link-list">-->
+                    <!--<li>-->
+                        <!--<i class="circle"></i>-->
+                        <!--<span>192.168.211.110</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="circle"></i>-->
+                        <!--<span>192.168.211.110</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="circle"></i>-->
+                        <!--<span>192.168.211.110</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="circle"></i>-->
+                        <!--<span>192.168.211.110</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="circle"></i>-->
+                        <!--<span>192.168.211.110</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="circle"></i>-->
+                        <!--<span>192.168.211.110</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="circle"></i>-->
+                        <!--<span>192.168.211.110</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="circle"></i>-->
+                        <!--<span>192.168.211.110</span>-->
+                    <!--</li>-->
+                <!--</ul>-->
+                <!--<ul class="host-link-list">-->
+                    <!--<li>-->
+                        <!--<i class="circle"></i>-->
+                        <!--<span>192.168.211.110</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="circle"></i>-->
+                        <!--<span>192.168.211.110</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="circle"></i>-->
+                        <!--<span>192.168.211.110</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="circle"></i>-->
+                        <!--<span>192.168.211.110</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="circle"></i>-->
+                        <!--<span>192.168.211.110</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="circle"></i>-->
+                        <!--<span>192.168.211.110</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="circle"></i>-->
+                        <!--<span>192.168.211.110</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<i class="circle"></i>-->
+                        <!--<span>192.168.211.110</span>-->
+                    <!--</li>-->
+                <!--</ul>-->
+                <div class="no-source-host">抱歉，暂无数据！</div>
+            </div>
+        </div>
+        <div id="attack-event" class="item-box">
+            <div class="title">
+                <h6 class="box-hd">
+                    <span class="pull-left">攻击事件分析</span>
+                </h6>
+            </div>
+            <div class="chart-box">
+                <div id="attack-chart"></div>
+            </div>
+        </div>
+        <div id="domain-box" class="item-box">
+            <h6 class="box-hd clearfix">
+                <span class="pull-left">访问域名清单</span>
+                <a class="more-link pull-right" href="#">更多&gt;&gt;</a>
+            </h6>
+            <table id="domain-table" class="list-table">
+                <thead>
+                <tr>
+                    <th>域名</th>
+                    <th>类别</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        www.taobao.com
+                    </td>
+                    <td>
+                        <i class="iconfont">&#xe631;</i>
+                        <span>未知</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        www.taobao.com
+                    </td>
+                    <td>
+                        <i class="iconfont">&#xe631;</i>
+                        <span>未知</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        www.taobao.com
+                    </td>
+                    <td>
+                        <i class="iconfont">&#xe631;</i>
+                        <span>未知</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        www.taobao.com
+                    </td>
+                    <td>
+                        <i class="iconfont">&#xe631;</i>
+                        <span>未知</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        www.taobao.com
+                    </td>
+                    <td>
+                        <i class="iconfont">&#xe631;</i>
+                        <span>未知</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        www.taobao.com
+                    </td>
+                    <td>
+                        <i class="iconfont">&#xe631;</i>
+                        <span>未知</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        www.taobao.com
+                    </td>
+                    <td>
+                        <i class="iconfont">&#xe631;</i>
+                        <span>未知</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        www.taobao.com
+                    </td>
+                    <td>
+                        <i class="iconfont">&#xe631;</i>
+                        <span>未知</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        www.taobao.com
+                    </td>
+                    <td>
+                        <i class="iconfont">&#xe631;</i>
+                        <span>未知</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        www.taobao.com
+                    </td>
+                    <td>
+                        <i class="iconfont">&#xe631;</i>
+                        <span>未知</span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="file-access">
+            <div class="title">
+                <h6 class="box-hd clearfix">
+                    <span class="pull-left">文件访问记录</span>
+                    <a class="more-link pull-right" href="#">更多&gt;&gt;</a>
+                </h6>
+            </div>
+            <div class="item-box">
+                <table id="file-access-table" class="list-table">
+                    <thead>
+                    <tr>
+                        <th style="width: 230px;">时间</th>
+                        <th style="width: 170px;">用户</th>
+                        <th>进程</th>
+                        <th>结果</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!--<tr>-->
+                    <!--<td>2016-10-13 10:13:25</td>-->
+                    <!--<td>hatty</td>-->
+                    <!--<td>winword.exe</td>-->
+                    <!--<td>修改了C：\ 文档 \ a.doc</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td>2016-10-13 10:13:25</td>-->
+                    <!--<td>hatty</td>-->
+                    <!--<td>winword.exe</td>-->
+                    <!--<td>修改了C：\ 文档 \ a.doc</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td>2016-10-13 10:13:25</td>-->
+                    <!--<td>hatty</td>-->
+                    <!--<td>winword.exe</td>-->
+                    <!--<td>修改了C：\ 文档 \ a.doc</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td>2016-10-13 10:13:25</td>-->
+                    <!--<td>hatty</td>-->
+                    <!--<td>winword.exe</td>-->
+                    <!--<td>修改了C：\ 文档 \ a.doc</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td>2016-10-13 10:13:25</td>-->
+                    <!--<td>hatty</td>-->
+                    <!--<td>winword.exe</td>-->
+                    <!--<td>修改了C：\ 文档 \ a.doc</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td>2016-10-13 10:13:25</td>-->
+                    <!--<td>hatty</td>-->
+                    <!--<td>winword.exe</td>-->
+                    <!--<td>修改了C：\ 文档 \ a.doc</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td>2016-10-13 10:13:25</td>-->
+                    <!--<td>hatty</td>-->
+                    <!--<td>winword.exe</td>-->
+                    <!--<td>修改了C：\ 文档 \ a.doc</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td>2016-10-13 10:13:25</td>-->
+                    <!--<td>hatty</td>-->
+                    <!--<td>winword.exe</td>-->
+                    <!--<td>修改了C：\ 文档 \ a.doc</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td>2016-10-13 10:13:25</td>-->
+                    <!--<td>hatty</td>-->
+                    <!--<td>winword.exe</td>-->
+                    <!--<td>修改了C：\ 文档 \ a.doc</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                    <!--<td>2016-10-13 10:13:25</td>-->
+                    <!--<td>hatty</td>-->
+                    <!--<td>winword.exe</td>-->
+                    <!--<td>修改了C：\ 文档 \ a.doc</td>-->
+                    <!--</tr>-->
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div id="design-file" class="item-box">
+            <h6 class="box-hd clearfix">
+                <span class="pull-left">当前设计文件访问状态</span>
+                <a class="more-link pull-right" href="#">更多&gt;&gt;</a>
+                <i class="update-icon iconfont pull-right">&#xe61b;</i>
+                <button class="btn-primary pull-right">动作追踪</button>
+            </h6>
+            <table id="design-file-table" class="list-table">
+                <thead>
+                <tr>
+                    <th >用户</th>
+                    <th >进程</th>
+                    <th>路径</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>张三</td>
+                    <td>fxp.exe</td>
+                    <td>C：user \a \文档 \ 2016标书 \ 沈阳市采购.doc</td>
+                </tr>
+                <tr>
+                    <td>张三</td>
+                    <td>fxp.exe</td>
+                    <td>C：user \a \文档 \ 2016标书 \ 沈阳市采购.doc</td>
+                </tr>
+                <tr>
+                    <td>张三</td>
+                    <td>fxp.exe</td>
+                    <td>C：user \a \文档 \ 2016标书 \ 沈阳市采购.doc</td>
+                </tr>
+                <tr>
+                    <td>张三</td>
+                    <td>fxp.exe</td>
+                    <td>C：user \a \文档 \ 2016标书 \ 沈阳市采购.doc</td>
+                </tr>
+                <tr>
+                    <td>张三</td>
+                    <td>fxp.exe</td>
+                    <td>C：user \a \文档 \ 2016标书 \ 沈阳市采购.doc</td>
+                </tr>
+                <tr>
+                    <td>张三</td>
+                    <td>fxp.exe</td>
+                    <td>C：user \a \文档 \ 2016标书 \ 沈阳市采购.doc</td>
+                </tr>
+                <tr>
+                    <td>张三</td>
+                    <td>fxp.exe</td>
+                    <td>C：user \a \文档 \ 2016标书 \ 沈阳市采购.doc</td>
+                </tr>
+                <tr>
+                    <td>张三</td>
+                    <td>fxp.exe</td>
+                    <td>C：user \a \文档 \ 2016标书 \ 沈阳市采购.doc</td>
+                </tr>
+                <tr>
+                    <td>张三</td>
+                    <td>fxp.exe</td>
+                    <td>C：user \a \文档 \ 2016标书 \ 沈阳市采购.docfweagggggggggggvdf vbngfhtrhtdhgdfdfdfdfdfdfdfdfnvfffffffffzvr</td>
+                </tr>
+                <tr>
+                    <td>张三</td>
+                    <td>fxp.exe</td>
+                    <td>C：user \a \文档 \ 2016标书 \ 沈阳市采购.doc</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="system-state" class="item-box">
+            <h6 class="box-hd clearfix">
+                <span class="pull-left">当前系统状态</span>
+                <a class="more-link pull-right" href="javascript:void(0);">更多&gt;&gt;</a>
+                <i class="update-icon iconfont pull-right">&#xe61b;</i>
+                <button class="btn-primary pull-right">动作追踪</button>
+            </h6>
+            <ul class="system-state-hd clearfix">
+                <li>进程</li>
+                <li>路径</li>
+                <li>用户名</li>
+                <li>参数</li>
+            </ul>
+            <div id="system-tree">
+                <ul>
+                    <li>
+                        <span>cmd.exe</span>
+                        <span>C:\Windows\system32\cmd.exe</span>
+                        <span>Administrator</span>
+                        <span>C:\WINDOWS\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,3072,512 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=winsrv:ConServerDllInitialization,2 ProfileControl=Off MaxRequestTh</span>
+                        <ul>
+                            <li>
+                                <span>tasklist.exe</span>
+                                <span>C:\Windows\system32\tasklist.exe</span>
+                                <span>Administrator</span>
+                                <span>C:\WINDOWS\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,3072,512 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=winsrv:ConServerDllInitialization,2 ProfileControl=Off MaxRequestTh</span>
+                                <ul></ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>sppsvc.exe</span>
+                        <span>C:\Windows\system32\sppsvc.exe</span>
+                        <span>NETWORK SERVICE</span>
+                        <span>C:\WINDOWS\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,3072,512 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=winsrv:ConServerDllInitialization,2 ProfileControl=Off MaxRequestTh</span>
+                    </li>
+                    <li>
+                        <span>powershell.exe</span>
+                        <span>C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe</span>
+                        <span>Administrator</span>
+                        <span>"C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe"</span>
+                    </li>
+                    <li>
+                        <span>TrustedInstaller.exe</span>
+                        <span>C:\Windows\servicing\TrustedInstaller.exe</span>
+                        <span>SYSTEM</span>
+                        <span>C:\Windows\servicing\TrustedInstaller.exe</span>
+                    </li>
+                    <li>
+                        <span>mmc.exe</span>
+                        <span>C:\Windows\system32\mmc.exe</span>
+                        <span>Administrator</span>
+                        <span>"C:\Windows\system32\mmc.exe" "C:\Windows\system32\eventvwr.msc" /s</span>
+                    </li>
+                    <li>
+                        <span>PCHunter64.exe</span>
+                        <span>C:\Users\Administrator\Desktop\PCHunter64.exe</span>
+                        <span>Administrator</span>
+                        <span>"C:\Users\Administrator\Desktop\PCHunter64.exe"</span>
+                    </li>
+                    <li>
+                        <span>cmd.exe</span>
+                        <span>C:\Windows\system32\cmd.exe</span>
+                        <span>Administrator</span>
+                        <span>"C:\Windows\system32\cmd.exe"</span>
+                        <ul>
+                            <li>
+                                <span>tasklist.exe</span>
+                                <span>C:\Windows\system32\tasklist.exe</span>
+                                <span>Administrator</span>
+                                <span>tasklist  /svc</span>
+                                <ul></ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>cmd.exe</span>
+                        <span>C:\Windows\system32\cmd.exe</span>
+                        <span>Administrator</span>
+                        <span>C:\WINDOWS\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,3072,512 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=winsrv:ConServerDllInitialization,2 ProfileControl=Off MaxRequestTh</span>
+                        <ul>
+                            <li>
+                                <span>tasklist.exe</span>
+                                <span>C:\Windows\system32\tasklist.exe</span>
+                                <span>Administrator</span>
+                                <span>C:\WINDOWS\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,3072,512 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=winsrv:ConServerDllInitialization,2 ProfileControl=Off MaxRequestTh</span>
+                                <ul></ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>sppsvc.exe</span>
+                        <span>C:\Windows\system32\sppsvc.exe</span>
+                        <span>NETWORK SERVICE</span>
+                        <span>C:\WINDOWS\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,3072,512 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=winsrv:ConServerDllInitialization,2 ProfileControl=Off MaxRequestTh</span>
+                    </li>
+                    <li>
+                        <span>powershell.exe</span>
+                        <span>C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe</span>
+                        <span>Administrator</span>
+                        <span>"C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe"</span>
+                    </li>
+                    <li>
+                        <span>TrustedInstaller.exe</span>
+                        <span>C:\Windows\servicing\TrustedInstaller.exe</span>
+                        <span>SYSTEM</span>
+                        <span>C:\Windows\servicing\TrustedInstaller.exe</span>
+                    </li>
+                    <li>
+                        <span>mmc.exe</span>
+                        <span>C:\Windows\system32\mmc.exe</span>
+                        <span>Administrator</span>
+                        <span>"C:\Windows\system32\mmc.exe" "C:\Windows\system32\eventvwr.msc" /s</span>
+                    </li>
+                    <li>
+                        <span>PCHunter64.exe</span>
+                        <span>C:\Users\Administrator\Desktop\PCHunter64.exe</span>
+                        <span>Administrator</span>
+                        <span>"C:\Users\Administrator\Desktop\PCHunter64.exe"</span>
+                    </li>
+                    <li>
+                        <span>cmd.exe</span>
+                        <span>C:\Windows\system32\cmd.exe</span>
+                        <span>Administrator</span>
+                        <span>"C:\Windows\system32\cmd.exe"</span>
+                        <ul>
+                            <li>
+                                <span>tasklist.exe</span>
+                                <span>C:\Windows\system32\tasklist.exe</span>
+                                <span>Administrator</span>
+                                <span>tasklist  /svc</span>
+                                <ul></ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>PCHunter64.exe</span>
+                        <span>C:\Users\Administrator\Desktop\PCHunter64.exe</span>
+                        <span>Administrator</span>
+                        <span>"C:\Users\Administrator\Desktop\PCHunter64.exe"</span>
+                    </li>
+                    <li>
+                        <span>cmd.exe</span>
+                        <span>C:\Windows\system32\cmd.exe</span>
+                        <span>Administrator</span>
+                        <span>"C:\Windows\system32\cmd.exe"</span>
+                        <ul>
+                            <li>
+                                <span>tasklist.exe</span>
+                                <span>C:\Windows\system32\tasklist.exe</span>
+                                <span>Administrator</span>
+                                <span>tasklist  /svc</span>
+                                <ul></ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>cmd.exe</span>
+                        <span>C:\Windows\system32\cmd.exe</span>
+                        <span>Administrator</span>
+                        <span>C:\WINDOWS\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,3072,512 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=winsrv:ConServerDllInitialization,2 ProfileControl=Off MaxRequestTh</span>
+                        <ul>
+                            <li>
+                                <span>tasklist.exe</span>
+                                <span>C:\Windows\system32\tasklist.exe</span>
+                                <span>Administrator</span>
+                                <span>C:\WINDOWS\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,3072,512 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=winsrv:ConServerDllInitialization,2 ProfileControl=Off MaxRequestTh</span>
+                                <ul></ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>sppsvc.exe</span>
+                        <span>C:\Windows\system32\sppsvc.exe</span>
+                        <span>NETWORK SERVICE</span>
+                        <span>C:\WINDOWS\system32\csrss.exe ObjectDirectory=\Windows SharedSection=1024,3072,512 Windows=On SubSystemType=Windows ServerDll=basesrv,1 ServerDll=winsrv:UserServerDllInitialization,3 ServerDll=winsrv:ConServerDllInitialization,2 ProfileControl=Off MaxRequestTh</span>
+                    </li>
+                    <li>
+                        <span>powershell.exe</span>
+                        <span>C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe</span>
+                        <span>Administrator</span>
+                        <span>"C:\WINDOWS\system32\WindowsPowerShell\v1.0\powershell.exe"</span>
+                    </li>
+                    <li>
+                        <span>TrustedInstaller.exe</span>
+                        <span>C:\Windows\servicing\TrustedInstaller.exe</span>
+                        <span>SYSTEM</span>
+                        <span>C:\Windows\servicing\TrustedInstaller.exe</span>
+                    </li>
+                    <li>
+                        <span>mmc.exe</span>
+                        <span>C:\Windows\system32\mmc.exe</span>
+                        <span>Administrator</span>
+                        <span>"C:\Windows\system32\mmc.exe" "C:\Windows\system32\eventvwr.msc" /s</span>
+                    </li>
+                    <li>
+                        <span>PCHunter64.exe</span>
+                        <span>C:\Users\Administrator\Desktop\PCHunter64.exe</span>
+                        <span>Administrator</span>
+                        <span>"C:\Users\Administrator\Desktop\PCHunter64.exe"</span>
+                    </li>
+                    <li>
+                        <span>cmd.exe</span>
+                        <span>C:\Windows\system32\cmd.exe</span>
+                        <span>Administrator</span>
+                        <span>"C:\Windows\system32\cmd.exe"</span>
+                        <ul>
+                            <li>
+                                <span>tasklist.exe</span>
+                                <span>C:\Windows\system32\tasklist.exe</span>
+                                <span>Administrator</span>
+                                <span>tasklist  /svc</span>
+                                <ul></ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<!--[if lt IE 9]>
+<script src="lib/html5shiv.min.js"></script>
+<script src="lib/respond.min.js"></script>
+<![endif]-->
+<script src="js/common.js"></script>
+<script src="js/host-details.js"></script>
+</html>

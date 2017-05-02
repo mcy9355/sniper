@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>审计日志</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/audit-log.css">
+</head>
+<body>
+<header id="header" class="clearfix">
+    <a href="#" class="logo pull-left"></a>
+    <div class="user-center pull-right">
+        <a class="user-btn" href="javascript:void(0);">
+            <i class="icon-man iconfont">&#xe61a;</i>
+            <span>安全管理员</span>
+            <i class="icon-arrow iconfont">&#xe62d;</i>
+        </a>
+    </div>
+    <div class="time-box pull-right clearfix">
+        <i class="icon-time iconfont">&#xe613;</i>
+        <span id="current-time"></span>
+    </div>
+</header>
+<aside id="nav-side" class="open">
+    <ul class="nav-side-list">
+        <li>
+            <a href="account.html" class="clearfix">
+                <i class="iconfont pull-left">&#xe611;</i>
+                <span class="pull-left">账号</span>
+            </a>
+        </li>
+        <li class="active">
+            <a href="audit-log.html" class="clearfix">
+                <i class="iconfont pull-left">&#xe646;</i>
+                <span class="pull-left">审计日志</span>
+            </a>
+        </li>
+    </ul>
+    <a class="toggle-nav-btn" href="javascript:void(0);">
+        <i class="iconfont">&#xe62f;</i>
+    </a>
+</aside>
+<section id="main-box">
+    <div id="contain">
+        <div class="bg-white">
+            <section class="head">
+                <div class="date-box pull-left">
+                    <label>日期</label>
+                    <input  type="text" >
+                    <i class="iconfont">&#xe652;</i>
+                </div>
+                <div class="search-box pull-left">
+                    <input type="text" placeholder="search">
+                    <button>
+                        <i class="iconfont">&#xe618;</i>
+                    </button>
+                </div>
+            </section>
+            <section class="table">
+                <table id="log-tab" class="compact">
+                    <thead class="dt-left">
+                    <tr>
+                        <th>时间</th>
+                        <th>用户</th>
+                        <th>账号类型</th>
+                        <th>模块</th>
+                        <th>内容</th>
+                        <th>状态</th>
+                    </tr>
+                    </thead>
+                    <tbody class="dt-left">
+                    <tr>
+                        <td>
+                            <span>2016-08-08</span>
+                            <span>15:44:04</span>
+                        </td>
+                        <td>hatty</td>
+                        <td>系统管理员</td>
+                        <td>登录</td>
+                        <td>用户登录</td>
+                        <td>成功</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>2016-08-08</span>
+                            <span>15:44:04</span>
+                        </td>
+                        <td>marry</td>
+                        <td>安全审计员</td>
+                        <td>全面体检</td>
+                        <td>用户登录失败，用户名或密码错误</td>
+                        <td class="failed">失败</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>2016-08-08</span>
+                            <span>15:44:04</span>
+                        </td>
+                        <td>小淼广告费</td>
+                        <td>安全管理员</td>
+                        <td>用户管理</td>
+                        <td>对“小A”进行体检，导出体检安全分析报告</td>
+                        <td class="failed">失败</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>2016-08-08</span>
+                            <span>15:44:04</span>
+                        </td>
+                        <td>小淼广告费</td>
+                        <td>安全管理员</td>
+                        <td>身份设置</td>
+                        <td>添加用户“最牛大咖”</td>
+                        <td>成功</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>2016-08-08</span>
+                            <span>15:44:04</span>
+                        </td>
+                        <td>小淼广告费</td>
+                        <td>安全审计员</td>
+                        <td>登录</td>
+                        <td>更改口令尝试设置</td>
+                        <td class="failed">失败</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>2016-08-08</span>
+                            <span>15:44:04</span>
+                        </td>
+                        <td>小淼广告费</td>
+                        <td>安全审计员</td>
+                        <td>登录</td>
+                        <td>更改口令尝试设置</td>
+                        <td class="failed">失败</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>2016-08-08</span>
+                            <span>15:44:04</span>
+                        </td>
+                        <td>hatty</td>
+                        <td>系统管理员</td>
+                        <td>登录</td>
+                        <td>用户登录</td>
+                        <td>成功</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>2016-08-08</span>
+                            <span>15:44:04</span>
+                        </td>
+                        <td>marry</td>
+                        <td>安全审计员</td>
+                        <td>全面体检</td>
+                        <td>用户登录失败，用户名或密码错误</td>
+                        <td class="failed">失败</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>2016-08-08</span>
+                            <span>15:44:04</span>
+                        </td>
+                        <td>小淼广告费</td>
+                        <td>安全管理员</td>
+                        <td>用户管理</td>
+                        <td>对“小A”进行体检，导出体检安全分析报告</td>
+                        <td class="failed">失败</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>2016-08-08</span>
+                            <span>15:44:04</span>
+                        </td>
+                        <td>小淼广告费</td>
+                        <td>安全管理员</td>
+                        <td>身份设置</td>
+                        <td>添加用户“最牛大咖”</td>
+                        <td>成功</td>
+                    </tr>
+                    </tbody>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="1">
+                            共<span>2177</span>项
+                        </td>
+                        <td colspan="5">
+                            <a href="##" class="prev">&lt;Prev</a>
+                            <a href="##">1</a>
+                            <a href="##">2</a>
+                            <a href="##" class="active">3</a>
+                            <a href="##" class="ellipsis">...</a>
+                            <a href="##">21</a>
+                            <a href="##" class="next">Next&gt;</a>
+                            到第
+                            <input type="number" min="1">
+                            页
+                            <a href="##" class="confirm">确定</a>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </section>
+
+        </div>
+    </div>
+</section>
+</body>
+<!--[if lt IE 9]>
+<script src="lib/html5shiv.min.js"></script>
+<script src="lib/respond.min.js"></script>
+<![endif]-->
+<script src="js/common.js"></script>
+<script src="js/audit-log.js"></script>
+</html>

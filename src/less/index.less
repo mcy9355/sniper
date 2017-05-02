@@ -1,0 +1,519 @@
+@import "variables";
+//修改密码模态窗口
+#passInput{
+  form{
+    //padding-top: 0;
+    //p{
+    //  color: #ff0000;
+    //  font-size: 12px;
+    //  text-align: center;
+    //  height: 40px;
+    //  line-height: 40px;
+    //}
+    .line{
+      input{
+
+      }
+    }
+  }
+}
+#main-box{
+  font-size:12px;
+  #contain{
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    background-color: @bg-gray;
+    position: relative;
+    //左右有相同颜色和盒模型
+    article,aside{
+      background-color: @bg-gray;
+      box-sizing: border-box;
+    }
+    //页面左边
+    article{
+      width: 67%;
+      padding-right: 12px;
+      //上下公共样式
+      .data-info,.recent-data{
+        width: 100%;
+        box-sizing: border-box;
+        background-color: @bg-white;
+      }
+      //页面左边的上面
+      .data-info{
+        height:614px;
+        //左右公共样式
+        .pie-chart,.map{
+          height: 100%;
+          background-color: @bg-gray;
+        }
+        .pie-chart{
+          width: 40.466%;
+          padding-right: 12px;
+          box-sizing: border-box;
+          //数据统计+关键服务器相同样式
+          .data-statistics,.key-server{
+            width: 100%;
+            background-color: @bg-white;
+            border:1px solid @border-gray;
+            box-sizing: border-box;
+          }
+          //数据统计
+          .data-statistics{
+            height: 380px;
+            h6{
+              span{
+                width: 25%;
+              }
+              strong{
+                width: 75%;
+                text-align: right;
+                #num{
+                  font-weight: bold;
+                  color: @primary-orange;
+                }
+              }
+            }
+            .pie,.file-num{
+              width: 100%;
+              padding: 0 26px;
+              box-sizing: border-box;
+            }
+            .pie{
+              height: 256px;
+              #pieBox{
+                width: 100%;
+                height: 100%;
+                .canvas{
+                  width: 47.96%;
+                  height: 100%;
+                  .pie-canvas{
+                    width: 100%;
+                    height: 100%;
+                  }
+                }
+              }
+            }
+            .file-num{
+              height: 64px;
+              text-align: center;
+              .num{
+                width: 47.96%;
+                padding: 2px;
+                box-sizing: border-box;
+                background-color: @dot-blue2;
+                h2,p{
+                  height: 30px;
+                  line-height: 30px;
+                  overflow: hidden;
+                }
+                h2{
+                  background-color: @dot-blue2;
+                  color: @bg-white;
+                  font-weight: normal;
+                }
+                p{
+                  background-color: @bg-white;
+                }
+              }
+            }
+          }
+          //关键服务器
+          .key-server{
+            height: 222px;
+            margin-top: 12px;
+            .severLink{
+              width: 100%;
+              height: 180px;
+              padding: 0 26px;
+              box-sizing: border-box;
+              overflow: hidden;
+              p{
+                width: 100%;
+                height: 32px;
+                margin-top: 11px;
+                a{
+                  display: inline-block;
+                  width: 47.96%;
+                  height: 32px;
+                  line-height: 32px;
+                  text-align: center;
+                  border: 1px solid @border-blue;
+                  color: @border-blue;
+                  box-sizing: border-box;
+                  overflow: hidden;
+                }
+                a:nth-child(1){
+                  float: left;
+                }
+                a:nth-child(2){
+                  float: right;
+                }
+                a:hover{
+                  background-color: @dot-blue2;
+                  border: 1px solid @dot-blue2;
+                  color: @bg-white;
+                }
+                a.selected{
+                  background-color: @primary-orange;
+                  border: 1px solid @primary-orange;
+                  color: @bg-white;
+                }
+              }
+            }
+          }
+        }
+        //地图+当前风险服务器
+        .map{
+          width: 59.534%;
+          //地图
+          #mapBox{
+            width: 100%;
+            height: 438px;
+            background-color: @bg-white;
+            .map-canvas{
+              width: 100%;
+              height: 100%;
+              border: 1px solid @border-gray;
+              box-sizing: border-box;
+            }
+          }
+          //当前风险服务器
+          .risk-server{
+            margin-top: 12px;
+            height: 164px;
+            background-color: @bg-white;
+            box-sizing: border-box;
+            border: 1px solid @border-gray;
+            .slideWrap{
+              height: 118px;
+              padding: 0 22px;
+              #slideBox {
+                overflow: hidden;
+                zoom: 1;
+                position: relative;
+                ul{
+                  overflow: hidden;
+                  zoom: 1;
+                  li {
+                    margin: 0 15px;
+                    a{
+                      color: #333;
+                      i{
+                        display: block;
+                        margin: 12px auto 0 auto;
+                      }
+                      span{
+                        font-size: 12px;
+                      }
+                    }
+                  }
+                }
+              }
+              .sPrev,
+              .sNext {
+                position: absolute;
+                left: 0;
+                top: 40px;
+                display: block;
+                width: 20px;
+                height: 30px;
+                line-height: 30px;
+                z-index: 9;
+                color: #888;
+                font-size: 20px;
+                text-align: left;
+                &:hover{
+                  color: @primary-orange;
+                }
+              }
+              .sNext {
+                left: auto;
+                right: 0;
+                text-align: right;
+              }
+              #slideBox.more-host{
+                display: flex;
+                display: -webkit-flex;
+                flex-direction: row;
+                justify-content: center;
+              }
+              #slideBox.less-host{
+                ul{
+                  li{
+                    float: left;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      //页面左边的下边
+      .recent-data{
+        margin-top: 12px;
+        height: 364px;
+        .tendency,.result{
+          background-color: @bg-white;
+          height: 100%;
+          box-sizing: border-box;
+          border: 1px solid @border-gray;
+        }
+        //最近7天趋势
+        .bg-gray{
+          height: 100%;
+          box-sizing: border-box;
+          width: 48%;
+          padding-right: 12px;
+          background-color: @bg-gray;
+          .tendency{
+            background-color: @bg-white;
+            width: 100%;
+            border-top: 0;
+            #wrap{
+              width: 100%;
+              height: 42px;
+              display: inline-block;
+              vertical-align: middle;
+              position: relative;
+              .lineBorder{
+                width: 100%;
+                height: 3px;
+                overflow: hidden;
+                position: absolute;
+                top: 0;
+                .lineDiv{
+                  background: @primary-orange;
+                  height: 3px;
+                  width: 33.3333%;
+                  transition:all 0.3s ease-in-out;
+                }
+              }
+              .tabClick{
+                background: #f8f8f8;
+                overflow: hidden;
+                border-right: 0;
+                border-left: 0;
+                li{
+                  height:42px;
+                  line-height: 42px;
+                  width: 33.3333%;
+                  float: left;
+                  text-align: center;
+                  border: 1px solid @border-gray;
+                  box-sizing: border-box;
+                  font-weight: bold;
+                }
+                li:hover{
+                  cursor: pointer;
+                }
+                li:nth-child(1),li:nth-child(2),li:nth-child(3){
+                  border-left: 0;
+                }
+                li:nth-child(3){
+                  border-right: 0;
+                }
+                .active{
+                  color: @primary-orange;
+                  background: @bg-white;
+                  border-bottom: 0;
+                }
+              }
+            }
+            .canvas-box{
+              width: 100%;
+              height: 321px;
+              .ten-canvas{
+                height: 321px;
+              }
+            }
+          }
+        }
+        //最近扫描结果
+        .result{
+          width:52%;
+          overflow: hidden;
+          table{
+            thead{
+              tr{
+                th:nth-child(1){
+                  width: 43%;
+                }
+                th:nth-child(2){
+                  width: 41%;
+                }
+                th:nth-child(3){
+                  width: 16%;
+                }
+              }
+            }
+            tbody{
+              tr{
+                cursor: pointer;
+                td:nth-child(3){
+                  span{
+                    display: inline-block;
+                    width: 54px;
+                    height: 20px;
+                    line-height: 20px;
+                    border-radius: 10px;
+                    border: 1px solid @primary-green;
+                    color: @primary-green;
+                    text-align: center;
+                  }
+                  span.active{
+                    border: 1px solid @primary-orange;
+                    color: @primary-orange;
+                  }
+                }
+              }
+              tr:hover{
+                td:last-child span{
+                  background-color: @primary-green;
+                  color: @bg-white;
+                }
+                td:last-child .active{
+                  background-color: @primary-orange;
+                  border: 1px solid @primary-orange;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    //页面右边
+    aside{
+      width: 33%;
+      //提取公共样式
+      .safe-event,.con-num,.open-num{
+        box-sizing: border-box;
+        border: 1px solid @border-gray;
+        overflow: hidden;
+        background-color: @bg-white;
+        .con-canvas,.open-num{
+          width: 100%;
+          height: 224px;
+        }
+      }
+      //最近安全事件
+      .safe-event{
+        height: 438px;
+        table{
+          thead{
+            tr{
+              th:nth-child(1){
+                width: 48%;
+              }
+              th:nth-child(2){
+                width: 32%;
+              }
+              th:nth-child(3){
+                width: 20%;
+              }
+            }
+          }
+          tbody{
+            tr{
+              td:nth-child(3){
+                color:#5584c5;
+                cursor: pointer;
+                padding-right: 6px;
+                box-sizing: border-box;
+              }
+            }
+            tr:hover{
+              td:nth-child(3){
+                color: @primary-orange;
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+      //最近一小时数量排行+最近一小时设计文件打开数量排行
+      .con-num,.open-num{
+        height: 264px;
+        margin-top: 12px;
+      }
+    }
+    @media screen and(max-width: 1300px){
+      article{
+        width: 100%;
+      }
+      aside{
+        width: 100%;
+        padding: 12px 12px 0 0;
+        .safe-event{
+          width: 100%;
+        }
+        .con-num,.open-num{
+          width: 49.5%;
+          float: left;
+        }
+        .open-num{
+          float: right;
+        }
+      }
+    }
+  }
+}
+//提取两个table的公共样式
+table{
+  width: 100%;
+  overflow: hidden;
+  thead{
+    tr{
+      height: 36px;
+      line-height: 36px;
+      background-color: @table-odd-bg;
+      th{
+        text-align: left;
+        white-space: nowrap;
+        box-sizing: border-box;
+      }
+      th:nth-child(1){
+        padding-left: 26px;
+      }
+    }
+  }
+  tbody{
+    tr{
+      height: 36px;
+      line-height: 36px;
+      td{
+        text-align: left;
+        white-space: nowrap;
+      }
+      td:nth-child(1){
+        padding-left: 26px;
+        box-sizing: border-box;
+      }
+    }
+    tr:nth-child(odd){
+      background-color: @bg-white;
+    }
+    tr:nth-child(even){
+      background-color: @table-odd-bg;
+    }
+    tr:hover{
+      background-color:#dee7f4;
+    }
+  }
+}
+//提示框样式
+.map-tooltip{
+  padding: 0;
+  .map-tooltip-title{
+    border-bottom: 1px solid #888;
+  }
+  p{
+    padding: 0 25px;
+    line-height: 26px;
+  }
+}
+
+
+

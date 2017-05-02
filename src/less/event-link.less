@@ -1,0 +1,288 @@
+@import "variables";
+
+html {
+  height: 100%;
+}
+
+html body {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#summary-box,
+#file-box,
+#details-box {
+  background: #fff;
+  .box-hd {
+    border-bottom: none;
+    height: 45px;
+  }
+}
+
+#summary-box {
+  margin-bottom: 16px;
+  .back-link {
+    color: #586782;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .summary-box {
+    width: 100%;
+    table-layout: fixed;
+    thead {
+      th {
+        background: #f2f2f2;
+        height: 38px;
+        line-height: 38px;
+        color: #555;
+        font-weight: bolder;
+        padding-left: 18px;
+      }
+    }
+    tbody {
+      td {
+        height: 50px;
+        padding-left: 18px;
+        vertical-align: middle;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+    }
+    .sniper-checkbox {
+      margin-right: 38px;
+    }
+    .digest-th {
+      width: 60%;
+    }
+    .tag-th {
+      text-align: right;
+      padding-right: 18px;
+    }
+  }
+}
+#file-box{
+  margin-bottom: 16px;
+  .file-table{
+    width: 100%;
+    table-layout: fixed;
+    thead {
+      th {
+        background: #f2f2f2;
+        height: 38px;
+        line-height: 38px;
+        color: #555;
+        font-weight: bolder;
+        padding-left: 18px;
+      }
+    }
+    tbody {
+      td {
+        height: 50px;
+        padding-left: 18px;
+        vertical-align: middle;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+    }
+    .process-th{
+      width: 48%;
+    }
+    .download-th{
+      text-align: right;
+      padding-right: 36px;
+    }
+    .download-btn{
+      padding-right: 40px;
+      line-height: 50px;
+      i{
+        display: block;
+        cursor: pointer;
+        &:hover{
+          color: @primary-orange;
+        }
+      }
+    }
+  }
+}
+#details-box {
+  .user {
+    width: 170px;
+  }
+  .icon {
+    width: 50px;
+  }
+  .time {
+    width: 166px;
+  }
+  .progress {
+    width: 240px;
+    @media screen and (max-width: 972px){
+      width: 100px;
+    }
+  }
+  .parameter {
+    max-width: 580px;
+    @media screen and (max-width: 1302px){
+      width: 400px;
+    }
+    @media screen and (max-width: 1252px){
+      width: 300px;
+    }
+    @media screen and (max-width: 1102px){
+      width: 200px;
+    }
+    @media screen and (max-width: 972px){
+      width: 100px;
+    }
+  }
+  .user,
+  .icon,
+  .time,
+  .progress,
+  .parameter {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .head-list {
+    background: #f2f2f2;
+    li {
+      float: left;
+      height: 38px;
+      line-height: 38px;
+      color: #555;
+      font-weight: bolder;
+      padding-left: 18px;
+    }
+    .icon {
+      padding-left: 10px;
+    }
+  }
+  .body-list {
+    position: relative;
+    height: 540px;
+    > li {
+      &:nth-child(even) {
+        .first-progress {
+          background: #f9fafb;
+        }
+      }
+      .first-progress {
+        height: 48px;
+        line-height: 48px;
+        span {
+          display: inline-block;
+          padding-left: 18px;
+        }
+        .icon {
+          padding-left: 0;
+          i {
+            color: @primary-orange;
+            cursor: pointer;
+            font-size: 20px;
+          }
+        }
+      }
+      .sec-progress {
+        display: none;
+        span {
+          display: inline-block;
+        }
+        > ul {
+          position: relative;
+          background: #fff5e8;
+          width: 70%;
+          margin: 8px auto 10px 230px;
+          padding: 20px 20px 0 30px;
+          border: 2px dotted @primary-orange;
+          border-radius: 4px;
+          @media screen and (max-width: 972px){
+            width: 60%;
+          }
+          @media screen and (max-width: 972px){
+            width: 50%;
+          }
+          // 三角形
+          &:before {
+            position: absolute;
+            left: 230px;
+            top: -16px;
+            display: block;
+            content: '';
+            width: 30px;
+            height: 22px;
+            background: url("../images/arrow-up.png");
+          }
+          li {
+            position: relative;
+            height: 38px;
+            color: #666;
+            word-break: break-all;
+            word-wrap: break-word;
+            > span {
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+            }
+            // 小圆点
+            &:before {
+              position: absolute;
+              left: -64px;
+              top: 5px;
+              display: block;
+              content: '';
+              width: 7px;
+              height: 7px;
+              border-radius: 50%;
+              background: #b3b3b3;
+            }
+            // 竖线
+            &:after {
+              position: absolute;
+              left: -61px;
+              top: -44px;
+              display: block;
+              content: '';
+              width: 1px;
+              height: 50px;
+              background: #b3b3b3;
+            }
+            .time {
+              width: 188px;
+            }
+            .progress {
+              padding-right: 18px;
+              @media screen and (max-width: 972px){
+                width: 100px;
+              }
+            }
+            .parameter{
+              @media screen and (max-width: 1402px){
+                width: 400px;
+              }
+              @media screen and (max-width: 1252px){
+                width: 300px;
+              }
+              @media screen and (max-width: 1102px){
+                width: 200px;
+              }
+              @media screen and (max-width: 972px){
+                width: 100px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .page {
+    div {
+      float: right;
+      margin-right: 22px;
+    }
+  }
+}

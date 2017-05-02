@@ -1,0 +1,97 @@
+@import "variables";
+#main-box{
+  font-size: 12px;
+  color: #333333;
+  background-color: @bg-gray;
+  padding: 12px;
+  box-sizing: border-box;
+  #contain{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    box-sizing: border-box;
+    color: @text-black;
+    position: relative;
+    .host-info{
+      background-color: @bg-white;
+      width: 100%;
+      border: 1px solid @border-gray;
+      box-sizing: border-box;
+      .host-info-table{
+        width: 100%;
+        padding: 0 18px;
+        box-sizing: border-box;
+        table{
+          width: 100%;
+          thead th,tbody td{
+            text-align: left;
+            height: 40px;
+            box-sizing: border-box;
+          }
+          thead{
+            th{
+              background-color: @bg-th;
+              padding: 10px 0;
+            }
+            th:first-child{
+              padding-left: 42px;
+            }
+          }
+          tbody{
+            td{
+              background-color: @bg-white;
+              padding: 12px 0;
+            }
+            td:nth-child(1){
+              padding-left: 42px;
+            }
+          }
+        }
+      }
+    }
+    //CPU使用率+内存使用率
+    .use-rate,.network-flow{
+      height: 426px;
+      width: 100%;
+      margin-top: 14px;
+      box-sizing: border-box;
+      .bg-cpu-rate,.bg-ram-rate,.bg-system-upward,.bg-system-downward{
+        width: 50%;
+        height: 100%;
+        box-sizing: border-box;
+        padding-right: 5px;
+        .cpu-rate,.ram-rate,.system-upward,.system-downward{
+          width: 100%;
+          height: 100%;
+          background-color: @bg-white;
+          border: 1px solid @border-gray;
+          #cpuRate,#ramRate,#systemUpward,#systemDownward{
+            width: 100%;
+            height: 386px;
+          }
+        }
+      }
+      .bg-ram-rate,.bg-system-downward{
+        padding-left: 5px;
+      }
+    }
+    .network-flow{
+      margin-top: 10px;
+    }
+    //网络上行+网络下行
+    //.system-upward,.system-downward{
+    //  width: 50%;
+    //  height: 426px;
+    //  background-color: @bg-white;
+    //  border: 1px solid @border-gray;
+    //  margin-top: 14px;
+    //  box-sizing: border-box;
+    //  #systemUpward,#systemDownward{
+    //    width: 100%;
+    //    height: 386px;
+    //  }
+    //
+    //}
+  }
+}

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>下载页面</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/download.css">
+<body>
+<header id="header" class="clearfix">
+    <a href="#" class="logo pull-left"></a>
+    <a href="#" class="back-btn pull-right">
+        <i class="iconfont">&#xe64f;</i>
+        <span>返回登录页</span>
+    </a>
+</header>
+<div class="empty"></div>
+<section class="contain" id="scroll">
+    <div class="bg-logo">
+        <div class="bg-logo-content">
+            <div class="bg-logo-content-left pull-left">
+                <img src="./images/download-bg.png" alt="">
+            </div>
+            <div class="bg-logo-content-right pull-left">
+                <img src="./images/windows-down.png" alt="" class="win-load-btn load">
+                <p class="note">支持&nbsp;XP&nbsp;/&nbsp;W7&nbsp;/&nbsp;W8&nbsp;/&nbsp;W10&nbsp;/&nbsp;2003&nbsp;/&nbsp;2008&nbsp;/&nbsp;2012</p>
+                <img src="./images/Linux-down.png" alt="">
+                <P class="note dash">支持&ensp;Redhat|Centos&nbsp;5/6/7系列</P>
+                <div class="epl-load-btn">
+                    EPL数据恢复工具下载
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-title">
+        <div class="wrap" id="wrap">
+            <div class="lineBorder">
+                <div class="lineDiv"><!--移动的div--></div>
+            </div>
+            <ul class="tabClick">
+                <li class="active" id="winGuide">Windows端安装指南</li>
+                <li id="LinGuide">Linux安装指南</li>
+                <li id="EPL">EPL数据恢复工具下载</li>
+            </ul>
+        </div>
+        <div class="note pull-right">
+            <span>试用到期时间</span><span>2016-12-01</span><span>许可证100台</span><span>当前版本</span><span>4.1</span>
+        </div>
+    </div>
+    <div class="windows-download version" id="winDownload">
+        <div class="win-normal win-load">
+            <h2>Windows安装（一般安装）</h2>
+            <p>1.右击选择以管理员身份运行"Sniper.exe"</p>
+            <p>2.输入正确的云中心地址，如：192.168.2.224,选择连接协议http或https，组名不输入则代表分配到“默认分组”,勾选“保护安装程序，自删除”，则安装成功后自动删除安装包，点击“同意”。</p>
+            <img src="images/download-win7.png" alt="">
+        </div>
+        <div class="win-silent win-load">
+            <h2>Windows安装（静默安装）</h2>
+            <p>1.在CMD中，执行Sniper.exe&nbsp;192.168.2.224:443&nbsp;group&nbsp;默认分组；</p>
+            <p>备注：静默推送的账号，必须是administrator组的用户或者是具备SYSTEM权限。</p>
+            <img src="images/download-win11.png" alt="">
+        </div>
+    </div>
+    <div class="linux-download hide version" id="linDownload">
+        <div class="linux-load">
+            <h2>Linux端</h2>
+            <p>以root用户执行:</p>
+            <p>1.将安装包（以sniper-linux-4.1.22.bin为例）拷贝到即将要部署的机器上面，/root目录下；</p>
+            <p>2.在/root目录下执行chmod u+x sniper-linux-4.1.22.bin；</p>
+            <p>3.执行./sniper-linux-4.1.22.bin ip:port group groupname，假设管控中心IP为192.168.2.251，端口
+                为443，如果不指定group，直接执行./sniper-linux-4.1.22.bin 192.168.2.251:443,则该client会默认添加到
+                “默认分组”中，如下举例为加入到“redhat6”组中，此时界面如下所示：</p>
+            <img src="images/download-linux.png" alt="">
+        </div>
+    </div>
+    <div class="epl-download hide version" id="EPLDownload">
+        <div class="EPL-load">
+            <h2>EPL数据恢复</h2>
+            <p>1.点击“初始化”，然后选择要恢复的数据日期</p>
+            <p>2.选择要恢复的文件，右键选择选项进行恢复</p>
+            <img src="images/epl.png" alt="">
+        </div>
+    </div>
+    <footer>
+        <p>
+            Copyright&nbsp;&copy;&nbsp;2016&nbsp;Sniper.All Rights Reserved.&nbsp;上海高中信息科技有限公司&nbsp;版权所有
+        </p>
+    </footer>
+</section>
+</body>
+<!--[if lt IE 9]>
+<script src="lib/html5shiv.min.js"></script>
+<script src="lib/respond.min.js"></script>
+<![endif]-->
+<script src="js/common.js"></script>
+<script src="js/download.js"></script>
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>分管片区</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/area-mana.css">
+</head>
+<body>
+<header id="header" class="clearfix">
+    <a href="#" class="logo pull-left"></a>
+    <div class="user-center pull-right">
+        <a class="user-btn" href="javascript:void(0);">
+            <i class="icon-man iconfont">&#xe61a;</i>
+            <span>安全管理员</span>
+            <i class="icon-arrow iconfont">&#xe62d;</i>
+        </a>
+    </div>
+    <div class="time-box pull-right clearfix">
+        <i class="icon-time iconfont">&#xe613;</i>
+        <span id="current-time"></span>
+    </div>
+</header>
+<aside id="nav-side" class="open">
+    <ul class="nav-side-list">
+        <li>
+            <a href="index.html" class="clearfix">
+                <i class="iconfont pull-left">&#xe621;</i>
+                <span class="pull-left">总览</span>
+            </a>
+        </li>
+        <li>
+            <a href="host-manage.html" class="clearfix">
+                <i class="iconfont pull-left">&#xe61f;</i>
+                <span class="pull-left">主机管理</span>
+            </a>
+        </li>
+        <li>
+            <a class="summary clearfix" href="javascript:void(0);">
+                <i class="iconfont arrow-icon pull-left">&#xe62b;</i>
+                <span class="pull-left">智能分析</span>
+            </a>
+            <ul class="nav-side-sec">
+                <li>
+                    <a href="#" class="clearfix">
+                        <i class="iconfont pull-left">&#xe60c;</i>
+                        <span class="pull-left">动作追踪</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="clearfix">
+                        <i class="iconfont pull-left">&#xe617;</i>
+                        <span class="pull-left">现场还原</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class="summary open clearfix" href="javascript:void(0);">
+                <i class="iconfont arrow-icon pull-left">&#xe62b;</i>
+                <span class="pull-left">用户管理</span>
+            </a>
+            <ul class="nav-side-sec">
+                <li>
+                    <a href="person-manage.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe611;</i>
+                        <span class="pull-left">分管人员</span>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="area-manage.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe609;</i>
+                        <span class="pull-left">分管片区</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class="summary clearfix" href="javascript:void(0);">
+                <i class="iconfont arrow-icon pull-left">&#xe62b;</i>
+                <span class="pull-left">系统设置</span>
+            </a>
+            <ul class="nav-side-sec">
+                <li>
+                    <a href="template.html" class="clearfix tooltip" title="防护模板">
+                        <i class="iconfont pull-left">&#xe706;</i>
+                        <span class="pull-left">防护模板</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="safe-rules.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe607;</i>
+                        <span class="pull-left">安全警报规则</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="time-manage.html" class="clearfix tooltip" title="时间管理">
+                        <i class="iconfont pull-left">&#xe613;</i>
+                        <span class="pull-left">时间管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="system-settings.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe61d;</i>
+                        <span class="pull-left">其他设置</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="system-status.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe668;</i>
+                        <span class="pull-left">系统信息</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="data-filter.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe66e;</i>
+                        <span class="pull-left">数据过滤器</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="about.html" class="clearfix tooltip" title="关于sniper">
+                <i class="iconfont pull-left">&#xe650;</i>
+                <span class="pull-left">关于sniper</span>
+            </a>
+        </li>
+    </ul>
+    <a class="toggle-nav-btn" href="javascript:void(0);">
+        <i class="iconfont">&#xe62f;</i>
+    </a>
+</aside>
+<section id="main-box">
+    <div id="contain">
+        <div class="area-box pull-left">
+            <div class="area">
+                <h1>
+                    <a class="add-btn pull-left" id="addArea">
+                        <i class="iconfont addIcon">&#xe608;</i>
+                        添加片区
+                    </a>
+                </h1>
+                <div id="addAreaModal" class="addModal" style="display: none;">
+                    <div class="header">添加片区</div>
+                    <form action="#">
+                        <div class="line">
+                            <label for="areaName">片区名：</label>
+                            <input type="text" id="areaName">
+                        </div>
+                        <div class="line">
+                            <a href="#close-modal" rel="modal:close" class="pull-left submit " id="confirmAdd">确定</a>
+                            <a href="#close-modal" rel="modal:close" class="pull-right cancel">取消</a>
+                        </div>
+                    </form>
+                </div>
+                <table id="area">
+                    <thead>
+                    <tr>
+                        <td><span></span></td>
+                        <td>片区</td>
+                        <td>显示为</td>
+                        <td>创建时间</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="active">
+                        <td><span></span></td>
+                        <td>重点服务区</td>
+                        <td class="area-name">重点服务区1</td>
+                        <td>2016-12-05 15:40:26</td>
+                        <td>
+                            <i class="iconfont">&#xe65e;</i>
+                        </td>
+                        <td>
+                            <i class="iconfont">&#xe605;</i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span></span></td>
+                        <td>IT管理员区</td>
+                        <td class="area-name">IT管理区2</td>
+                        <td>2016-12-05 15:40:26</td>
+                        <td>
+                            <i class="iconfont">&#xe65e;</i>
+                        </td>
+                        <td>
+                            <i class="iconfont">&#xe605;</i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span></span></td>
+                        <td>总装产线区</td>
+                        <td class="area-name">重点服务e区</td>
+                        <td>2016-12-05 15:40:26</td>
+                        <td>
+                            <i class="iconfont">&#xe65e;</i>
+                        </td>
+                        <td>
+                            <i class="iconfont">&#xe605;</i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span></span></td>
+                        <td>重点服务区</td>
+                        <td class="area-name">重点服务区1</td>
+                        <td>2016-12-05 15:40:26</td>
+                        <td>
+                            <i class="iconfont">&#xe65e;</i>
+                        </td>
+                        <td>
+                            <i class="iconfont">&#xe605;</i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span></span></td>
+                        <td>IT管理员区</td>
+                        <td class="area-name">IT管理区2</td>
+                        <td>2016-12-05 15:40:26</td>
+                        <td>
+                            <i class="iconfont">&#xe65e;</i>
+                        </td>
+                        <td>
+                            <i class="iconfont">&#xe605;</i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span></span></td>
+                        <td>总装产线区</td>
+                        <td class="area-name">重点服务e区</td>
+                        <td>2016-12-05 15:40:26</td>
+                        <td>
+                            <i class="iconfont">&#xe65e;</i>
+                        </td>
+                        <td>
+                            <i class="iconfont">&#xe605;</i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span></span></td>
+                        <td>重点服务区</td>
+                        <td class="area-name">重点服务区1</td>
+                        <td>2016-12-05 15:40:26</td>
+                        <td>
+                            <i class="iconfont">&#xe65e;</i>
+                        </td>
+                        <td>
+                            <i class="iconfont">&#xe605;</i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span></span></td>
+                        <td>IT管理员区</td>
+                        <td class="area-name">IT管理区2</td>
+                        <td>2016-12-05 15:40:26</td>
+                        <td>
+                            <i class="iconfont">&#xe65e;</i>
+                        </td>
+                        <td>
+                            <i class="iconfont">&#xe605;</i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span></span></td>
+                        <td>总装产线区</td>
+                        <td class="area-name">重点服务e区</td>
+                        <td>2016-12-05 15:40:26</td>
+                        <td>
+                            <i class="iconfont">&#xe65e;</i>
+                        </td>
+                        <td>
+                            <i class="iconfont">&#xe605;</i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span></span></td>
+                        <td>重点服务区</td>
+                        <td class="area-name">重点服务区1</td>
+                        <td>2016-12-05 15:40:26</td>
+                        <td>
+                            <i class="iconfont">&#xe65e;</i>
+                        </td>
+                        <td>
+                            <i class="iconfont">&#xe605;</i>
+                        </td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="1">
+                            共<span>2177</span>项
+                        </td>
+                        <td colspan="5">
+                            <a href="##" class="prev">&lt;Prev</a>
+                            <a href="##">1</a>
+                            <a href="##">2</a>
+                            <a href="##" class="active">3</a>
+                            <a href="##" class="ellipsis">...</a>
+                            <a href="##">21</a>
+                            <a href="##" class="next">Next&gt;</a>
+                            到第
+                            <input type="number" min="1">
+                            页
+                            <a href="##" class="confirm">确定</a>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <div class="manage-person pull-left" id="managePerson">
+            <ul>
+                <li>
+                    <div class="sniper-checkbox">
+                        <input type="checkbox" id="checkAll" class="all">
+                        <i class="iconfont">&#xe624;</i>
+                    </div>
+                    <span>分管负责人</span>
+                </li>
+                <li>
+                    <div class="sniper-checkbox">
+                        <input type="checkbox" class="only">
+                        <i class="iconfont">&#xe624;</i>
+                    </div>
+                    <span>hatty</span>
+                </li>
+                <li>
+                    <div class="sniper-checkbox">
+                        <input type="checkbox" class="only">
+                        <i class="iconfont">&#xe624;</i>
+                    </div>
+                    <span>Mary</span>
+                </li>
+                <li>
+                    <div class="sniper-checkbox">
+                        <input type="checkbox" class="only">
+                        <i class="iconfont">&#xe624;</i>
+                    </div>
+                    <span>小淼</span>
+                </li>
+                <li>
+                    <div class="sniper-checkbox">
+                        <input type="checkbox" class="only">
+                        <i class="iconfont">&#xe624;</i>
+                    </div>
+                    <span>蓝叶</span>
+                </li>
+                <li>
+                    <div class="sniper-checkbox">
+                        <input type="checkbox" class="only">
+                        <i class="iconfont">&#xe624;</i>
+                    </div>
+                    <span>白云</span>
+                </li>
+                <li>
+                    <div class="sniper-checkbox">
+                        <input type="checkbox" class="only">
+                        <i class="iconfont">&#xe624;</i>
+                    </div>
+                    <span>玫瑰</span>
+                </li>
+                <li>
+                    <div class="sniper-checkbox">
+                        <input type="checkbox" class="only">
+                        <i class="iconfont">&#xe624;</i>
+                    </div>
+                    <span>百合</span>
+                </li>
+                <li>
+                    <div class="sniper-checkbox">
+                        <input type="checkbox" class="only">
+                        <i class="iconfont">&#xe624;</i>
+                    </div>
+                    <span>莲花</span>
+                </li>
+                <li>
+                    <div class="sniper-checkbox">
+                        <input type="checkbox" class="only">
+                        <i class="iconfont">&#xe624;</i>
+                    </div>
+                    <span>梅花</span>
+                </li>
+                <li>
+                    <div class="sniper-checkbox">
+                        <input type="checkbox" class="only">
+                        <i class="iconfont">&#xe624;</i>
+                    </div>
+                    <span>碧玉</span>
+                </li>
+                <li>
+                    <div class="sniper-checkbox">
+                        <input type="checkbox" class="only">
+                        <i class="iconfont">&#xe624;</i>
+                    </div>
+                    <span>hatty</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+</body>
+<!--[if lt IE 9]>
+<script src="lib/html5shiv.min.js"></script>
+<script src="lib/respond.min.js"></script>
+<![endif]-->
+<script src="js/common.js"></script>
+<script src="js/area-manage.js"></script>
+</html>

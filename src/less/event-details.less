@@ -1,0 +1,148 @@
+@import "variables";
+@import (inline)"../css/font-awesome.min.css";
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/glyphicons-halflings-regular.svg');
+  src: url('../fonts/glyphicons-halflings-regular.eot') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2?v=4.6.3') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff?v=4.6.3') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf?v=4.6.3') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg?v=4.6.3#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  height: 100%;
+}
+
+html body {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.main-details-box {
+  .main-details-wrap {
+    .tab-content {
+      width: 100% !important;
+    }
+  }
+  .filter-box {
+    position: relative;
+    padding: 20px 10px;
+    color: @text-black;
+    .search-box {
+      border-color: @input-border;
+      height: 28px;
+      margin-right: 12px;
+      input {
+        width: 116px;
+      }
+    }
+    .btn-primary {
+      background: @primary-green;
+      height: 30px;
+      padding: 0 11px;
+      margin-left: 8px;
+    }
+    .action-type-box,
+    .date-box {
+      margin-right: 16px;
+      label {
+        margin-right: 4px;
+      }
+    }
+
+    @media screen and(max-width: 1442px) {
+      .action-type-box {
+        margin-bottom: 14px;
+      }
+    }
+
+    @media screen and(max-width: 1002px) {
+      .date-box {
+        margin-right: 24px;
+        margin-bottom: 14px;
+      }
+      .search-box {
+        margin-right: 24px;
+        margin-bottom: 14px;
+      }
+      .refresh {
+        margin-right: 24px;
+      }
+    }
+    @media screen and(max-width: 920px) {
+      .date-box {
+        margin-right: 137px;
+        margin-bottom: 14px;
+      }
+      .search-box {
+        margin-right: 136px;
+        margin-bottom: 14px;
+      }
+    }
+    @media screen and(max-width: 800px) {
+      .date-box {
+        margin-right: 137px;
+        margin-bottom: 14px;
+      }
+      .search-box {
+        margin-right: 50px;
+        margin-bottom: 14px;
+      }
+    }
+
+    .action-type-box {
+      select {
+        width: 178px;
+      }
+    }
+    .refresh {
+      .sniper-checkbox {
+        margin-top: 7px;
+        i {
+          color: @primary-orange;
+        }
+      }
+      .text {
+        line-height: 30px;
+        margin-left: 4px;
+      }
+    }
+  }
+  .sniper-checkbox {
+    margin: auto;
+  }
+  .data-table {
+    width: 100%;
+    thead {
+      th {
+        box-sizing: border-box;
+        padding: 10px 16px!important;
+      }
+    }
+    td {
+      position: relative;
+      word-break: break-all;
+      word-wrap: break-word;
+      padding: 10px 16px!important;
+      overflow: hidden;
+    }
+    .details-link{
+      color: #5584c5;
+      text-decoration: underline;
+    }
+    .digest-th{
+      width: 50%;
+    }
+  }
+  table.dataTable thead th{
+    border: none;
+  }
+  table.dataTable tbody td{
+    border: none;
+  }
+  .tab-content{
+    position: relative;
+  }
+}
+

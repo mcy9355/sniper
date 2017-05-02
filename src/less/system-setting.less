@@ -1,0 +1,114 @@
+@import "variables";
+#main-box{
+  font-size: 12px;
+  color: #333333;
+  background-color: @bg-gray;
+  padding: 12px;
+  #contain{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    box-sizing: border-box;
+    color: @text-black;
+    position: relative;
+    background-color: @bg-white;
+    .out-box{
+      width: 100%;
+      background-color: @bg-white;
+      padding: 60px 0 20px 60px;
+      box-sizing: border-box;
+      section{
+        h2{
+          display: block;
+          width: 100%;
+          padding-bottom: 16px;
+          font-weight: bold;
+          min-width: 150px;
+          font-size: 14px;
+          clear: both;
+        }
+        .in-box{
+          width: 100%;
+          height: 66px;
+          display: block;
+          box-sizing: border-box;
+          input{
+            vertical-align: middle;
+          }
+        }
+        .smaller-height.in-box{
+          height: 46px;
+        }
+      }
+      select,input{
+        height: 30px;
+        padding: 0;
+        box-sizing: border-box;
+        border: 1px solid @border-gray;
+      }
+      .normal-time select,.period input[type=text],.timeout-strategy input[type=text],.try-strategy input[type=text],.validity-strategy input[type=text],.complexity-strategy input[type=text]{
+        width: 80px;
+        margin: 0 8px;
+        text-align: center;
+      }
+      .select2-container{
+        margin: 0 8px;
+        text-align: center;
+      }
+      .complexity-strategy{
+        ul{
+          height: 66px;
+          li{
+            margin-right: 46px;
+            height: 34px;
+            float: left;
+          }
+          li:nth-child(1), li:nth-child(2),li:nth-child(3),li:nth-child(4){
+            padding-top: 6px;
+            box-sizing: border-box;
+            .sniper-checkbox{
+              margin-top: 2px;
+              margin-right: 3px;
+            }
+          }
+          li:last-child{
+            .sniper-checkbox{
+              margin-top: 8px;
+              margin-right: 3px;
+            }
+            .length{
+              display: inline-block;
+              input{
+                margin: 2px 12px 0;
+              }
+            }
+          }
+        }
+      }
+      .ip-range input[type=text],.ip-or-name input[type=text],.epl-type input[type=text]{
+        width: 500px;
+        margin: 0;
+        text-indent: 12px;
+      }
+      section:last-child{
+        clear: both;
+        padding-top: 16px;
+        box-sizing: border-box;
+        .save-btn{
+          width: 110px;
+          height: 32px;
+          background-color: @primary-orange;
+          color: @bg-white;
+          border: 0;
+          font-size: 15px;
+          border-right:1px;
+          border-radius: 2px;
+          cursor: pointer;
+          box-sizing: border-box;
+          padding: 0;
+        }
+      }
+    }
+  }
+}

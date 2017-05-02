@@ -1,0 +1,956 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>策略设置</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/strategy.css">
+</head>
+<body>
+<div class="main-details-box">
+    <div class="main-details-wrap">
+        <form action="#">
+            <div class="sort-tab-wrap pull-left">
+                <ul class="sort-tab">
+                    <li class="active">
+                        <i class="iconfont">&#xe626;</i>
+                        <span>行为分析</span>
+                    </li>
+                    <li>
+                        <i class="iconfont">&#xe62a;</i>
+                        <span>文件防护</span>
+                    </li>
+                    <li>
+                        <i class="iconfont">&#xe629;</i>
+                        <span>网络链路</span>
+                    </li>
+                    <li>
+                        <i class="iconfont">&#xe627;</i>
+                        <span>渗透溯源</span>
+                    </li>
+                    <li>
+                        <i class="iconfont">&#xe628;</i>
+                        <span>域名捕获</span>
+                    </li>
+                    <!--<li>-->
+                        <!--<i class="iconfont">&#xe630;</i>-->
+                        <!--<span>高级策略</span>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+            <!--行为分析-->
+            <div class="tab-content pull-left behavior-analysis">
+                <div class="analytical-engine">
+                    <h1>
+                        <i class="iconfont">&#xe662;</i>
+                        分析引擎
+                    </h1>
+                    <div class="behav-analysis">
+                        <section class="clearfix">
+                            <div class="open-engine pull-left">
+                                开启行为分析引擎
+                            </div>
+                            <div class="default pull-left">
+                                <div class="switch open">
+                                    <span class="text-info">已关闭</span>
+                                    <input class="switch-input analysis-switch" type="checkbox"  checked="checked">
+                                    <div class="switch-box"></div>
+                                </div>
+                                <span class="default-open">默认开启</span>
+                            </div>
+                            <section class="check-choose">
+                                <div class="power-shell pull-left choose-all">
+                                    <div class="sniper-checkbox pull-left">
+                                        <input type="checkbox" name="check-choose" class="only" id="chooseAll">
+                                        <i class="iconfont">&#xe624;</i>
+                                    </div>
+                                    <label for="chooseAll">全选</label>
+                                </div>
+                                <div class="choose-item">
+                                    <div class="dash-analysis pull-left choose">
+                                        <div class="forbid-web choose-content">
+                                            <div class="sniper-checkbox pull-left">
+                                                <input type="checkbox" name="check-choose" class="only" id="kernelAnalysis">
+                                                <i class="iconfont">&#xe624;</i>
+                                            </div>
+                                            <label for="kernelAnalysis">内核溢出分析</label>
+                                        </div>
+                                        <div class="dashed pull-left"></div>
+                                        <div class="choose-block pull-left">
+                                            <div class="sniper-checkbox pull-left">
+                                                <input type="checkbox" name="check-choose" class="only" id="kernelBlocking">
+                                                <i class="iconfont">&#xe624;</i>
+                                            </div>
+                                            <label for="kernelBlocking">阻断</label>
+                                        </div>
+                                    </div>
+                                    <div class="dash-analysis pull-left choose">
+                                        <div class="forbid-binary choose-content">
+                                            <div class="sniper-checkbox pull-left">
+                                                <input type="checkbox" name="check-choose" class="only" id="attachmentAnalysis">
+                                                <i class="iconfont">&#xe624;</i>
+                                            </div>
+                                            <label for="attachmentAnalysis">畸形邮件附件分析</label>
+                                        </div>
+                                        <div class="dashed pull-left"></div>
+                                        <div class="choose-block pull-left">
+                                            <div class="sniper-checkbox pull-left">
+                                                <input type="checkbox" name="check-choose" class="only" id="attachmentBlocking">
+                                                <i class="iconfont">&#xe624;</i>
+                                            </div>
+                                            <label for="attachmentBlocking">阻断</label>
+                                        </div>
+                                    </div>
+                                    <div class="web-change pull-left choose">
+                                        <div class="sniper-checkbox pull-left">
+                                            <input type="checkbox" name="check-choose" class="only" id="intranetAnalysis">
+                                            <i class="iconfont">&#xe624;</i>
+                                        </div>
+                                        <label for="intranetAnalysis">内网渗透分析</label>
+                                    </div>
+                                    <div class="web-change pull-left choose">
+                                        <div class="sniper-checkbox pull-left">
+                                            <input type="checkbox" name="check-choose" class="only" id="unusualAnalysis">
+                                            <i class="iconfont">&#xe624;</i>
+                                        </div>
+                                        <label for="unusualAnalysis">异常进程启动分析</label>
+                                    </div>
+                                    <div class="web-change pull-left choose">
+                                        <div class="sniper-checkbox pull-left">
+                                            <input type="checkbox" name="check-choose" class="only" id="hostPro">
+                                            <i class="iconfont">&#xe624;</i>
+                                        </div>
+                                        <label for="hostPro">Hosts文件防护</label>
+                                    </div>
+                                </div>
+                            </section>
+                        </section>
+                        <section class="clearfix">
+                            <div class="filter-behavior pull-left">
+                                过滤常见行为
+                            </div>
+                            <div class="default pull-left">
+                                <div class="switch">
+                                    <span class="text-info">已关闭</span>
+                                    <input class="switch-input filter-switch" type="checkbox">
+                                    <div class="switch-box"></div>
+                                </div>
+                                <span class="default-close">默认关闭</span>
+                            </div>
+                        </section>
+                    </div>
+                    <!--没有许可证时显示-->
+                    <div class="no-license-layer">
+                        <div class="tip-box">
+                            <div class="tip-hd">许可信息</div>
+                            <div class="tip-bd">
+                                <p class="p1">购买分析引擎license激活本功能</p>
+                                <p>联系电话：<span>400-877-0006</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="advanced-strategy">
+                    <h1 class="title">
+                        <i class="iconfont">&#xe630;</i>
+                        高级策略
+                    </h1>
+                    <div class="advance-config-con">
+                        <section>
+                            <h2 class="pull-left">程序自检</h2>
+                            <div class="opera-box pull-left">
+                                <div class="switch">
+                                    <span class="text-info">已关闭</span>
+                                    <input class="switch-input" type="checkbox" name="switch">
+                                    <div class="switch-box"></div>
+                                </div>
+                                <span class="note">防止保存有主机、IP对表的host文件被修改，阻止部分类型钓鱼及水坑攻击</span>
+                            </div>
+                        </section>
+                        <section>
+                            <h2 class="pull-left">调试模式</h2>
+                            <div class="opera-box pull-left">
+                                <div class="switch">
+                                    <span class="text-info">已关闭</span>
+                                    <input class="switch-input" type="checkbox"  >
+                                    <div class="switch-box"></div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <div class="sel-1">
+                    <select name="config">
+                        <option value="volvo">此台机器</option>
+                        <option value="saab">管理区</option>
+                        <option value="fiat">万兆区</option>
+                        <option value="audi">生产区</option>
+                    </select>
+                    <button type="submit" value="" class="sub">应用配置</button>
+                </div>
+            </div>
+            <!--文件保护-->
+            <div class="tab-content pull-left hide file-protect" id="scroll">
+                <div class="pro-box">
+                    <div class="auto-protect verify">
+                        <h1>
+                            <i class="iconfont">&#xe637;</i>
+                            自动保护设计文件
+                            <span class="note">此功能仅限EPL许可证用户使用</span>
+                        </h1>
+                        <div class="switchMain-btn pull-right">
+                            <span class="note">开启此功能</span>
+                            <div class="switch-main">
+                                <input class="switchMain-input" type="checkbox"  >
+                                <div class="switchMain-box"></div>
+                            </div>
+                        </div>
+                        <div class="auto-protect-con">
+                            <div class="ignore-size line-box">
+                                <span class="text-pre">忽略</span>
+                                <input type="text">
+                                <span>MB以上的设计文件</span>
+                            </div>
+                            <div class="ignore-time line-box">
+                                <span class="text-pre">忽略</span>
+                                <input type="text">
+                                <span>小时的改动</span>
+                            </div>
+                            <div class="preset-size line-box">
+                                <span class="text-pre">忽略</span>
+                                <input type="text" value="500">
+                                <span>MB保护区大小</span>
+                            </div>
+                            <div class="preset-location line-box">
+                                <span class="text-pre">预设保护区位置</span>
+                                <select name="" class="sel-preset">
+                                    <option value="volvo">C:</option>
+                                    <option value="saab">D:</option>
+                                    <option value="fiat">E:</option>
+                                    <option value="audi">F:</option>
+                                </select>
+                            </div>
+                            <div class="file-type line-box">
+                                <span class="text-pre">设计文件类型</span>
+                                <input type="text" placeholder="注：以逗号分隔,例如：doc,html,png">
+                            </div>
+                            <div class="open-btn line-box">
+                                <span class="text-pre">启用并记录访问行为</span>
+                                <div class="switch">
+                                    <span class="text-info">已关闭</span>
+                                    <input class="switch-input" type="checkbox"  >
+                                    <div class="switch-box"></div>
+                                </div>
+                            </div>
+                            <div class="open-btn line-box">
+                                <span class="text-pre">阻断可疑勒索行为&ensp;&ensp;</span>
+                                <div class="switch">
+                                    <span class="text-info">已关闭</span>
+                                    <input class="switch-input" type="checkbox"  >
+                                    <div class="switch-box"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--没有许可证时显示-->
+                        <div class="no-license-layer">
+                            <div class="tip-box">
+                                <div class="tip-hd">许可信息</div>
+                                <div class="tip-bd">
+                                    <p class="p1">购买增强保护许可证以激活本功能</p>
+                                    <p>联系电话：<span>400-877-0006</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="web-protect verify">
+                        <h1>
+                            <i class="iconfont">&#xe639;</i>
+                            web应用防护
+                        </h1>
+                        <div class="switchMain-btn pull-right">
+                            <span class="note">开启此功能</span>
+                            <div class="switch-main">
+                                <input class="switchMain-input" type="checkbox">
+                                <div class="switchMain-box"></div>
+                            </div>
+                        </div>
+                        <div class="web-protect-con">
+                            <div class="product-con">
+                                <section>
+                                    <div class="multi-select pull-left">
+                                        <div class="sniper-checkbox pull-left">
+                                            <input type="checkbox" id="checkAll" class="all">
+                                            <i class="iconfont">&#xe624;</i>
+                                        </div>
+                                        <label for="checkAll">全选</label>
+                                    </div>
+                                    <div class="check-box pull-left">
+                                        <div class="check-box-child pull-left">
+                                            <div class="sniper-checkbox pull-left">
+                                                <input type="checkbox" name="check-choose" class="only" id="asa" checked>
+                                                <i class="iconfont">&#xe624;</i>
+                                            </div>
+                                            <label for="asa">asa</label>
+                                            <i class="iconfont delete">&#xe658;</i>
+                                        </div>
+                                        <div class="check-box-child pull-left">
+                                            <div class="sniper-checkbox pull-left">
+                                                <input type="checkbox" name="check-choose" class="only" id="asax" checked>
+                                                <i class="iconfont">&#xe624;</i>
+                                            </div>
+                                            <label for="asax">asax</label>
+                                            <i class="iconfont delete">&#xe658;</i>
+                                        </div>
+                                        <div class="check-box-child pull-left">
+                                            <div class="sniper-checkbox pull-left">
+                                                <input type="checkbox" name="check-choose" class="only" id="ascx">
+                                                <i class="iconfont">&#xe624;</i>
+                                            </div>
+                                            <label for="ascx">ascx</label>
+                                            <i class="iconfont delete">&#xe658;</i>
+                                        </div>
+                                        <div class="check-box-child pull-left">
+                                            <div class="sniper-checkbox pull-left">
+                                                <input type="checkbox" name="check-choose" class="only" id="ashx">
+                                                <i class="iconfont">&#xe624;</i>
+                                            </div>
+                                            <label for="ashx">ashx</label>
+                                            <i class="iconfont delete">&#xe658;</i>
+                                        </div>
+                                        <div class="check-box-child pull-left">
+                                            <div class="sniper-checkbox pull-left">
+                                                <input type="checkbox" name="check-choose" class="only" id="asmx">
+                                                <i class="iconfont">&#xe624;</i>
+                                            </div>
+                                            <label for="asmx">asmx</label>
+                                            <i class="iconfont delete">&#xe658;</i>
+                                        </div>
+                                        <div class="check-box-child pull-left">
+                                            <div class="sniper-checkbox pull-left">
+                                                <input type="checkbox" name="check-choose" class="only" id="asp">
+                                                <i class="iconfont">&#xe624;</i>
+                                            </div>
+                                            <label for="asp">asp</label>
+                                            <i class="iconfont delete">&#xe658;</i>
+                                        </div>
+                                        <div class="check-box-child pull-left">
+                                            <div class="sniper-checkbox pull-left">
+                                                <input type="checkbox" name="check-choose" class="only" id="config">
+                                                <i class="iconfont">&#xe624;</i>
+                                            </div>
+                                            <label for="config">config</label>
+                                            <i class="iconfont delete">&#xe658;</i>
+                                        </div>
+                                        <div class="check-box-child pull-left">
+                                            <div class="sniper-checkbox pull-left">
+                                                <input type="checkbox" name="check-choose" class="only" id="aspx">
+                                                <i class="iconfont">&#xe624;</i>
+                                            </div>
+                                            <label for="aspx">aspx</label>
+                                            <i class="iconfont delete">&#xe658;</i>
+                                        </div>
+                                        <div class="check-box-child pull-left">
+                                            <div class="sniper-checkbox pull-left">
+                                                <input type="checkbox" name="check-choose" class="only" id="cdx">
+                                                <i class="iconfont">&#xe624;</i>
+                                            </div>
+                                            <label for="cdx">cdx</label>
+                                            <i class="iconfont delete">&#xe658;</i>
+                                        </div>
+                                        <div class="check-box-child pull-left">
+                                            <div class="sniper-checkbox pull-left">
+                                                <input type="checkbox" name="check-choose" class="only" id="cer">
+                                                <i class="iconfont">&#xe624;</i>
+                                            </div>
+                                            <label for="cer">cer</label>
+                                            <i class="iconfont delete">&#xe658;</i>
+                                        </div>
+                                        <div class="check-box-child pull-left">
+                                            <div class="sniper-checkbox pull-left">
+                                                <input type="checkbox" name="check-choose" class="only" id="cgi">
+                                                <i class="iconfont">&#xe624;</i>
+                                            </div>
+                                            <label for="cgi">cgi</label>
+                                            <i class="iconfont delete">&#xe658;</i>
+                                        </div>
+                                        <div class="check-box-child pull-left">
+                                            <div class="sniper-checkbox pull-left">
+                                                <input type="checkbox" name="check-choose" class="only" id="jsp">
+                                                <i class="iconfont">&#xe624;</i>
+                                            </div>
+                                            <label for="jsp">jsp</label>
+                                            <i class="iconfont delete">&#xe658;</i>
+                                        </div>
+                                        <div class="check-box-child pull-left">
+                                            <div class="sniper-checkbox pull-left">
+                                                <input type="checkbox" name="check-choose" class="only" id="jspx">
+                                                <i class="iconfont">&#xe624;</i>
+                                            </div>
+                                            <label for="jspx">jspx</label>
+                                            <i class="iconfont delete">&#xe658;</i>
+                                        </div>
+                                        <div class="check-box-child pull-left">
+                                            <div class="sniper-checkbox pull-left">
+                                                <input type="checkbox" name="check-choose" class="only" id="php5">
+                                                <i class="iconfont">&#xe624;</i>
+                                            </div>
+                                            <label for="php5">php5</label>
+                                            <i class="iconfont delete">&#xe658;</i>
+                                        </div>
+                                        <div class="check-box-child pull-left">
+                                            <div class="sniper-checkbox pull-left">
+                                                <input type="checkbox" name="check-choose" class="only" id="php">
+                                                <i class="iconfont">&#xe624;</i>
+                                            </div>
+                                            <label for="php">php</label>
+                                            <i class="iconfont delete">&#xe658;</i>
+                                        </div>
+                                        <div class="check-box-child pull-left">
+                                            <div class="sniper-checkbox pull-left">
+                                                <input type="checkbox" name="check-choose" class="only" id="php4">
+                                                <i class="iconfont">&#xe624;</i>
+                                            </div>
+                                            <label for="php4">php4</label>
+                                            <i class="iconfont delete">&#xe658;</i>
+                                        </div>
+                                        <div class="check-box-child pull-left">
+                                            <div class="sniper-checkbox pull-left">
+                                                <input type="checkbox" name="check-choose" class="only" id="php3">
+                                                <i class="iconfont">&#xe624;</i>
+                                            </div>
+                                            <label for="php3">php3</label>
+                                            <i class="iconfont delete">&#xe658;</i>
+                                        </div>
+                                        <div class="pull-left add-wrap">
+                                            <div class="add-box pull-left">
+                                                <i class="iconfont" id="add">&#xe608;</i>
+                                            </div>
+                                            <label for="add">添加</label>
+                                            <input type="text" class="add-name" style="display: none">
+                                        </div>
+                                    </div>
+                                </section>
+                                <section>
+                                    <div class="the-radio pull-left">
+                                        <span>单选</span>
+                                    </div>
+                                    <div class="radio-box pull-left">
+                                        <div class="choose pull-left">
+                                            <div class="sniper-radio pull-left">
+                                                <input class="radio-btn" type="radio" >
+                                                <i class="green-dot"></i>
+                                            </div>
+                                            <span>创建或修改选定类型文件时记入告警记录</span>
+                                        </div>
+                                        <div class="choose pull-left">
+                                            <div class="sniper-radio pull-left">
+                                                <input class="radio-btn" type="radio" >
+                                                <i class="green-dot"></i>
+                                            </div>
+                                            <span>创建或修改选定类型文件时自动删除</span>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                            <!--------------------------------------->
+                            <div class="search-skill">
+                                <span class="title">执行选定类型文件时进行关键词检查及木马查杀</span>
+                                <div class="switch">
+                                    <span class="text-info">已关闭</span>
+                                    <input class="switch-input searchSkill" type="checkbox" checked>
+                                    <div class="switch-box"></div>
+                                </div>
+                            </div>
+                            <section class="key-table">
+                                <div class="key-check">
+                                    <div class="pull-left check-left">
+                                        <span>关键字审核表</span>
+                                    </div>
+                                    <div class="pull-right check-right">
+                                        <div class="sniper-checkbox pull-left">
+                                            <input type="checkbox" id="useCheck">
+                                            <i class="iconfont">&#xe624;</i>
+                                        </div>
+                                        <span for="useCheck">使用sniper系统审核库</span>
+                                    </div>
+                                </div>
+                                <textarea name="" cols="30" rows="10" class="useCheckCon"></textarea>
+                            </section>
+                            <section class="radio-one">
+                                <div class="the-radio pull-left">
+                                    <span>单选</span>
+                                </div>
+                                <div class="radio-box pull-left">
+                                    <div class="choose pull-left">
+                                        <div class="sniper-radio pull-left">
+                                            <input class="radio-btn" type="radio">
+                                            <i class="green-dot"></i>
+                                        </div>
+                                        <span>自动删除未通过审核文件</span>
+                                    </div>
+                                    <div class="choose pull-left">
+                                        <div class="sniper-radio pull-left">
+                                            <input class="radio-btn" type="radio">
+                                            <i class="green-dot"></i>
+                                        </div>
+                                        <span>自动记入报警记录</span>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="monitor-web">
+                                <h2>监控web中间件进程</h2>
+                                <div class="check-box pull-left">
+                                    <div class="check-box-child pull-left">
+                                        <div class="sniper-checkbox pull-left">
+                                            <input type="checkbox" name="check-choose" class="only" id="phpCgiExe" checked>
+                                            <i class="iconfont">&#xe624;</i>
+                                        </div>
+                                        <label for="phpCgiExe">php-cgi.exe</label>
+                                        <i class="iconfont delete">&#xe658;</i>
+                                    </div>
+                                    <div class="check-box-child pull-left">
+                                        <div class="sniper-checkbox pull-left">
+                                            <input type="checkbox" name="check-choose" class="only" id="tomCat" checked>
+                                            <i class="iconfont">&#xe624;</i>
+                                        </div>
+                                        <label for="tomCat">tomcat.exe</label>
+                                        <i class="iconfont delete">&#xe658;</i>
+                                    </div>
+                                    <div class="check-box-child pull-left">
+                                        <div class="sniper-checkbox pull-left">
+                                            <input type="checkbox" name="check-choose" class="only" id="apacheExe">
+                                            <i class="iconfont">&#xe624;</i>
+                                        </div>
+                                        <label for="apacheExe">apache.exe</label>
+                                        <i class="iconfont delete">&#xe658;</i>
+                                    </div>
+                                    <div class="check-box-child pull-left">
+                                        <div class="sniper-checkbox pull-left">
+                                            <input type="checkbox" name="check-choose" class="only" id="httpdExe">
+                                            <i class="iconfont">&#xe624;</i>
+                                        </div>
+                                        <label for="httpdExe">httpd.exe</label>
+                                        <i class="iconfont delete">&#xe658;</i>
+                                    </div>
+                                    <div class="check-box-child pull-left">
+                                        <div class="sniper-checkbox pull-left">
+                                            <input type="checkbox" name="check-choose" class="only" id="phpFpm">
+                                            <i class="iconfont">&#xe624;</i>
+                                        </div>
+                                        <label for="phpFpm">php-fpm</label>
+                                        <i class="iconfont delete">&#xe658;</i>
+                                    </div>
+                                    <div class="check-box-child pull-left">
+                                        <div class="sniper-checkbox pull-left">
+                                            <input type="checkbox" name="check-choose" class="only" id="phpCgi">
+                                            <i class="iconfont">&#xe624;</i>
+                                        </div>
+                                        <label for="phpCgi">php-cgi</label>
+                                        <i class="iconfont delete">&#xe658;</i>
+                                    </div>
+                                    <div class="pull-left add-wrap">
+                                        <div class="add-box pull-left">
+                                            <i class="iconfont" id="add">&#xe608;</i>
+                                        </div>
+                                        <label for="add">添加</label>
+                                        <input type="text" class="add-name" style="display: none">
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="server-consolid">
+                                <h2>服务器加固</h2>
+                                <div class="opera-checkbox">
+                                    <div class="power-shell pull-left">
+                                        <div class="sniper-checkbox pull-left">
+                                            <input type="checkbox" name="check-choose" class="only" id="powerShell">
+                                            <i class="iconfont">&#xe624;</i>
+                                        </div>
+                                        <label for="powerShell">禁止powershell</label>
+                                    </div>
+                                    <div class="forbid-web pull-left">
+                                        <div class="sniper-checkbox pull-left">
+                                            <input type="checkbox" name="check-choose" class="only" id="forbidWeb">
+                                            <i class="iconfont">&#xe624;</i>
+                                        </div>
+                                        <label for="forbidWeb">禁止web非法执行程序</label>
+                                    </div>
+                                    <div class="forbid-binary pull-left">
+                                        <div class="sniper-checkbox pull-left">
+                                            <input type="checkbox" name="check-choose" class="only" id="forbidBinary">
+                                            <i class="iconfont">&#xe624;</i>
+                                        </div>
+                                        <label for="forbidBinary">禁止上传二进制</label>
+                                    </div>
+                                    <div class="web-change pull-left">
+                                        <div class="sniper-checkbox pull-left">
+                                            <input type="checkbox" name="check-choose" class="only" id="webChange">
+                                            <i class="iconfont">&#xe624;</i>
+                                        </div>
+                                        <label for="webChange">网页防篡改</label>
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="defend server-consolid">
+                                <h2>HTTP防护</h2>
+                                <div class="opera-checkbox">
+                                    <div class="power-shell pull-left">
+                                        <div class="sniper-checkbox pull-left">
+                                            <input type="checkbox" name="check-choose" class="only" id="postPro">
+                                            <i class="iconfont">&#xe624;</i>
+                                        </div>
+                                        <label for="postPro">POST防护</label>
+                                    </div>
+                                    <div class="forbid-web pull-left">
+                                        <div class="sniper-checkbox pull-left">
+                                            <input type="checkbox" name="check-choose" class="only" id="getPro">
+                                            <i class="iconfont">&#xe624;</i>
+                                        </div>
+                                        <label for="getPro">GET防护</label>
+                                    </div>
+                                    <div class="forbid-web pull-left">
+                                        <div class="sniper-checkbox pull-left">
+                                            <input type="checkbox" name="check-choose" class="only" id="dataPro">
+                                            <i class="iconfont">&#xe624;</i>
+                                        </div>
+                                        <label for="dataPro">数据阻断</label>
+                                    </div>
+                                </div>
+                            </section>
+                            <!------------------------------------------------------------------------------->
+                            <section class="trajectory">
+                                <span>启用文件夹浏览轨迹(忽略特定文件夹)</span>
+                                <div class="switch">
+                                    <span class="text-info">已关闭</span>
+                                    <input class="switch-input" type="checkbox" id="" checked="checked">
+                                    <div class="switch-box"></div>
+                                </div>
+                                <h2>忽略特定文件夹</h2>
+                                <textarea name="" cols="30" rows="10" id="trajectTextarea"></textarea>
+                            </section>
+                            <section class="monitor">
+                                <span>监控lls,apeach,nginx,httpd以及</span>
+                                <input type="text" placeholder="注:记入进程名，多种类型，web进程，用逗号分隔">
+                            </section>
+                        </div>
+                        <!--没有许可证时显示-->
+                        <div class="no-license-layer">
+                            <div class="tip-box">
+                                <div class="tip-hd">许可信息</div>
+                                <div class="tip-bd">
+                                    <p class="p1">购买web应用防护license激活本功能</p>
+                                    <p>联系电话：<span>400-877-0006</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sel-1">
+                        <select name="config">
+                            <option value="volvo">此台机器</option>
+                            <option value="saab">管理区</option>
+                            <option value="fiat">万兆区</option>
+                            <option value="audi">生产区</option>
+                        </select>
+                        <button type="submit" value="" class="sub">应用配置</button>
+                    </div>
+                </div>
+            </div>
+            <!--网络链路-->
+            <div class="tab-content pull-left hide">
+                <div class="network-link verify">
+                    <h1 class="title">
+                        <i class="iconfont">&#xe664;</i>
+                        网络链路
+                    </h1>
+                    <section class="white-list">
+                        <h2>
+                            <i class="iconfont">&#xe638;</i>
+                            白名单
+                        </h2>
+                        <textarea name="" cols="30" rows="10"></textarea>
+                    </section>
+                    <section class="emerge-password">
+                        <h2>
+                            <i class="iconfont">&#xe647;</i>
+                            应急密码
+                        </h2>
+                        <div class="auto-generate only-one-track">
+                            <div class="sniper-radio pull-left">
+                                <input class="radio-btn" type="radio" name="trackName">
+                                <i class="green-dot"></i>
+                            </div>
+                            <span>自动生成随机密码，发送至电子邮件</span>
+                            <input type="email" class="change-bg" placeholder="注:多个收件人，以逗号分隔">
+                        </div>
+                        <div class="preset-pwd only-one-track">
+                            <div class="sniper-radio pull-left">
+                                <input class="radio-btn" type="radio" name="trackName">
+                                <i class="green-dot"></i>
+                            </div>
+                            <span>预设紧急密码</span>
+                            <input type="password" class="pwd change-bg">
+                            <i class="iconfont scan-pwd">&#xe666;</i>
+                        </div>
+                    </section>
+                    <div class="sel-1">
+                        <select name="config">
+                            <option value="volvo">此台机器</option>
+                            <option value="saab">管理区</option>
+                            <option value="fiat">万兆区</option>
+                            <option value="audi">生产区</option>
+                        </select>
+                        <button type="submit" value="" class="sub">应用配置</button>
+                    </div>
+                </div>
+            </div>
+            <!--渗透溯源-->
+            <div class="tab-content pull-left hide">
+                <div class="traceability-trap verify">
+                    <h1>
+                        <i class="iconfont">&#xe634;</i>
+                        溯源陷阱
+                    </h1>
+                    <div class="traceability-trap-con">
+                        <section >
+                            <div class="multi-select pull-left">
+                                <div class="sniper-checkbox pull-left">
+                                    <input type="checkbox" class="all" id="checkWhole">
+                                    <i class="iconfont">&#xe624;</i>
+                                </div>
+                                <label for="checkWhole">全选</label>
+                            </div>
+                            <div class="check-box pull-left">
+                                <div class="check-list pull-left">
+                                    <div class="sniper-checkbox">
+                                        <input type="checkbox" id="ftp" class="only">
+                                        <i class="iconfont">&#xe624;</i>
+                                    </div>
+                                    <label for="ftp">FTP</label>
+                                </div>
+                                <div class="check-list pull-left">
+                                    <div class="sniper-checkbox">
+                                        <input type="checkbox" id="ssh" class="only">
+                                        <i class="iconfont">&#xe624;</i>
+                                    </div>
+                                    <label for="ssh">SSH</label>
+                                </div>
+                                <div class="check-list pull-left">
+                                    <div class="sniper-checkbox">
+                                        <input type="checkbox" id="telnet" class="only">
+                                        <i class="iconfont">&#xe624;</i>
+                                    </div>
+                                    <span for="telnet">TELNET</span>
+                                </div>
+                                <div class="check-list pull-left">
+                                    <div class="sniper-checkbox">
+                                        <input type="checkbox" id="smtp" class="only">
+                                        <i class="iconfont">&#xe624;</i>
+                                    </div>
+                                    <label for="smtp">SMTP</label>
+                                </div>
+                                <div class="check-list pull-left">
+                                    <div class="sniper-checkbox">
+                                        <input type="checkbox" id="dns" class="only">
+                                        <i class="iconfont">&#xe624;</i>
+                                    </div>
+                                    <label for="smtp">DNS</label>
+                                </div>
+                                <div class="check-list pull-left">
+                                    <div class="sniper-checkbox">
+                                        <input type="checkbox" id="http" class="only">
+                                        <i class="iconfont">&#xe624;</i>
+                                    </div>
+                                    <label for="http">HTTP</label>
+                                </div>
+                                <div class="check-list pull-left">
+                                    <div class="sniper-checkbox">
+                                        <input type="checkbox" id="ipc" class="only">
+                                        <i class="iconfont">&#xe624;</i>
+                                    </div>
+                                    <label for="ipc">IPC/135</label>
+                                </div>
+                                <div class="check-list pull-left">
+                                    <div class="sniper-checkbox">
+                                        <input type="checkbox" id="http5" class="only">
+                                        <i class="iconfont">&#xe624;</i>
+                                    </div>
+                                    <label for="http5">HTTPS</label>
+                                </div>
+                                <div class="check-list pull-left">
+                                    <div class="sniper-checkbox">
+                                        <input type="checkbox" id="ipcTwo" class="only">
+                                        <i class="iconfont">&#xe624;</i>
+                                    </div>
+                                    <label for="ipcTwo">IPC/445</label>
+                                </div>
+                                <div class="check-list pull-left">
+                                    <div class="sniper-checkbox">
+                                        <input type="checkbox" id="mssql" class="only">
+                                        <i class="iconfont">&#xe624;</i>
+                                    </div>
+                                    <label for="mssql">MSSQL</label>
+                                </div>
+                                <div class="check-list pull-left">
+                                    <div class="sniper-checkbox">
+                                        <input type="checkbox" id="musql" class="only">
+                                        <i class="iconfont">&#xe624;</i>
+                                    </div>
+                                    <label for="musql">MYSQL</label>
+                                </div>
+                                <div class="check-list pull-left">
+                                    <div class="sniper-checkbox">
+                                        <input type="checkbox" id="terminal" class="only">
+                                        <i class="iconfont">&#xe624;</i>
+                                    </div>
+                                    <label for="terminal">TERMINAL</label>
+                                </div>
+                            </div>
+                        </section>
+                        <section>
+                            <span class="title">启用陷阱</span>
+                            <div class="switch">
+                                <span class="text-info">已关闭</span>
+                                <input id="traceability-input" class="switch-input" type="checkbox">
+                                <div class="switch-box"></div>
+                            </div>
+                        </section>
+                        <!--没有许可证时显示-->
+                        <div class="no-license-layer">
+                            <div class="tip-box">
+                                <div class="tip-hd">许可信息</div>
+                                <div class="tip-bd">
+                                    <p class="p1">购买溯源陷阱license激活本功能</p>
+                                    <p>联系电话：<span>400-877-0006</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sel-1">
+                        <select name="config">
+                            <option value="volvo">此台机器</option>
+                            <option value="saab">管理区</option>
+                            <option value="fiat">万兆区</option>
+                            <option value="audi">生产区</option>
+                        </select>
+                        <button type="submit" value="" class="sub">应用配置</button>
+                    </div>
+                </div>
+
+            </div>
+            <!--域名捕获-->
+            <div class="tab-content pull-left hide name-capture">
+                <div class="verify name-capture-con">
+                    <h1>
+                        <i class="iconfont">&#xe663;</i>
+                        封锁域名
+                    </h1>
+                    <div class="switchMain-btn pull-right">
+                        <span class="note">开启此功能</span>
+                        <div class="switch-main">
+                            <input class="switchMain-input" type="checkbox"  >
+                            <div class="switchMain-box"></div>
+                        </div>
+                    </div>
+                    <section>
+                        <h2>封锁一个域名</h2>
+                        <textarea name="" cols="30" rows="10" placeholder="若要封锁多个域名，请使用换行"></textarea>
+                    </section>
+                    <section>
+                        <h2>封锁整个域名（含子域名）</h2>
+                        <textarea name="" cols="30" rows="10" placeholder="若要封锁多个域名，请使用换行"></textarea>
+                    </section>
+                    <div class="sel-1">
+                        <select name="config">
+                            <option value="volvo">此台机器</option>
+                            <option value="saab">管理区</option>
+                            <option value="fiat">万兆区</option>
+                            <option value="audi">生产区</option>
+                        </select>
+                        <button type="submit" value="" class="sub">应用配置</button>
+                    </div>
+                </div>
+            </div>
+            <!--高级策略-->
+            <!--<div class="tab-content pull-left hide advance-config">-->
+                <!--<h1 class="title">-->
+                    <!--<i class="iconfont">&#xe630;</i>-->
+                    <!--高级策略-->
+                <!--</h1>-->
+                <!--<div class="advance-config-con">-->
+                    <!--<section>-->
+                        <!--<h2 class="pull-left">程序自检</h2>-->
+                        <!--<div class="opera-box pull-left">-->
+                            <!--<div class="switch">-->
+                                <!--<span class="text-info">已关闭</span>-->
+                                <!--<input class="switch-input" type="checkbox" name="switch">-->
+                                <!--<div class="switch-box"></div>-->
+                            <!--</div>-->
+                            <!--<span class="note">防止保存有主机、IP对表的host文件被修改，阻止部分类型钓鱼及水坑攻击</span>-->
+                        <!--</div>-->
+                    <!--</section>-->
+                    <!--<section>-->
+                        <!--<h2 class="pull-left">调试模式</h2>-->
+                        <!--<div class="opera-box pull-left">-->
+                            <!--<div class="switch">-->
+                                <!--<span class="text-info">已关闭</span>-->
+                                <!--<input class="switch-input" type="checkbox"  >-->
+                                <!--<div class="switch-box"></div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</section>-->
+                    <!--<section>-->
+                        <!--<h2 class="pull-left">检测未知漏洞利用</h2>-->
+                        <!--<div class="opera-box pull-left">-->
+                            <!--<div class="switch">-->
+                                <!--<span class="text-info">已关闭</span>-->
+                                <!--<input class="switch-input detection-switch" type="checkbox">-->
+                                <!--<div class="switch-box"></div>-->
+                            <!--</div>-->
+                            <!--<span class="note">PC端同样适用</span>-->
+                        <!--</div>-->
+                    <!--</section>-->
+                    <!--<section>-->
+                        <!--<h2 class="pull-left">同时阻断</h2>-->
+                        <!--<div class="opera-box pull-left">-->
+                            <!--<div class="switch">-->
+                                <!--<span class="text-info">已关闭</span>-->
+                                <!--<input class="switch-input interdict-switch" type="checkbox"  >-->
+                                <!--<div class="switch-box"></div>-->
+                            <!--</div>-->
+                            <!--<span class="note">PC端同样适用</span>-->
+                        <!--</div>-->
+                    <!--</section>-->
+                    <!--<section>-->
+                        <!--<h2 class="pull-left">Hosts防护</h2>-->
+                        <!--<div class="opera-box pull-left">-->
+                            <!--<div class="switch">-->
+                                <!--<span class="text-info">已关闭</span>-->
+                                <!--<input class="switch-input" type="checkbox"  >-->
+                                <!--<div class="switch-box"></div>-->
+                            <!--</div>-->
+                            <!--<span class="note">针对服务器开启本功能以防止黑客使用位置漏洞入侵服务器</span>-->
+                        <!--</div>-->
+                    <!--</section>-->
+                    <!--<div class="sel-1">-->
+                        <!--<select name="config">-->
+                            <!--<option value="volvo">此台机器</option>-->
+                            <!--<option value="saab">管理区</option>-->
+                            <!--<option value="fiat">万兆区</option>-->
+                            <!--<option value="audi">生产区</option>-->
+                        <!--</select>-->
+                        <!--<button type="submit" value="" class="sub">应用配置</button>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </form>
+    </div>
+</div>
+</body>
+<!--[if lt IE 9]>
+<script src="lib/html5shiv.min.js"></script>
+<script src="lib/respond.min.js"></script>
+<![endif]-->
+<script src="js/common.js"></script>
+<script src="js/strategy.js"></script>
+</html>

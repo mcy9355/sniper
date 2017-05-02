@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>账号</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/account.css">
+</head>
+<body>
+<header id="header" class="clearfix">
+    <a href="#" class="logo pull-left"></a>
+    <div class="user-center pull-right">
+        <a class="user-btn" href="javascript:void(0);">
+            <i class="icon-man iconfont">&#xe61a;</i>
+            <span>系统管理员</span>
+            <i class="icon-arrow iconfont">&#xe62d;</i>
+        </a>
+    </div>
+    <div class="time-box pull-right clearfix">
+        <i class="icon-time iconfont">&#xe613;</i>
+        <span id="current-time"></span>
+    </div>
+</header>
+<aside id="nav-side" class="open">
+    <ul class="nav-side-list">
+        <li class="active">
+            <a href="safe-account.html" class="clearfix">
+                <i class="iconfont pull-left">&#xe611;</i>
+                <span class="pull-left">账号</span>
+            </a>
+        </li>
+        <li>
+            <a href="safe-migrate.html" class="clearfix">
+                <i class="iconfont pull-left">&#xe64c;</i>
+                <span class="pull-left">安全中心迁移</span>
+            </a>
+        </li>
+        <li>
+            <a href="install.html" class="clearfix">
+                <i class="iconfont pull-left">&#xe648;</i>
+                <span class="pull-left">安装卸载</span>
+            </a>
+        </li>
+        <li>
+            <a class="summary clearfix" href="javascript:void(0);">
+                <i class="iconfont arrow-icon pull-left">&#xe62b;</i>
+                <span class="pull-left">升级设定</span>
+            </a>
+            <ul class="nav-side-sec">
+                <li>
+                    <a href="upgrade-setting.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe60c;</i>
+                        <span class="pull-left">升级设置</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="email-setting.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe617;</i>
+                        <span class="pull-left">邮件设置</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <a class="toggle-nav-btn" href="javascript:void(0);">
+        <i class="iconfont">&#xe62f;</i>
+    </a>
+</aside>
+<section id="main-box">
+    <div id="contain">
+        <div class="bg-white">
+            <section class="head">
+                <button class="add-btn pull-left" id="addUser">
+                    <i class="iconfont addIcon">&#xe608;</i>
+                    添加用户
+                </button>
+                <div id="addUserModal" class="addModal" style="display: none;">
+                    <div class="header">用户信息</div>
+                    <form action="#">
+                        <div class="line">
+                            <label for="userName">用户名：</label>
+                            <input type="text" id="userName">
+                        </div>
+                        <div class="line">
+                            <label for="password">密码：</label>
+                            <input type="text" id="password">
+                        </div>
+                        <div class="line">
+                            <label for="repwd">确认密码：</label>
+                            <input type="text" id="repwd">
+                        </div>
+                        <div class="line">
+                            <a href="#close-modal" rel="modal:close" class="pull-left submit " id="confirmAdd">确定</a>
+                            <a href="#close-modal" rel="modal:close" class="pull-right cancel">取消</a>
+                        </div>
+                    </form>
+                </div>
+                <button class="delete-btn pull-left" id="deleteUser">
+                    <i class="iconfont">&#xe65e;</i>
+                    删除用户
+                </button>
+            </section>
+            <section class="table">
+                <table id="userList">
+                    <thead>
+                    <tr>
+                        <th>
+                            <div class="sniper-checkbox pull-left">
+                                <input type="checkbox" id="checkAll" class="all">
+                                <i class="iconfont">&#xe624;</i>
+                            </div>
+                        </th>
+                        <th>用户名</th>
+                        <th>创建时间</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <div class="sniper-checkbox pull-left">
+                                <input type="checkbox" class="only">
+                                <i class="iconfont">&#xe624;</i>
+                            </div>
+                        </td>
+                        <td class="uname">zhao45258</td>
+                        <td>
+                            <span>2016/10/21</span>
+                            <span>10:45</span>
+                        </td>
+                        <td>
+                            <i class="iconfont delete">&#xe65e;</i>
+                        </td>
+                        <td>
+                            <i class="iconfont edit">&#xe605;</i>
+                        </td>
+                        <td>
+                            <div class="switch">
+                                <span class="text-info">已关闭</span>
+                                <input class="switch-input" type="checkbox">
+                                <div class="switch-box"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="sniper-checkbox pull-left">
+                                <input type="checkbox" class="only">
+                                <i class="iconfont">&#xe624;</i>
+                            </div>
+                        </td>
+                        <td class="uname">zhao45258</td>
+                        <td>
+                            <span>2016/10/21</span><span>10:45</span>
+                        </td>
+                        <td>
+                            <i class="iconfont delete">&#xe65e;</i>
+                        </td>
+                        <td>
+                            <i class="iconfont edit">&#xe605;</i>
+                        </td>
+                        <td>
+                            <div class="switch">
+                                <span class="text-info">已关闭</span>
+                                <input class="switch-input" type="checkbox">
+                                <div class="switch-box"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="sniper-checkbox pull-left">
+                                <input type="checkbox" class="only">
+                                <i class="iconfont">&#xe624;</i>
+                            </div>
+                        </td>
+                        <td class="uname">zhao45258</td>
+                        <td>
+                            <span>2016/10/21</span>
+                            <span>10:45</span>
+                        </td>
+                        <td>
+                            <i class="iconfont delete">&#xe65e;</i>
+                        </td>
+                        <td>
+                            <i class="iconfont edit">&#xe605;</i>
+                        </td>
+                        <td>
+                            <div class="switch">
+                                <span class="text-info">已关闭</span>
+                                <input class="switch-input" type="checkbox">
+                                <div class="switch-box"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="sniper-checkbox pull-left">
+                                <input type="checkbox" class="only">
+                                <i class="iconfont">&#xe624;</i>
+                            </div>
+                        </td>
+                        <td class="uname">zhao45258</td>
+                        <td>
+                            <span>2016/10/21</span><span>10:45</span>
+                        </td>
+                        <td>
+                            <i class="iconfont delete">&#xe65e;</i>
+                        </td>
+                        <td>
+                            <i class="iconfont edit">&#xe605;</i>
+                        </td>
+                        <td>
+                            <div class="switch">
+                                <span class="text-info">已关闭</span>
+                                <input class="switch-input" type="checkbox">
+                                <div class="switch-box"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="sniper-checkbox pull-left">
+                                <input type="checkbox" class="only">
+                                <i class="iconfont">&#xe624;</i>
+                            </div>
+                        </td>
+                        <td class="uname">zhao45258</td>
+                        <td>
+                            <span>2016/10/21</span><span>10:45</span>
+                        </td>
+                        <td>
+                            <i class="iconfont delete">&#xe65e;</i>
+                        </td>
+                        <td>
+                            <i class="iconfont edit">&#xe605;</i>
+                        </td>
+                        <td>
+                            <div class="switch">
+                                <span class="text-info">已关闭</span>
+                                <input class="switch-input" type="checkbox">
+                                <div class="switch-box"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="sniper-checkbox pull-left">
+                                <input type="checkbox" class="only">
+                                <i class="iconfont">&#xe624;</i>
+                            </div>
+                        </td>
+                        <td class="uname">zhao45258</td>
+                        <td>
+                            <span>2016/10/21</span><span>10:45</span>
+                        </td>
+                        <td>
+                            <i class="iconfont delete">&#xe65e;</i>
+                        </td>
+                        <td>
+                            <i class="iconfont edit">&#xe605;</i>
+                        </td>
+                        <td>
+                            <div class="switch">
+                                <span class="text-info">已关闭</span>
+                                <input class="switch-input" type="checkbox">
+                                <div class="switch-box"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="sniper-checkbox pull-left">
+                                <input type="checkbox" class="only">
+                                <i class="iconfont">&#xe624;</i>
+                            </div>
+                        </td>
+                        <td class="uname">zhao45258</td>
+                        <td>
+                            <span>2016/10/21</span><span>10:45</span>
+                        </td>
+                        <td>
+                            <i class="iconfont delete">&#xe65e;</i>
+                        </td>
+                        <td>
+                            <i class="iconfont edit">&#xe605;</i>
+                        </td>
+                        <td>
+                            <div class="switch">
+                                <span class="text-info">已关闭</span>
+                                <input class="switch-input" type="checkbox">
+                                <div class="switch-box"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="sniper-checkbox pull-left">
+                                <input type="checkbox" class="only">
+                                <i class="iconfont">&#xe624;</i>
+                            </div>
+                        </td>
+                        <td class="uname">zhao45258</td>
+                        <td>
+                            <span>2016/10/21</span><span>10:45</span>
+                        </td>
+                        <td>
+                            <i class="iconfont delete">&#xe65e;</i>
+                        </td>
+                        <td>
+                            <i class="iconfont edit">&#xe605;</i>
+                        </td>
+                        <td>
+                            <div class="switch">
+                                <span class="text-info">已关闭</span>
+                                <input class="switch-input" type="checkbox">
+                                <div class="switch-box"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td colspan="1">
+                            共<span>2177</span>项
+                        </td>
+                        <td colspan="5">
+                            <a href="##" class="prev">&lt;Prev</a>
+                            <a href="##">1</a>
+                            <a href="##">2</a>
+                            <a href="##" class="active">3</a>
+                            <a href="##" class="ellipsis">...</a>
+                            <a href="##">21</a>
+                            <a href="##" class="next">Next&gt;</a>
+                            到第
+                            <input type="number">
+                            页
+                            <a href="##" class="confirm">确定</a>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </section>
+        </div>
+    </div>
+</section>
+</body>
+<!--[if lt IE 9]>
+<script src="lib/html5shiv.min.js"></script>
+<script src="lib/respond.min.js"></script>
+<![endif]-->
+<script src="js/common.js"></script>
+<script src="js/account.js"></script>
+</html>

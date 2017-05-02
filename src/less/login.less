@@ -1,0 +1,100 @@
+@import "variables";
+body{
+  background: url("../images/monitor-bg.png") repeat @primary-blue;
+}
+#login-box{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1008px;
+  height: 722px;
+  margin-left: -370px;
+  margin-top: -361px;
+  color: #d1d2d5;
+  .login-input{
+    position: relative;
+    float: left;
+    width: 561px;
+    height: 722px;
+    background: url("../images/login-box-bg.png");
+    .logo{
+      margin: 120px 0 52px 280px;
+    }
+    #error-tip{
+      position: absolute;
+      left: 224px;
+      top: 286px;
+      display: none;
+      color: @primary-orange;
+      font-size: 14px;
+    }
+    .form-group{
+      position: relative;
+      margin-bottom: 20px;
+      padding-left: 80px;
+      margin-left: 130px;
+      .label{
+        display: inline-block;
+        width: 80px;
+        font-size: 16px;
+        text-align: right;
+        margin-left: -80px;
+        line-height: 36px;
+      }
+      input{
+        margin-left: 14px;
+        height: 34px;
+        width: 250px;
+        padding: 0 15px;
+        border-radius: 2px;
+        border: none;
+      }
+    }
+    .code-box{
+      position: relative;
+      input{
+        width: 78px;
+        margin-right: 12px;
+      }
+      .change-btn{
+        display: inline-block;
+        vertical-align: top;
+        padding-top: 6px;
+        color: @primary-green;
+        margin-left: 8px;
+        font-size: 12px;
+      }
+      .code-img{
+        margin-top: -4px;
+      }
+    }
+  }
+  .login-btn-box{
+    float: left;
+    width:184px;
+    height:368px;
+    margin-top: 172px;
+    background: url("../images/login-btn-bg.png");
+    border:none;
+    cursor: pointer;
+  }
+  #download-btn{
+    display: block;
+    font-size: 14px;
+    color: @primary-orange;
+    margin-left: 224px;
+    a{
+      color: @primary-orange;
+      text-decoration: underline;
+    }
+  }
+}
+#copy{
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 26px;
+  text-align: center;
+  font-size: 12px;
+  color: #61666e;
+}

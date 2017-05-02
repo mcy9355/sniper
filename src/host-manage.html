@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>主机管理</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/host-manage.css">
+</head>
+<body>
+<header id="header" class="clearfix">
+    <a href="#" class="logo pull-left"></a>
+    <div class="user-center pull-right">
+        <a class="user-btn" href="javascript:void(0);">
+            <i class="icon-man iconfont">&#xe61a;</i>
+            <span>安全管理员</span>
+            <i class="icon-arrow iconfont">&#xe62d;</i>
+        </a>
+        <ul class="user-menu">
+            <li id="set-psw">
+                <a href="#">
+                    <i class="iconfont">&#xe605;</i>
+                    修改密码
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="iconfont">&#xe64f;</i>
+                    退出
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="time-box pull-right clearfix">
+        <i class="icon-time iconfont">&#xe613;</i>
+        <span id="current-time"></span>
+    </div>
+</header>
+<aside id="nav-side" class="open">
+    <ul class="nav-side-list">
+        <li>
+            <a href="index.html" class="clearfix tooltip" title="总览">
+                <i class="iconfont pull-left">&#xe621;</i>
+                <span class="pull-left">总览</span>
+            </a>
+        </li>
+        <li class="active">
+            <a href="host-manage.html" class="clearfix tooltip" title="主机管理">
+                <i class="iconfont pull-left">&#xe61f;</i>
+                <span class="pull-left">主机管理</span>
+            </a>
+        </li>
+        <li>
+            <a class="summary clearfix tooltip" href="javascript:void(0);" title="智能分析">
+                <i class="iconfont arrow-icon pull-left">&#xe62b;</i>
+                <span class="pull-left">智能分析</span>
+            </a>
+            <ul class="nav-side-sec">
+                <li>
+                    <a href="action-track.html" class="clearfix tooltip" title="动作追踪">
+                        <i class="iconfont pull-left">&#xe60c;</i>
+                        <span class="pull-left">动作追踪</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="restore.html" class="clearfix tooltip" title="现场还原">
+                        <i class="iconfont pull-left">&#xe617;</i>
+                        <span class="pull-left">现场还原</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class="summary clearfix tooltip" title="用户管理" href="javascript:void(0);">
+                <i class="iconfont arrow-icon pull-left">&#xe62b;</i>
+                <span class="pull-left">用户管理</span>
+            </a>
+            <ul class="nav-side-sec">
+                <li>
+                    <a href="person-manage.html" class="clearfix tooltip" title="分管人员">
+                        <i class="iconfont pull-left">&#xe611;</i>
+                        <span class="pull-left">分管人员</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="area-manage.html" class="clearfix tooltip" title="分管片区">
+                        <i class="iconfont pull-left">&#xe609;</i>
+                        <span class="pull-left">分管片区</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class="summary clearfix tooltip" title="系统设置" href="javascript:void(0);">
+                <i class="iconfont arrow-icon pull-left">&#xe62b;</i>
+                <span class="pull-left">系统设置</span>
+            </a>
+            <ul class="nav-side-sec">
+                <li>
+                    <a href="template.html" class="clearfix tooltip" title="防护模板">
+                        <i class="iconfont pull-left">&#xe706;</i>
+                        <span class="pull-left">防护模板</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="safe-rules.html" class="clearfix tooltip" title="安全警报规则">
+                        <i class="iconfont pull-left">&#xe607;</i>
+                        <span class="pull-left">安全警报规则</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="time-manage.html" class="clearfix tooltip" title="时间管理">
+                        <i class="iconfont pull-left">&#xe613;</i>
+                        <span class="pull-left">时间管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="system-settings.html" class="clearfix tooltip" title="其他设置">
+                        <i class="iconfont pull-left">&#xe61d;</i>
+                        <span class="pull-left">其他设置</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="system-status.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe668;</i>
+                        <span class="pull-left">系统信息</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="data-filter.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe66e;</i>
+                        <span class="pull-left">数据过滤器</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="about.html" class="clearfix tooltip" title="关于sniper">
+                <i class="iconfont pull-left">&#xe650;</i>
+                <span class="pull-left">关于sniper</span>
+            </a>
+        </li>
+    </ul>
+    <a class="toggle-nav-btn" href="javascript:void(0);">
+        <i class="iconfont">&#xe62f;</i>
+    </a>
+</aside>
+<aside id="group-box">
+    <div class="search-box">
+        <input type="text" placeholder="search">
+        <button>
+            <i class="iconfont icon-search"></i>
+        </button>
+    </div>
+    <ul id="search-result" class="host-list host-result-list"></ul>
+    <div class="filter-box">
+        <a class="filter-btn filter-btn-danger" href="javascript:void(0);">
+            可疑
+            <span class="num">15</span>
+        </a>
+        <a class="filter-btn filter-btn-safe" href="javascript:void(0);">
+            安全
+            <span class="num">59</span>
+        </a>
+        <a class="filter-btn filter-btn-outline" href="javascript:void(0);">
+            离线
+            <span class="num">28</span>
+        </a>
+    </div>
+    <div id="host-menu">
+        <div id="title-top" class="group-item clearfix" data-group="1">
+            <i class="icon-arrow iconfont pull-left">&#xe62b;</i>
+                <span data-id="1" class="group-info pull-left clearfix">
+                    <span class="group-name">管理区</span>
+                    <span class="group-host-num">(81)</span>
+                </span>
+            <i class="edit-btn iconfont pull-right">&#xe605;</i>
+        </div>
+        <ul class="group-list">
+            <li class="open" data-id="1">
+                <div class="group-item clearfix">
+                    <i class="icon-arrow iconfont pull-left">&#xe62b;</i>
+                    <span class="group-info pull-left clearfix">
+                        <span class="group-name">管理区</span>
+                        <span class="group-host-num">(81)</span>
+                    </span>
+                    <i class="edit-btn iconfont pull-right">&#xe605;</i>
+                </div>
+                <ul class="host-list">
+                    <li class="active clearfix">
+                        <i class="sprite sprite-outlineHost"></i>
+                        <div class="host-info">
+                            <span class="host-name">王一贝</span>
+                            <span class="host-ip">192.168.31.1</span>
+                        </div>
+                        <i class="star iconfont icon-star-off"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-safeHost"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.2</span>
+                        </div>
+                        <i class="star iconfont icon-star-on"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-safeHost"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.3</span>
+                        </div>
+                        <i class="star iconfont icon-star-on"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-safeHost"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.4</span>
+                        </div>
+                        <i class="star iconfont icon-star-on"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-safeHost"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.5</span>
+                        </div>
+                        <i class="star iconfont icon-star-off"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-safeHost"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.6</span>
+                        </div>
+                        <i class="star iconfont icon-star-off"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-safeHost"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.7</span>
+                        </div>
+                        <i class="star iconfont icon-star-off"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-safeHost"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.8</span>
+                        </div>
+                        <i class="star iconfont icon-star-off"></i>
+                    </li>
+                </ul>
+            </li>
+            <li data-id="2">
+                <div class="group-item clearfix">
+                    <i class="icon-arrow iconfont pull-left">&#xe62b;</i>
+                        <span class="group-info pull-left clearfix">
+                            <span class="group-name">万兆区</span>
+                            <span class="group-host-num">(15)</span>
+                        </span>
+                    <i class="edit-btn iconfont pull-right">&#xe605;</i>
+                </div>
+                <ul class="host-list hide">
+                    <li class="clearfix">
+                        <i class="sprite sprite-dangerHost"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.9</span>
+                        </div>
+                        <i class="star iconfont icon-star-on"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-dangerHost-warn"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.10</span>
+                        </div>
+                        <i class="star iconfont icon-star-on"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-dangerHost-warn"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.11</span>
+                        </div>
+                        <i class="star iconfont icon-star-off"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-dangerHost-warn"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.12</span>
+                        </div>
+                        <i class="star iconfont icon-star-off"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-dangerHost-warn"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.13</span>
+                        </div>
+                        <i class="star iconfont icon-star-off"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-dangerHost-warn"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.14</span>
+                        </div>
+                        <i class="star iconfont icon-star-off"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-dangerHost-warn"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.15</span>
+                        </div>
+                        <i class="star iconfont icon-star-off"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-dangerHost-warn"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.16</span>
+                        </div>
+                        <i class="star iconfont icon-star-off"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-dangerHost-warn"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.17</span>
+                        </div>
+                        <i class="star iconfont icon-star-on"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-dangerHost-warn"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.18</span>
+                        </div>
+                        <i class="star iconfont icon-star-off"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-dangerHost-warn"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.19</span>
+                        </div>
+                        <i class="star iconfont icon-star-off"></i>
+                    </li>
+                </ul>
+            </li>
+            <li data-id="3">
+                <div class="group-item clearfix">
+                    <i class="icon-arrow iconfont pull-left">&#xe62b;</i>
+                        <span class="group-info pull-left clearfix">
+                            <span class="group-name">技术部</span>
+                            <span class="group-host-num">(15)</span>
+                        </span>
+                    <i class="edit-btn iconfont pull-right">&#xe605;</i>
+                </div>
+                <ul class="host-list hide">
+                    <li class="clearfix">
+                        <i class="sprite sprite-dangerHost"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.20</span>
+                        </div>
+                        <i class="star iconfont icon-star-on"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-dangerHost-warn"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.21</span>
+                        </div>
+                        <i class="star iconfont icon-star-on"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-dangerHost-warn"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.23</span>
+                        </div>
+                        <i class="star iconfont icon-star-off"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-dangerHost-warn"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.24</span>
+                        </div>
+                        <i class="star iconfont icon-star-off"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-dangerHost-warn"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.25</span>
+                        </div>
+                        <i class="star iconfont icon-star-off"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-dangerHost-warn"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.26</span>
+                        </div>
+                        <i class="star iconfont icon-star-off"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-dangerHost-warn"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.27</span>
+                        </div>
+                        <i class="star iconfont icon-star-off"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-dangerHost-warn"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.232</span>
+                        </div>
+                        <i class="star iconfont icon-star-off"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-dangerHost-warn"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.232</span>
+                        </div>
+                        <i class="star iconfont icon-star-off"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-dangerHost-warn"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.232</span>
+                        </div>
+                        <i class="star iconfont icon-star-off"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-dangerHost-warn"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.232</span>
+                        </div>
+                        <i class="star iconfont icon-star-off"></i>
+                    </li>
+                </ul>
+            </li>
+            <li data-id="4">
+                <div class="group-item clearfix">
+                    <i class="icon-arrow iconfont pull-left">&#xe62b;</i>
+                        <span class="group-info pull-left clearfix">
+                            <span class="group-name">财务部</span>
+                            <span class="group-host-num">(15)</span>
+                        </span>
+                    <i class="edit-btn iconfont pull-right">&#xe605;</i>
+                </div>
+                <ul class="host-list hide">
+                    <li class="clearfix">
+                        <i class="sprite sprite-dangerHost"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.232</span>
+                        </div>
+                        <i class="star iconfont icon-star-off"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-dangerHost-warn"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.232</span>
+                        </div>
+                        <i class="star iconfont icon-star-off"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-dangerHost-warn"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.232</span>
+                        </div>
+                        <i class="star iconfont icon-star-off"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-dangerHost-warn"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.232</span>
+                        </div>
+                        <i class="star iconfont icon-star-off"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-dangerHost-warn"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.232</span>
+                        </div>
+                        <i class="star iconfont icon-star-off"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-dangerHost-warn"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.232</span>
+                        </div>
+                        <i class="star iconfont icon-star-off"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-dangerHost-warn"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.232</span>
+                        </div>
+                        <i class="star iconfont icon-star-off"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-dangerHost-warn"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.232</span>
+                        </div>
+                        <i class="star iconfont icon-star-off"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-dangerHost-warn"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.232</span>
+                        </div>
+                        <i class="star iconfont icon-star-off"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-dangerHost-warn"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.232</span>
+                        </div>
+                        <i class="star iconfont icon-star-off"></i>
+                    </li>
+                    <li class="clearfix">
+                        <i class="sprite sprite-dangerHost-warn"></i>
+                        <div class="host-info">
+                            <span class="host-name">win-5VSOFOOJA</span>
+                            <span class="host-ip">192.168.31.232</span>
+                        </div>
+                        <i class="star iconfont icon-star-off"></i>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</aside>
+<section id="group-main-box">
+    <div id="nav-details" class="clearfix">
+        <ul class="pull-left">
+            <li class="active">
+                <i class="iconfont pull-left">&#xe61e;</i>
+                <span class="pull-left">主机详情</span>
+            </li>
+            <li>
+                <i class="iconfont pull-left">&#xe669;</i>
+                <span class="pull-left">事件详情</span>
+            </li>
+            <li>
+                <i class="iconfont pull-left">&#xe60e;</i>
+                <span class="pull-left">策略设置</span>
+            </li>
+            <li>
+                <i class="iconfont pull-left">&#xe612;</i>
+                <span class="pull-left">日志详情</span>
+            </li>
+        </ul>
+        <button class="btn-primary report-btn pull-right">安全分析报告</button>
+        <div class="refresh-box pull-right">
+            <div class="sniper-checkbox pull-left">
+                <input type="checkbox">
+                <i class="iconfont">&#xe624;</i>
+            </div>
+            <span class="text">自动刷新</span>
+        </div>
+    </div>
+    <iframe class="iframe-content" src="host-details.html" frameborder="0"></iframe>
+    <iframe class="iframe-content hide" src="event-details.html" frameborder="0"></iframe>
+    <iframe class="iframe-content hide" src="strategy.html" frameborder="0"></iframe>
+    <iframe class="iframe-content hide" src="log-details.html" frameborder="0"></iframe>
+</section>
+<div id="changePsw" class="addModal" style="display: none;">
+    <div class="header">修改密码</div>
+    <form action="#">
+        <div class="line">
+            <label for="oldPsw">原密码：</label>
+            <input type="password" id="oldPsw">
+        </div>
+        <div class="line">
+            <label for="newPsw">新密码：</label>
+            <input type="password" id="newPsw">
+        </div>
+        <div class="line">
+            <label for="rePsw">确认密码：</label>
+            <input type="password" id="rePsw">
+        </div>
+        <div class="line">
+            <a href="#close-modal" rel="modal:close" class="pull-left submit " id="confirmAdd">确定</a>
+            <a href="#close-modal" rel="modal:close" class="pull-right cancel">取消</a>
+        </div>
+    </form>
+</div>
+</body>
+<!--[if lt IE 9]>
+<script src="lib/html5shiv.min.js"></script>
+<script src="lib/respond.min.js"></script>
+<![endif]-->
+
+<script src="js/common.js"></script>
+<script src="js/host-manage.js"></script>
+</html>

@@ -1,0 +1,198 @@
+@import "variables";
+header{
+  clear: both;
+  box-sizing: border-box;
+  .back-btn{
+    color: @bg-white;
+    font-size: 12px;
+    padding-right: 49px;
+    box-sizing: border-box;
+    .iconfont{
+      margin-right: 1px;
+    }
+  }
+}
+.empty{
+  width: 100%;
+  height: @header-height;
+}
+#scroll{
+  .bg-logo{
+    height: 458px;
+    border: 1px solid black;
+    background-color: #4b699f;
+    overflow: hidden;
+    .bg-logo-content{
+      width: 1200px;
+      height: 458px;
+      margin: 0 auto;
+      color: @bg-white;
+      .bg-logo-content-left{
+        width: 760px;
+        height: 458px;
+      }
+      .bg-logo-content-right{
+        width: 440px;
+        height: 458px;
+        padding: 73px 0 0 69px;
+        box-sizing: border-box;
+        h1{
+          padding-bottom: 14px;
+        }
+        img{
+          cursor: pointer;
+        }
+        .epl-load-btn{
+          background: url("../images/but02.png") no-repeat;
+          width: 250px;
+          height: 64px;
+          line-height: 64px;
+          text-align: center;
+          font-size: 18px;
+          cursor: pointer;
+        }
+        .note{
+          height: 46px;
+          line-height: 46px;
+          margin-bottom: 17px;
+        }
+        .note.dash{
+          width: 250px;
+          border-bottom: 1px dashed rgba(255,255,255,0.35);
+        }
+      }
+    }
+  }
+  .tab-title{
+    width: 100%;
+    height: 65px;
+    background-color: #4b5469;
+    color: @bg-white;
+    padding: 0 49px 0 18%;
+    box-sizing: border-box;
+    line-height: 65px;
+    margin-top: -1px;
+    #wrap{
+      width: 780px;
+      height: 65px;
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+      font-size: 18px;
+      letter-spacing: 2px;
+      .lineBorder{
+        width: 780px;
+        height: 3px;
+        overflow: hidden;
+        position: absolute;
+        box-sizing: border-box;
+        top: 0;
+        .lineDiv{
+          background: @primary-orange;
+          height: 3px;
+          width: 260px;
+          transition:all 0.3s ease-in-out;
+          box-sizing: border-box;
+        }
+      }
+      .tabClick{
+        width: 780px;
+        overflow: hidden;
+        li{
+          height:65px;
+          line-height: 65px;
+          width: 260px;
+          float: left;
+          text-align: center;
+          cursor: pointer;
+          font-size: 18px;
+          box-sizing: border-box;
+        }
+        .active{
+          color: @primary-orange;
+          transition: 0.3s;
+          background: @bg-white;
+        }
+      }
+    }
+    .note{
+      span{
+        font-size: 14px;
+      }
+      span:nth-child(1){
+        margin-right: 5px;
+      }
+      span:nth-child(2){
+        margin-right: 14px;
+      }
+      span:nth-child(3){
+        margin-right: 18px;
+      }
+      span:nth-child(3){
+        margin-right: 4px;
+      }
+
+    }
+  }
+  .windows-download{
+    .win-silent{
+      //height: 282px;
+      margin-top: 124px;
+    }
+  }
+  .linux-download,.epl-download{
+    margin-bottom: 417px;
+    .linux-load{
+      h2{
+        width: 150px;
+      }
+    }
+    .EPL-load{
+      h2{
+        width: 224px;
+      }
+    }
+  }
+  .win-load,.linux-load,.EPL-load{
+    width: 1004px;
+    padding-bottom: 30px;
+    border: 2px solid @primary-orange;
+    border-radius: 4px;
+    margin: 108px auto 0;
+    box-sizing: border-box;
+
+    text-align: center;
+    h2{
+      width: 376px;
+      height: 98px;
+      line-height: 98px;
+      margin: -49px auto 0;
+      font-size: 24px;
+      background-color: @bg-white;
+      font-family: "微软雅黑";
+      font-weight: bold;
+    }
+    p{
+      display: block;
+      font-size: 18px;
+      line-height: 36px;
+      text-align: left;
+      margin-left: 130px;
+      margin-right: 130px;
+    }
+    img{
+      margin-top: 20px;
+    }
+
+  }
+  footer{
+    margin-top: 238px;
+    width: 100%;
+    height: 56px;
+    background-color: #515969;
+    line-height: 56px;
+    text-align: center;
+    color: #adb0b6;
+  }
+}
+

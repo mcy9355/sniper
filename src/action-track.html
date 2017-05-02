@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>动作追踪</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/action-track.css">
+</head>
+<body>
+<header id="header" class="clearfix">
+    <a href="#" class="logo pull-left"></a>
+    <div class="user-center pull-right">
+        <a class="user-btn" href="javascript:void(0);">
+            <i class="icon-man iconfont">&#xe61a;</i>
+            <span>安全管理员</span>
+            <i class="icon-arrow iconfont">&#xe62d;</i>
+        </a>
+    </div>
+    <div class="time-box pull-right clearfix">
+        <i class="icon-time iconfont">&#xe613;</i>
+        <span id="current-time"></span>
+    </div>
+</header>
+<aside id="nav-side" class="open">
+    <ul class="nav-side-list">
+        <li>
+            <a href="index.html" class="clearfix">
+                <i class="iconfont pull-left">&#xe621;</i>
+                <span class="pull-left">总览</span>
+            </a>
+        </li>
+        <li>
+            <a href="host-manage.html" class="clearfix">
+                <i class="iconfont pull-left">&#xe61f;</i>
+                <span class="pull-left">主机管理</span>
+            </a>
+        </li>
+        <li>
+            <a class="summary open clearfix" href="javascript:void(0);">
+                <i class="iconfont arrow-icon pull-left">&#xe62b;</i>
+                <span class="pull-left">智能分析</span>
+            </a>
+            <ul class="nav-side-sec">
+                <li class="active">
+                    <a href="action-track.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe60c;</i>
+                        <span class="pull-left">动作追踪</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="restore.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe617;</i>
+                        <span class="pull-left">现场还原</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class="summary clearfix" href="javascript:void(0);">
+                <i class="iconfont arrow-icon pull-left">&#xe62b;</i>
+                <span class="pull-left">用户管理</span>
+            </a>
+            <ul class="nav-side-sec">
+                <li>
+                    <a href="person-manage.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe611;</i>
+                        <span class="pull-left">分管人员</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="area-manage.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe609;</i>
+                        <span class="pull-left">分管片区</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a class="summary clearfix" href="javascript:void(0);">
+                <i class="iconfont arrow-icon pull-left">&#xe62b;</i>
+                <span class="pull-left">系统设置</span>
+            </a>
+            <ul class="nav-side-sec">
+                <li>
+                    <a href="template.html" class="clearfix tooltip" title="防护模板">
+                        <i class="iconfont pull-left">&#xe706;</i>
+                        <span class="pull-left">防护模板</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="safe-rules.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe607;</i>
+                        <span class="pull-left">安全警报规则</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="time-manage.html" class="clearfix tooltip" title="时间管理">
+                        <i class="iconfont pull-left">&#xe613;</i>
+                        <span class="pull-left">时间管理</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="system-settings.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe61d;</i>
+                        <span class="pull-left">其他设置</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="system-status.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe668;</i>
+                        <span class="pull-left">系统信息</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="data-filter.html" class="clearfix">
+                        <i class="iconfont pull-left">&#xe66e;</i>
+                        <span class="pull-left">数据过滤器</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="index.html" class="clearfix">
+                <i class="iconfont pull-left">&#xe650;</i>
+                <span class="pull-left">关于sniper</span>
+            </a>
+        </li>
+    </ul>
+    <a class="toggle-nav-btn" href="javascript:void(0);">
+        <i class="iconfont">&#xe62f;</i>
+    </a>
+</aside>
+<section id="main-box">
+    <div id="container">
+        <div id="track-box" class="item-box">
+            <h6 class="box-hd">
+                <i class="iconfont">&#xe632;</i>
+                <em>输入线索</em>
+            </h6>
+            <div class="box-bd clearfix">
+                <div class="date-box pull-left">
+                    <label>时间</label>
+                    <input type="text" readonly>
+                    <i class="iconfont">&#xe652;</i>
+                </div>
+                <div class="ip-box pull-left">
+                    <label>IP</label>
+                    <input id="ip-input" type="text">
+                    <!--<button>-->
+                        <!--<i class="iconfont icon-search"></i>-->
+                    <!--</button>-->
+                    <div id="search-result" class="host-list host-result-list">
+                        <ul id="searchUl"></ul>
+                    </div>
+                </div>
+                <div class="username-box pull-left">
+                    <label>机器名</label>
+                    <input id="user-input" type="text">
+                </div>
+            </div>
+        </div>
+        <div id="none-box" class="item-box"></div>
+        <div id="result-box">
+            <div id="design-file-box" class="item-box">
+                <h6 class="box-hd">
+                    <span class="pull-left">2小时内设计文件操作一览</span>
+                    <a class="more-link pull-right" href="#">更多&gt;&gt;</a>
+                </h6>
+                <table class="list-table">
+                    <thead>
+                    <tr>
+                        <th style="width: 230px;">时间</th>
+                        <th style="width: 136px;">文件名</th>
+                        <th style="width: 170px;">用户名</th>
+                        <th>进程名</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>2016-10-13  10:13:25</td>
+                        <td>logo</td>
+                        <td>hatty</td>
+                        <td>fxp.exe</td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-13  10:13:25</td>
+                        <td>logo</td>
+                        <td>hatty</td>
+                        <td>fxp.exe</td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-13  10:13:25</td>
+                        <td>logo</td>
+                        <td>hatty</td>
+                        <td>fxp.exe</td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-13  10:13:25</td>
+                        <td>logo</td>
+                        <td>hatty</td>
+                        <td>fxp.exe</td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-13  10:13:25</td>
+                        <td>logo</td>
+                        <td>hatty</td>
+                        <td>fxp.exe</td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-13  10:13:25</td>
+                        <td>logo</td>
+                        <td>hatty</td>
+                        <td>fxp.exe</td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-13  10:13:25</td>
+                        <td>logo</td>
+                        <td>hatty</td>
+                        <td>fxp.exe</td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-13  10:13:25</td>
+                        <td>logo</td>
+                        <td>hatty</td>
+                        <td>fxp.exe</td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-13  10:13:25</td>
+                        <td>logo</td>
+                        <td>hatty</td>
+                        <td>fxp.exe</td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-13  10:13:25</td>
+                        <td>logo</td>
+                        <td>hatty</td>
+                        <td>fxp.exe</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="domain-box">
+                <div class="item-box">
+                    <h6 class="box-hd">
+                        <span class="pull-left">2小时内访问域名记录</span>
+                        <a class="more-link pull-right" href="#">更多&gt;&gt;</a>
+                    </h6>
+                    <table class="list-table">
+                        <thead>
+                        <tr>
+                            <th style="width: 270px;">时间</th>
+                            <th>域名</th>
+                            <th>类别</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>2016-10-13  10:13:25</td>
+                            <td>www.a.com</td>
+                            <td>
+                                <i class="iconfont">&#xe631;</i>
+                                <span>未知</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2016-10-13  10:13:25</td>
+                            <td>www.a.com</td>
+                            <td>
+                                <i class="iconfont">&#xe631;</i>
+                                <span>未知</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2016-10-13  10:13:25</td>
+                            <td>www.a.com</td>
+                            <td>
+                                <i class="iconfont">&#xe631;</i>
+                                <span>未知</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2016-10-13  10:13:25</td>
+                            <td>www.a.com</td>
+                            <td>
+                                <i class="iconfont">&#xe631;</i>
+                                <span>未知</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2016-10-13  10:13:25</td>
+                            <td>www.a.com</td>
+                            <td>
+                                <i class="iconfont">&#xe631;</i>
+                                <span>未知</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2016-10-13  10:13:25</td>
+                            <td>www.a.com</td>
+                            <td>
+                                <i class="iconfont">&#xe631;</i>
+                                <span>未知</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2016-10-13  10:13:25</td>
+                            <td>www.a.com</td>
+                            <td>
+                                <i class="iconfont">&#xe631;</i>
+                                <span>未知</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2016-10-13  10:13:25</td>
+                            <td>www.a.com</td>
+                            <td>
+                                <i class="iconfont">&#xe631;</i>
+                                <span>未知</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2016-10-13  10:13:25</td>
+                            <td>www.a.com</td>
+                            <td>
+                                <i class="iconfont">&#xe631;</i>
+                                <span>未知</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2016-10-13  10:13:25</td>
+                            <td>www.a.com</td>
+                            <td>
+                                <i class="iconfont">&#xe631;</i>
+                                <span>未知</span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div id="relate-box" class="item-box">
+                <h6 class="box-hd">
+                    <span class="pull-left">2小时内关联操作</span>
+                    <a class="more-link pull-right" href="#">更多&gt;&gt;</a>
+                </h6>
+                <table class="list-table">
+                    <thead>
+                    <tr>
+                        <th style="width: 230px;">时间</th>
+                        <th style="width: 136px;">用户名</th>
+                        <th style="width: 170px;">父进程</th>
+                        <th style="width: 300px;">主体进程</th>
+                        <th>参数</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>2016-10-13  10:13:25</td>
+                        <td>hatty</td>
+                        <td>svchost.exe</td>
+                        <td>svchost.exe</td>
+                        <td>C：\Users\Administrator\AppData\Roaming\360se6\Application\360se.exe</td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-13  10:13:25</td>
+                        <td>hatty</td>
+                        <td>svchost.exe</td>
+                        <td>svchost.exe</td>
+                        <td>C：\Users\Administrator\AppData\Roaming\360se6\Application\360se.exe</td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-13  10:13:25</td>
+                        <td>hatty</td>
+                        <td>svchost.exe</td>
+                        <td>svchost.exe</td>
+                        <td>C：\Users\Administrator\AppData\Roaming\360se6\Application\360se.exe</td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-13  10:13:25</td>
+                        <td>hatty</td>
+                        <td>svchost.exe</td>
+                        <td>svchost.exe</td>
+                        <td>C：\Users\Administrator\AppData\Roaming\360se6\Application\360se.exe</td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-13  10:13:25</td>
+                        <td>hatty</td>
+                        <td>svchost.exe</td>
+                        <td>svchost.exe</td>
+                        <td>C：\Users\Administrator\AppData\Roaming\360se6\Application\360se.exe</td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-13  10:13:25</td>
+                        <td>hatty</td>
+                        <td>svchost.exe</td>
+                        <td>svchost.exe</td>
+                        <td>C：\Users\Administrator\AppData\Roaming\360se6\Application\360se.exe</td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-13  10:13:25</td>
+                        <td>hatty</td>
+                        <td>svchost.exe</td>
+                        <td>svchost.exe</td>
+                        <td>C：\Users\Administrator\AppData\Roaming\360se6\Application\360se.exe</td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-13  10:13:25</td>
+                        <td>hatty</td>
+                        <td>svchost.exe</td>
+                        <td>svchost.exe</td>
+                        <td>C：\Users\Administrator\AppData\Roaming\360se6\Application\360se.exe</td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-13  10:13:25</td>
+                        <td>hatty</td>
+                        <td>svchost.exe</td>
+                        <td>svchost.exe</td>
+                        <td>C：\Users\Administrator\AppData\Roaming\360se6\Application\360se.exe</td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-13  10:13:25</td>
+                        <td>hatty</td>
+                        <td>svchost.exe</td>
+                        <td>svchost.exe</td>
+                        <td>C：\Users\Administrator\AppData\Roaming\360se6\Application\360se.exe</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="sensitive-box" class="item-box">
+                <h6 class="box-hd">
+                    <span class="pull-left">系统敏感文件操作一览</span>
+                    <a class="more-link pull-right" href="#">更多&gt;&gt;</a>
+                </h6>
+                <table class="list-table">
+                    <thead>
+                    <tr>
+                        <th style="width: 230px;">时间</th>
+                        <th style="width: 604px;">文件</th>
+                        <th>操作进程</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>2016-10-13  10:13:25</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-13  10:13:25</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-13  10:13:25</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-13  10:13:25</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-13  10:13:25</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-13  10:13:25</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-13  10:13:25</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-13  10:13:25</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-13  10:13:25</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2016-10-13  10:13:25</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+<!--[if lt IE 9]>
+<script src="lib/html5shiv.min.js"></script>
+<script src="lib/respond.min.js"></script>
+<![endif]-->
+<script src="js/common.js"></script>
+<script src="js/action-track.js"></script>
+</html>

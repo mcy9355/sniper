@@ -1,0 +1,117 @@
+@import "variables";
+#main-box{
+  font-size: 12px;
+  color: #333333;
+  background-color: @bg-gray;
+  #contain{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    .bg-white{
+      height: 100%;
+      .client{
+        height: 317px;
+        width: 100%;
+        border: 1px solid @border-gray;
+        background-color: @bg-white;
+        padding: 30px;
+        box-sizing: border-box;
+        font-size: 14px;
+        h1{
+          height: 34px;
+          padding: 0 80px;
+          background-color: @bg-white;
+          font-size: 16px;
+          font-weight: normal;
+          border-bottom: 1px solid @border-gray;
+          color: @text-black;
+          i{
+            color: @text-grey;
+          }
+          span{
+            color: #2f2f2f;
+            font-weight: normal;
+            font-size: 12px;
+          }
+        }
+        section{
+          padding-left: 100px;
+          box-sizing: border-box;
+          h2{
+            padding: 20px 0 10px 0;
+            box-sizing: border-box;
+            color: #2f2f2f;
+          }
+          div{
+            border: 1px solid @input-border;
+            width: 580px;
+            height: 30px;
+            input[type=text],button{
+              height: 30px;
+              padding: 0;
+              border: 0;
+              box-sizing: border-box;
+              font-size: 14px;
+            }
+            input[type=text]{
+              width: 500px;
+              margin: 0 -4px 0 0;
+              border-right: 0;
+              color: #a4a4a4;
+              text-indent: 1em;
+              float: left;
+            }
+            button{
+              width: 80px;
+              margin: 0;
+              color: #777777;
+              border-left: 0;
+              cursor: pointer;
+              background: linear-gradient(@bg-white, #ededed);
+              float: right;
+            }
+            button.active{
+              color: #ff7c00;
+              background: linear-gradient(#ededed, @bg-white);
+            }
+            p{
+              height: 30px;
+              line-height: 30px;
+              color: #5983c8;
+              font-size: 14px;
+            }
+          }
+        }
+        aside{
+          box-sizing: border-box;
+          padding: 30px 0 30px 100px;
+          button{
+            height: 32px;
+            width: 110px;
+            padding: 0;
+            border: 0;
+            border-radius:2px;
+            color: @bg-white;
+            background-color: @primary-orange;
+            font-size: 16px;
+            box-sizing: border-box;
+          }
+        }
+      }
+      .linux-client{
+        margin-top: 12px
+      }
+      .permit{
+        height: 314px;
+        margin-top: 12px;
+        background-color: @bg-white;
+        h1{
+          margin-bottom: 48px;
+        }
+      }
+    }
+  }
+}
+
